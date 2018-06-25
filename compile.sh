@@ -10,5 +10,4 @@ cp src/main/antlr/ch/chrisport/bitflow/* out
 cd out
 antlr4 Bitflow.g4
 javac Bitflow*.java
-cat ../src/test/resources/testscript.txt | grun Bitflow pipeline -tokens
 cd ..

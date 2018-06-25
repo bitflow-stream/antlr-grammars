@@ -3,11 +3,11 @@
 */
 grammar Bitflow ;
 
-parameter : PARAM_NAME '=' (STRING | NUMBER);
+parameter : NAME '=' (STRING | NUMBER);
 
 parameter_list : (parameter (',' parameter)*)?;
 
-transform : FUNCTION_NAME transform_parameters transform_execution_config;
+transform : NAME transform_parameters? transform_execution_config?;
 
 pipeline : (transform PIPE)+ transform EOP ;
 
@@ -24,20 +24,19 @@ fragment LETTER : [a-zA-Z_];
 
 fragment F : ('F'|'f') ;
 
-STRING : '"' .*? '"' ;
-
-NUMBER : [0-9]+ ;
-
 // End Of Pipeline
 EOP : ';';
 
 PIPE : '->';
 
-FUNCTION_NAME : LETTER+;
-
-PARAM_NAME : LETTER+;
-
 EQUALS : '=' ;
+
+NAME : LETTER+;
+
+STRING : '"' .*? '"' ;
+
+NUMBER : [0-9]+ ;
+
 
 NEWLINE : ('\r' | '\n') -> skip;
 

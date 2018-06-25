@@ -1,0 +1,6 @@
+input() ->
+    someFork(nrOfThreads=5){
+        stepA1() -> stepA2() -> outstep();
+        stepB1() -> stepB2() -> outstep()
+    }
+    -> someoutput();
