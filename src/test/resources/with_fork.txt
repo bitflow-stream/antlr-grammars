@@ -1,6 +1,1 @@
-input() ->
-    someFork(nrOfThreads=5){
-        stepA1() -> stepA2() -> outstep();
-        stepB1() -> stepB2() -> outstep()
-    }
-    -> someoutput();
+input() -> someFork(nrOfThreads="ASD"){ stepB1() -> stepB2() -> outstep(nrOfThreads="ASD");  } -> someoutput();

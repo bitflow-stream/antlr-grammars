@@ -3,24 +3,25 @@
 */
 grammar Bitflow ;
 
+fork : FORK_NAME transform_parameters? transform_execution_config? '{' pipeline+ '}';
+
 parameter : NAME '=' (STRING | NUMBER);
 
 parameter_list : (parameter (',' parameter)*)?;
 
 transform : NAME transform_parameters? transform_execution_config?;
 
-pipeline : (transform PIPE)+ transform EOP ;
+pipeline : PIPE_NAME? (transform PIPE)+ (fork PIPE)* transform EOP;
 
 transform_parameters : '(' parameter_list ')';
 
 transform_execution_config : '[' parameter_list ']';
 
-//fork : FORK_NAME parameter_list '{' pipeline+ '}';
 
 /*
 * Lexer Rules
 */
-fragment LETTER : [a-zA-Z_];
+fragment LETTER : [a-zA-Z_0-9];
 
 fragment F : ('F'|'f') ;
 
@@ -31,12 +32,15 @@ PIPE : '->';
 
 EQUALS : '=' ;
 
-NAME : LETTER+;
+FORK_NAME : NAME F 'ork';
+
+PIPE_NAME : ('"' NAME '":' | NAME ':');
 
 STRING : '"' .*? '"' ;
 
 NUMBER : [0-9]+ ;
 
+NAME : LETTER+;
 
 NEWLINE : ('\r' | '\n') -> skip;
 

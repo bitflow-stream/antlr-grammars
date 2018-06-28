@@ -2,5 +2,5 @@
 
 source ./compile.sh
 cd out
-cat ../src/test/resources/$1.txt | grun Bitflow pipeline -tokens
+cat ../src/test/resources/$1.txt | grun Bitflow pipeline -gui
 cd ..
