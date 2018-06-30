@@ -2,5 +2,11 @@
 
 source ./compile.sh
 cd out
-cat ../src/test/resources/$1.txt | grun Bitflow pipeline -gui
+
+for testFile in ../src/test/resources/*.txt; do
+    echo "testing $testFile"
+    cat ${testFile} | java org.antlr.v4.gui.TestRig Bitflow script
+    echo "------------------------"
+done
+
 cd ..

@@ -1,0 +1,5 @@
+input()
+      -> someFork(nrOfThreads="ASD"){
+               step1() -> step2() -> step3(nrOfThreads="ASD");
+      }
+      -> someoutput();

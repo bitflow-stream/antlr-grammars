@@ -1,0 +1,7 @@
+input()
+-> someTransform(tag="tag1")
+-> outputFork()[server_tag="log-server"] {
+          http_output(port=7001);
+          file_out(path="/var/log/access.log");
+   }
+   ;

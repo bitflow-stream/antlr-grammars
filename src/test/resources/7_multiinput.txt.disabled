@@ -1,0 +1,6 @@
+{
+    http_input(port=7000);
+    file_in(path="/var/log/access.log");
+}
+-> someTransform(param="value1")
+-> output()

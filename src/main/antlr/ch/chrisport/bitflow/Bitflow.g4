@@ -3,19 +3,23 @@
 */
 grammar Bitflow ;
 
-fork : FORK_NAME transform_parameters? transform_execution_config? '{' pipeline+ '}';
+script: pipeline+;
+
+comment: NAME transform_parameters? scheduling_hints?;
+
+transform : NAME transform_parameters? scheduling_hints?;
+
+fork : FORK_NAME transform_parameters? scheduling_hints? '{' pipeline+'}';
 
 parameter : NAME '=' (STRING | NUMBER);
 
 parameter_list : (parameter (',' parameter)*)?;
 
-transform : NAME transform_parameters? transform_execution_config?;
-
-pipeline : PIPE_NAME? (transform PIPE)+ (fork PIPE)* transform EOP;
+pipeline : PIPE_NAME? transform ((PIPE transform) | (PIPE fork))* ( EOP | EOF );
 
 transform_parameters : '(' parameter_list ')';
 
-transform_execution_config : '[' parameter_list ']';
+scheduling_hints : '[' parameter_list ']';
 
 
 /*
@@ -30,8 +34,6 @@ EOP : ';';
 
 PIPE : '->';
 
-EQUALS : '=' ;
-
 FORK_NAME : NAME F 'ork';
 
 PIPE_NAME : ('"' NAME '":' | NAME ':');
@@ -45,3 +47,8 @@ NAME : LETTER+;
 NEWLINE : ('\r' | '\n') -> skip;
 
 WHITESPACE : ' ' -> skip ;
+
+// ignore comments
+COMMENT : ('//' .*? NEWLINE) -> skip ;
+
+MULTILINE_COMMENT : ('/*' .*? '*/') -> skip ;
