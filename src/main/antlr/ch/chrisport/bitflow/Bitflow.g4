@@ -5,28 +5,26 @@ grammar Bitflow ;
 
 script : pipeline+;
 
-input : transform;
-
 // special transform shortcuts:
 console: '-';
 
-port: ':' NUMBER;
+ipport: IP? PORT;
 
-file:  FILEPATH ;
+file: FILEPATH;
 
 multiinput : '{' (transform ';')+ '}';
 
 full_transform : NAME transform_parameters? scheduling_hints?;
 
-transform : (port | console | file | full_transform);
+transform : (ipport | console | file | full_transform);
 
-fork : FORK_NAME transform_parameters? scheduling_hints? '{' pipeline+'}';
+fork : FORK_NAME? transform_parameters? scheduling_hints? '{' pipeline+'}';
 
 parameter : NAME '=' (STRING | NUMBER | FILEPATH);
 
 parameter_list : (parameter (',' parameter)*)?;
 
-pipeline : PIPE_NAME? (input | multiinput) ((PIPE transform) | (PIPE fork))* ( EOP | EOF );
+pipeline : PIPE_NAME? (transform | multiinput) ((PIPE transform) | (PIPE fork))* ( EOP | EOF );
 
 transform_parameters : '(' parameter_list ')';
 
@@ -50,17 +48,21 @@ FORK_NAME : NAME F 'ork';
 
 PIPE_NAME : ('"' NAME '":' | NAME ':');
 
+IP: (NUMBER '.' NUMBER '.' NUMBER '.' NUMBER )+;
+
+PORT: ':' NUMBER;
+
 FILEPATH: '"' [/\\][-.a-zA-Z0-9:/\\]+ '"';
 
-STRING : '"' .*? '"' ;
+STRING : '"' .*? '"';
 
-NUMBER : [0-9]+ ;
+NUMBER : [0-9]+;
 
 NAME : LETTER+;
 
 NEWLINE : ('\r' | '\n') -> skip;
 
-WHITESPACE : ' ' -> skip ;
+WHITESPACE : ' ' -> skip;
 
 // ignore comments
 COMMENT : '//' ~('\n'|'\r')* '\r'? NEWLINE -> skip;
