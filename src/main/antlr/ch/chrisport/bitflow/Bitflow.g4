@@ -3,24 +3,34 @@
 */
 grammar Bitflow ;
 
-script: pipeline+;
+script : pipeline+;
 
-comment: NAME transform_parameters? scheduling_hints?;
+input : transform;
 
-transform : NAME transform_parameters? scheduling_hints?;
+// special transform shortcuts:
+console: '-';
+
+port: ':' NUMBER;
+
+file:  FILEPATH ;
+
+multiinput : '{' (transform ';')+ '}';
+
+full_transform : NAME transform_parameters? scheduling_hints?;
+
+transform : (port | console | file | full_transform);
 
 fork : FORK_NAME transform_parameters? scheduling_hints? '{' pipeline+'}';
 
-parameter : NAME '=' (STRING | NUMBER);
+parameter : NAME '=' (STRING | NUMBER | FILEPATH);
 
 parameter_list : (parameter (',' parameter)*)?;
 
-pipeline : PIPE_NAME? transform ((PIPE transform) | (PIPE fork))* ( EOP | EOF );
+pipeline : PIPE_NAME? (input | multiinput) ((PIPE transform) | (PIPE fork))* ( EOP | EOF );
 
 transform_parameters : '(' parameter_list ')';
 
 scheduling_hints : '[' parameter_list ']';
-
 
 /*
 * Lexer Rules
@@ -28,6 +38,8 @@ scheduling_hints : '[' parameter_list ']';
 fragment LETTER : [a-zA-Z_0-9];
 
 fragment F : ('F'|'f') ;
+
+fragment I : ('I'|'i') ;
 
 // End Of Pipeline
 EOP : ';';
@@ -37,6 +49,8 @@ PIPE : '->';
 FORK_NAME : NAME F 'ork';
 
 PIPE_NAME : ('"' NAME '":' | NAME ':');
+
+FILEPATH: '"' [/\\][-.a-zA-Z0-9:/\\]+ '"';
 
 STRING : '"' .*? '"' ;
 
@@ -49,6 +63,6 @@ NEWLINE : ('\r' | '\n') -> skip;
 WHITESPACE : ' ' -> skip ;
 
 // ignore comments
-COMMENT : ('//' .*? NEWLINE) -> skip ;
+COMMENT : '//' ~('\n'|'\r')* '\r'? NEWLINE -> skip;
 
 MULTILINE_COMMENT : ('/*' .*? '*/') -> skip ;

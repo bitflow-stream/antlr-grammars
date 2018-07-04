@@ -1,0 +1,7 @@
+{
+    :7000;
+    "/var/log/access.log";
+    -;
+}
+-> someTransform(param="value1")
+-> output()
