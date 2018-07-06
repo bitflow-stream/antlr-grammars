@@ -5,6 +5,14 @@ grammar Bitflow ;
 
 script : pipeline+;
 
+fork : NAME? transform_parameters? scheduling_hints? '{' sub_pipeline+'}';
+
+multiinput : '{' (transform ';')+ '}';
+
+pipeline : PIPE_NAME? (multiinput | transform) ((PIPE transform) | (PIPE fork))* ( EOP | EOF );
+
+sub_pipeline : PIPE_NAME? transform ((PIPE transform) | (PIPE fork))* ( EOP | EOF );
+
 // special transform shortcuts:
 console: '-';
 
@@ -12,19 +20,13 @@ ipport: IP? PORT;
 
 file: FILEPATH;
 
-multiinput : '{' (transform ';')+ '}';
-
 full_transform : NAME transform_parameters? scheduling_hints?;
 
 transform : (ipport | console | file | full_transform);
 
-fork : FORK_NAME? transform_parameters? scheduling_hints? '{' pipeline+'}';
-
 parameter : NAME '=' (STRING | NUMBER | FILEPATH);
 
 parameter_list : (parameter (',' parameter)*)?;
-
-pipeline : PIPE_NAME? (transform | multiinput) ((PIPE transform) | (PIPE fork))* ( EOP | EOF );
 
 transform_parameters : '(' parameter_list ')';
 
@@ -43,8 +45,6 @@ fragment I : ('I'|'i') ;
 EOP : ';';
 
 PIPE : '->';
-
-FORK_NAME : NAME F 'ork';
 
 PIPE_NAME : ('"' NAME '":' | NAME ':');
 

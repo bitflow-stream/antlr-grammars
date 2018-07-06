@@ -8,9 +8,9 @@
          "default": stepB1() -> stepB2(); // this is the default case
        }
 -> {
-         stepA1()[metadata="nothing"] -> stepA2();
-         stepB1() -> stepB2();
-       }
+       stepA1()[metadata="nothing"] -> stepA2();
+       stepB1() -> stepB2();
+    }
 -> outputFork(mode="round_robin") [server_tag="log-server"] {
           http_output(port=7001);
           "/var/log/access.log";
