@@ -26,11 +26,9 @@ transform : (ipport | console | file | full_transform);
 
 parameter : NAME '=' (STRING | NUMBER | FILEPATH);
 
-parameter_list : (parameter (',' parameter)*)?;
+transform_parameters : '(' (parameter (',' parameter)*)? ')';
 
-transform_parameters : '(' parameter_list ')';
-
-scheduling_hints : '[' parameter_list ']';
+scheduling_hints : '[' (parameter (',' parameter)*)? ']';
 
 /*
 * Lexer Rules
@@ -52,7 +50,7 @@ IP: (NUMBER '.' NUMBER '.' NUMBER '.' NUMBER )+;
 
 PORT: ':' NUMBER;
 
-FILEPATH: '"' [/\\][-.a-zA-Z0-9:/\\]+ '"';
+FILEPATH: '"' .?[/\\][-.a-zA-Z0-9:/\\]+ '"';
 
 STRING : '"' .*? '"';
 
