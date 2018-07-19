@@ -5,35 +5,36 @@ grammar Bitflow ;
 
 script : pipeline+;
 
-fork : NAME? transform_parameters? scheduling_hints? '{' sub_pipeline+'}';
+fork : name? transform_parameters? scheduling_hints? '{' sub_pipeline+ '}';
 
-multiinput : '{' (transform ';')+ '}';
+multiinput : '{' (input ';')+ '}';
 
-pipeline : PIPE_NAME? (multiinput | transform) ((PIPE transform) | (PIPE fork))* ( EOP | EOF );
+input : (NAME | STRING) transform_parameters? scheduling_hints?;
 
-sub_pipeline : PIPE_NAME? transform ((PIPE transform) | (PIPE fork))* ( EOP | EOF );
+sub_pipeline : PIPE_NAME? (fork | transform) ((PIPE transform) | (PIPE fork))* ( EOP | EOF )?;
 
-// special transform shortcuts:
-console: '-';
+pipeline : PIPE_NAME? (multiinput | input) ((PIPE transform) | (PIPE fork))* ( EOP | EOF );
 
-ipport: IP? PORT;
+// special transform shortcuts, removed from script, because they are detected by the bitflow framework itself
+// console: '-';
+// ipport: IP? PORT;
+// file: FILEPATH;
+// full_transform: name transform_parameters? scheduling_hints?;
+// transform : (ipport | console | file | full_transform);
+transform: name transform_parameters? scheduling_hints?;
 
-file: FILEPATH;
-
-full_transform : NAME transform_parameters? scheduling_hints?;
-
-transform : (ipport | console | file | full_transform);
-
-parameter : NAME '=' (STRING | NUMBER | FILEPATH);
+parameter : NAME '=' (STRING | NUMBER);
 
 transform_parameters : '(' (parameter (',' parameter)*)? ')';
+
+name: (STRING | NAME);
 
 scheduling_hints : '[' (parameter (',' parameter)*)? ']';
 
 /*
 * Lexer Rules
 */
-fragment LETTER : [a-zA-Z_0-9];
+fragment LETTER : [a-zA-Z_0-9:\\/-];
 
 fragment F : ('F'|'f') ;
 
@@ -45,12 +46,6 @@ EOP : ';';
 PIPE : '->';
 
 PIPE_NAME : ('"' NAME '":' | NAME ':');
-
-IP: (NUMBER '.' NUMBER '.' NUMBER '.' NUMBER )+;
-
-PORT: ':' NUMBER;
-
-FILEPATH: '"' .?[/\\][-.a-zA-Z0-9:/\\]+ '"';
 
 STRING : '"' .*? '"';
 

@@ -1,17 +1,1 @@
-{
-    http_input(port=7000);
-    file_in(path="/var/log/access.log");
-}
--> someTransform(tag="tag1")
--> someFork (nrOfThreads=5)[ mode="offline" ]{
-         raw:       /* some ugly comment */ stepA1()[metadata="nothing"] -> stepA2();
-         "default": stepB1() -> stepB2(); // this is the default case
-       }
--> {
-       stepA1()[metadata="nothing"] -> stepA2();
-       stepB1() -> stepB2();
-    }
--> outputFork(mode="round_robin") [server_tag="log-server"] {
-          http_output(port=7001);
-          "/var/log/access.log";
-   }
+"./test"->(){tags();rr(){tags()->print_heade    r();};}->print_tags(tag="rr")->"./asd";
