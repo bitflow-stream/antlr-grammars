@@ -40,6 +40,12 @@ fragment F : ('F'|'f') ;
 
 fragment I : ('I'|'i') ;
 
+NEWLINE : ('\r' | '\n') -> skip;
+
+WHITESPACE : (' ' | '\\s') -> skip;
+
+TAB : '\t' -> skip;
+
 // End Of Pipeline
 EOP : ';';
 
@@ -52,10 +58,6 @@ STRING : '"' .*? '"';
 NUMBER : [0-9]+;
 
 NAME : LETTER+;
-
-NEWLINE : ('\r' | '\n') -> skip;
-
-WHITESPACE : ' ' -> skip;
 
 // ignore comments
 COMMENT : '//' ~('\n'|'\r')* '\r'? NEWLINE -> skip;
