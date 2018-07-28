@@ -9,11 +9,13 @@ fork : name? transform_parameters? scheduling_hints? '{' sub_pipeline+ '}';
 
 multiinput : '{' (input ';')+ '}';
 
-input : (NAME | STRING) transform_parameters? scheduling_hints?;
+input : name transform_parameters? scheduling_hints?;
 
-sub_pipeline : PIPE_NAME? (fork | transform) ((PIPE transform) | (PIPE fork))* ( EOP | EOF )?;
+output : name transform_parameters? scheduling_hints?;
 
-pipeline : PIPE_NAME? (multiinput | input) ((PIPE transform) | (PIPE fork))* ( EOP | EOF );
+sub_pipeline : (CASE? name PIPE)? (fork | transform) ((PIPE transform) | (PIPE fork))*  ( EOP | EOF )?;
+
+pipeline : name? (multiinput | input) ((PIPE transform) | (PIPE fork))* PIPE output ( EOP | EOF )?;
 
 // special transform shortcuts, removed from script, because they are detected by the bitflow framework itself
 // console: '-';
@@ -27,7 +29,7 @@ parameter : NAME '=' (STRING | NUMBER);
 
 transform_parameters : '(' (parameter (',' parameter)*)? ')';
 
-name: (STRING | NAME);
+name: (STRING | NAME | NUMBER);
 
 scheduling_hints : '[' (parameter (',' parameter)*)? ']';
 
@@ -40,11 +42,7 @@ fragment F : ('F'|'f') ;
 
 fragment I : ('I'|'i') ;
 
-NEWLINE : ('\r' | '\n') -> skip;
-
-WHITESPACE : (' ' | '\\s') -> skip;
-
-TAB : '\t' -> skip;
+CASE: 'case' | 'CASE';
 
 // End Of Pipeline
 EOP : ';';
@@ -57,9 +55,15 @@ STRING : '"' .*? '"';
 
 NUMBER : [0-9]+;
 
-NAME : LETTER+;
+NAME : (LETTER+ | '"'LETTER+'"');
 
 // ignore comments
 COMMENT : '//' ~('\n'|'\r')* '\r'? NEWLINE -> skip;
 
 MULTILINE_COMMENT : ('/*' .*? '*/') -> skip ;
+
+NEWLINE : ('\r' | '\n') -> skip;
+
+WHITESPACE : (' ' | '\\s') -> skip;
+
+TAB : '\t' -> skip;
