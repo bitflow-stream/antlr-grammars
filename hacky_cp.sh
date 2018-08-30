@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-/bin/cp -rf out/go/* ../../cit-master-project/go-bitflow-pipeline/bitflowcli/script/internal
+/bin/cp -rf out/go/* ~/go/src/github.com/antongulenko/go-bitflow-pipeline/bitflowcli/script/sinternal

@@ -5,7 +5,11 @@ grammar Bitflow ;
 
 script : pipeline+;
 
+outputFork : name? transform_parameters? scheduling_hints? '{' (output ';')+ '}';
+
 fork : name? transform_parameters? scheduling_hints? '{' sub_pipeline+ '}';
+
+window: 'window' transform_parameters? scheduling_hints? '{' sub_pipeline+ '}';
 
 multiinput : '{' (input ';')+ '}';
 
@@ -13,9 +17,11 @@ input : name transform_parameters? scheduling_hints?;
 
 output : name transform_parameters? scheduling_hints?;
 
-sub_pipeline : (CASE? name PIPE)? (fork | transform) ((PIPE transform) | (PIPE fork))*  ( EOP | EOF )?;
+transform: name transform_parameters? scheduling_hints?;
 
-pipeline : name? (multiinput | input) ((PIPE transform) | (PIPE fork))* PIPE output ( EOP | EOF )?;
+sub_pipeline : (CASE? name PIPE)? (transform | fork | window) (PIPE (transform | fork | window))*  ( EOP | EOF )?;
+
+pipeline : name? (multiinput | input) (PIPE  (transform | fork | window ))* PIPE (output | outputFork) ( EOP | EOF )?;
 
 // special transform shortcuts, removed from script, because they are detected by the bitflow framework itself
 // console: '-';
@@ -23,7 +29,6 @@ pipeline : name? (multiinput | input) ((PIPE transform) | (PIPE fork))* PIPE out
 // file: FILEPATH;
 // full_transform: name transform_parameters? scheduling_hints?;
 // transform : (ipport | console | file | full_transform);
-transform: name transform_parameters? scheduling_hints?;
 
 parameter : NAME '=' (STRING | NUMBER);
 
