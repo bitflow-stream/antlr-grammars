@@ -1,1 +1,1 @@
-"./test"->shuffle()->rr(num=2){0 -> head(num=2)->noop();1 -> head(num=5)}->histogram()->"./test_out"
+./test -> shuffle()->rr(num=2){0 -> head(num=2)->noop();1 -> head(num=5)} -> histogram() -> ./test_out

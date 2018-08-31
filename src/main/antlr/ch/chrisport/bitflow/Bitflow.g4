@@ -5,21 +5,21 @@ grammar Bitflow ;
 
 script : pipeline+;
 
-outputFork : name? transform_parameters? scheduling_hints? '{' (output ';')+ '}';
+outputFork : name? transformParameters? schedulingHints? '{' (output ';')+ '}';
 
-fork : name? transform_parameters? scheduling_hints? '{' sub_pipeline+ '}';
+fork : name? transformParameters? schedulingHints? '{' subPipeline+ '}';
 
-window: 'window' transform_parameters? scheduling_hints? '{' sub_pipeline+ '}';
+window: 'window' transformParameters? schedulingHints? '{' subPipeline+ '}';
 
 multiinput : '{' (input ';')+ '}';
 
-input : name transform_parameters? scheduling_hints?;
+input : name transformParameters? schedulingHints?;
 
-output : name transform_parameters? scheduling_hints?;
+output : name transformParameters? schedulingHints?;
 
-transform: name transform_parameters? scheduling_hints?;
+transform: name transformParameters? schedulingHints?;
 
-sub_pipeline : (CASE? name PIPE)? (transform | fork | window) (PIPE (transform | fork | window))*  ( EOP | EOF )?;
+subPipeline : (CASE? pipelineName PIPE)? (transform | fork | window) (PIPE (transform | fork | window))*  ( EOP | EOF )?;
 
 pipeline : name? (multiinput | input) (PIPE  (transform | fork | window ))* PIPE (output | outputFork) ( EOP | EOF )?;
 
@@ -32,20 +32,26 @@ pipeline : name? (multiinput | input) (PIPE  (transform | fork | window ))* PIPE
 
 parameter : NAME '=' (STRING | NUMBER);
 
-transform_parameters : '(' (parameter (',' parameter)*)? ')';
+transformParameters : '(' (parameter (',' parameter)*)? ')';
 
 name: (STRING | NAME | NUMBER);
 
-scheduling_hints : '[' (parameter (',' parameter)*)? ']';
+pipelineName: (STRING | NAME | NUMBER);
+
+schedulingHints : '[' (parameter (',' parameter)*)? ']';
 
 /*
 * Lexer Rules
 */
-fragment LETTER : [a-zA-Z_0-9:\\/-];
+fragment LETTER : [.a-zA-Z_0-9:\\/-];
+
+fragment LETTER_WITHOUT_DASH : [.a-zA-Z_0-9:\\];
 
 fragment F : ('F'|'f') ;
 
 fragment I : ('I'|'i') ;
+
+fragment SINGLE_DASH: '-';
 
 CASE: 'case' | 'CASE';
 
@@ -60,7 +66,7 @@ STRING : '"' .*? '"';
 
 NUMBER : [0-9]+;
 
-NAME : (LETTER+ | '"'LETTER+'"');
+NAME : (LETTER*LETTER_WITHOUT_DASH | '"'LETTER*LETTER_WITHOUT_DASH'"' | SINGLE_DASH);
 
 // ignore comments
 COMMENT : '//' ~('\n'|'\r')* '\r'? NEWLINE -> skip;
