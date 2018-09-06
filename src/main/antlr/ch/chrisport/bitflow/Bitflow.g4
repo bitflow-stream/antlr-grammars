@@ -11,7 +11,7 @@ fork : name? transformParameters? schedulingHints? '{' subPipeline+ '}';
 
 window: 'window' transformParameters? schedulingHints? '{' subPipeline+ '}';
 
-multiinput : '{' (input ';')+ '}';
+multiinput : input (';' input)* ';'?;
 
 input : name transformParameters? schedulingHints?;
 
@@ -21,7 +21,7 @@ transform: name transformParameters? schedulingHints?;
 
 subPipeline : (CASE? pipelineName PIPE)? (transform | fork | window) (PIPE (transform | fork | window))*  ( EOP | EOF )?;
 
-pipeline : name? (multiinput | input) (PIPE  (transform | fork | window ))* PIPE (output | outputFork) ( EOP | EOF )?;
+pipeline : (multiinput | input) (PIPE  (transform | fork | window ))* PIPE (output | outputFork) ( EOP | EOF )?;
 
 // special transform shortcuts, removed from script, because they are detected by the bitflow framework itself
 // console: '-';
