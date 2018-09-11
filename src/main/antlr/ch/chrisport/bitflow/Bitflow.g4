@@ -9,7 +9,7 @@ outputFork : name? transformParameters? schedulingHints? '{' (output ';')+ '}';
 
 fork : name? transformParameters? schedulingHints? '{' subPipeline+ '}';
 
-window: 'window' transformParameters? schedulingHints? '{' subPipeline+ '}';
+window: 'window' transformParameters? schedulingHints? '{' windowSubPipeline '}';
 
 multiinput : input (';' input)* ';'?;
 
@@ -19,7 +19,9 @@ output : name transformParameters? schedulingHints?;
 
 transform: name transformParameters? schedulingHints?;
 
-subPipeline : (CASE? pipelineName PIPE)? (transform | fork | window) (PIPE (transform | fork | window))*  ( EOP | EOF )?;
+subPipeline : (CASE? pipelineName PIPE)? (transform | fork | window) (PIPE (transform | fork | window))*  ( EOP )?;
+
+windowSubPipeline : (transform | fork) (PIPE (transform | fork))*  ( EOP )?;
 
 pipeline : (multiinput | input) (PIPE  (transform | fork | window ))* PIPE (output | outputFork) ( EOP | EOF )?;
 
