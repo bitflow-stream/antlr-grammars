@@ -3,7 +3,7 @@
 */
 grammar Bitflow ;
 
-script : pipeline+;
+script : pipeline;
 
 outputFork : name? transformParameters? schedulingHints? '{' (output ';')+ '}';
 

@@ -6,7 +6,7 @@ cp src/main/antlr/ch/chrisport/bitflow/* out
 cd out
 
 mkdir -p java
-java -jar /usr/local/lib/antlr-4.7.1-complete.jar Bitflow.g4
+java -jar /usr/local/lib/antlr-4.7.1-complete.jar -package bitflow4j.script.antlr.generated Bitflow.g4
 javac Bitflow*.java
 
 mkdir -p go
