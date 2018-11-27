@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
+root=`dirname $(readlink -e $0)`
 
-source ./compile.sh
-cd out
-cat ../src/test/resources/$1_*.txt | java org.antlr.v4.gui.TestRig Bitflow script -tokens
-cat ../src/test/resources/$1_*.txt | java org.antlr.v4.gui.TestRig Bitflow script -gui
-cd ..
+export SOURCE_ONLY=true
+source "$root/generate.sh"
+cd "$OUT_JAVA"
+javac -cp "$ANTLR_JAR" -d . *.java
+
+java -cp .:"$ANTLR_JAR" org.antlr.v4.gui.TestRig "${JAVA_PACKAGE}.Bitflow" script -tokens -gui
+

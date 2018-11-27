@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
+root=`dirname $(readlink -e $0)`
 
-source ./compile.sh
-cd out
+export SOURCE_ONLY=true
+source "$root/generate.sh"
+cd "$OUT_JAVA"
 
-for testFile in ../src/test/resources/*.txt; do
-    echo "testing $testFile"
-    cat ${testFile} | java org.antlr.v4.gui.TestRig Bitflow script
+for testFile in "$root/tests"/*.txt; do
+    echo -e "\nTesting: $testFile\n"
+    cat "$testFile" | java -cp .:"$ANTLR_JAR" org.antlr.v4.gui.TestRig "${JAVA_PACKAGE}.Bitflow" script
     echo "------------------------"
 done
 
-cd ..

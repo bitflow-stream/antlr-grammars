@@ -1,1 +1,0 @@
-"./test"->(){tags();rr(){tags()->print_heade    r();};}->print_tags(tag="rr")->"./asd";
