@@ -1,33 +1,72 @@
 #!/usr/bin/env bash
 root=`dirname $(readlink -e $0)`
 
-JAVA_PACKAGE="bitflow4j.script.antlr.generated"
+function help() {
+    echo "Possible commands: generate (default) | test script | gui script | gui query"
+    exit 1
+}
+
+test $# -gt 2 && help
+cmd="$1 $2"
+
 ANTLR_JAR="$root/lib/antlr-4.7.1-complete.jar"
-OUT="$root/out"
-OUT_JAVA="$OUT/java"
-OUT_GO="$OUT/go"
+ANTLR_CLASS="org.antlr.v4.gui.TestRig"
 
-if [ -z "$SOURCE_ONLY" ]; then
-    rm -rf "$OUT"
-    mkdir -p "$OUT"
-    cp "$root/Bitflow.g4" "$OUT"
+SCRIPT_JAVA_PACKAGE="bitflow4j.script.generated"
+SCRIPT_GO_PACKAGE="parser"
+QUERY_JAVA_PACKAGE="bitflow4j.steps.query.generated"
+QUERY_GO_PACKAGE="parser"
 
-    # Work in subshells due to changing working directory
+function generate() {
+    grammar="$1"
+    target="$2"
+    shift 2
+
+    rm -rf "$target"
+    mkdir -p "$target"
     (
-    rm -rf "$OUT_JAVA" && mkdir -p "$OUT_JAVA" && cd "$OUT_JAVA"
-    cp "$root/Bitflow.g4" .
-    java -jar "$ANTLR_JAR" -package "$JAVA_PACKAGE" Bitflow.g4
-    rm *.g4
-
-    # Compile
-    javac -cp "$ANTLR_JAR" -d . *.java
+        cd $(dirname "$grammar")
+        java -jar "$ANTLR_JAR" -o "$target" $@ $(basename "$grammar")
     )
+}
 
-    (
-    rm -rf "$OUT_GO" && mkdir -p "$OUT_GO" && cd "$OUT_GO"
-    cp "$root/Bitflow.g4" .
-    java -jar "$ANTLR_JAR" -Dlanguage=Go -visitor Bitflow.g4 Bitflow.g4
-    rm *.g4
-    )
-fi
+function generate_java() {
+    target=$(readlink -e $2)
+    generate $@
+    javac -cp "$ANTLR_JAR" -d "$target" "$target"/*.java
+}
+
+case $cmd in
+    " "|"generate ")
+        # Bitflow Script
+        script="$root/bitflow-script"
+        generate_java "$script/Bitflow.g4" "$script/generated/java" -package $SCRIPT_JAVA_PACKAGE -visitor
+        generate      "$script/Bitflow.g4" "$script/generated/go"   -package $SCRIPT_GO_PACKAGE -Dlanguage=Go -visitor
+
+        # Bitflow Query Language
+        query="$root/bitflow-query-language"
+        generate_java "$query/BitflowQuery.g4" "$query/generated/java" -package $QUERY_JAVA_PACKAGE -visitor
+        generate      "$query/BitflowQuery.g4" "$query/generated/go"   -package $QUERY_GO_PACKAGE -Dlanguage=Go -visitor
+        ;;
+    "test script")
+        cd "$root/bitflow-script/generated/java"
+        for testFile in "$root/bitflow-script/tests"/*.txt; do
+            echo -e "\nTesting: $testFile\n"
+            cat "$testFile" | java -cp .:"$ANTLR_JAR" $ANTLR_CLASS "$SCRIPT_JAVA_PACKAGE.Bitflow" script
+            echo "------------------------"
+        done
+        ;;
+    "gui script")
+        cd "$root/bitflow-script/generated/java"
+        java -cp .:"$ANTLR_JAR" $ANTLR_CLASS "${SCRIPT_JAVA_PACKAGE}.Bitflow" script -tokens -gui
+        ;;
+    "gui query")
+        cd "$root/bitflow-query-language/generated/java"
+        java -cp .:"$ANTLR_JAR" $ANTLR_CLASS "${QUERY_JAVA_PACKAGE}.BitflowQuery" parse -tokens -gui
+        ;;
+    *)
+        echo "Unknown command: '$cmd'"
+        help
+        ;;
+esac
 
