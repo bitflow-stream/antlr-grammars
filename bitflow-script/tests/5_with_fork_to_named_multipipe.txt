@@ -1,6 +1,0 @@
-input()
-    -> someFork(nrOfThreads=5){
-         raw ->      stepA1() -> stepA2();
-         "default" -> stepB1() -> stepB2();
-       }
-    -> someoutput();

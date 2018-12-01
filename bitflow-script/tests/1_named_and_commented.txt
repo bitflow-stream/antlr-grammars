@@ -1,15 +1,12 @@
-first_pipeline -> input() -> someTransform(id=5) -> someoutput(); // this is a second pipeline
+first_pipeline -> input() -> someTransform(id=5) -> someoutput(); # this is a second pipeline
 
-/*
-    Multiline comments are ignored, only for documentation purpose, e.g. when the scripts is checked_in to GIT
-*/
+# comments are ignored, only for documentation purpose, e.g. when the scripts is checked_in to GIT
+
 second_pipeline -> input2() -> someTransform(id=5) -> someoutput1();
 
-third_pipeline -> input2() /* comments can be inserted in the middle of the script */ -> someTransform(id=5) -> someoutput1();
+third_pipeline -> input2() -> someTransform(id=5) -> someoutput1();
 
 
-/*
-    This whole pipeline could also be written in one line:
+# This whole pipeline could also be written in one line:
 
-    input() -> someTransform(id=5) -> someoutput(); input2() -> someTransform(id=5) -> someoutput1(); third_pipeline: input2() -> someTransform(id=5) -> someoutput1()
-*/
+# input -> someTransform(id=5) -> someoutput(); input2 -> someTransform(id=5) -> someoutput1(); third_pipeline: input2 -> someTransform(id=5) -> someoutput1()

@@ -1,1 +1,1 @@
-"./test"->(){tags();rr(){tags()->print_heade    r();};}->print_tags(tag="rr")->"./asd"
+{ "1"; "./test"; }-> {tags(); rr(){1 -> tags(); 2 -> print_header()}; } ->  "file" -> print_tags(tag="rr")->"./asd"

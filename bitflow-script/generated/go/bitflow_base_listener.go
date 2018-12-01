@@ -26,29 +26,17 @@ func (s *BaseBitflowListener) EnterScript(ctx *ScriptContext) {}
 // ExitScript is called when production script is exited.
 func (s *BaseBitflowListener) ExitScript(ctx *ScriptContext) {}
 
-// EnterOutputFork is called when production outputFork is entered.
-func (s *BaseBitflowListener) EnterOutputFork(ctx *OutputForkContext) {}
+// EnterPipeline is called when production pipeline is entered.
+func (s *BaseBitflowListener) EnterPipeline(ctx *PipelineContext) {}
 
-// ExitOutputFork is called when production outputFork is exited.
-func (s *BaseBitflowListener) ExitOutputFork(ctx *OutputForkContext) {}
+// ExitPipeline is called when production pipeline is exited.
+func (s *BaseBitflowListener) ExitPipeline(ctx *PipelineContext) {}
 
-// EnterFork is called when production fork is entered.
-func (s *BaseBitflowListener) EnterFork(ctx *ForkContext) {}
+// EnterMultiInputPipeline is called when production multiInputPipeline is entered.
+func (s *BaseBitflowListener) EnterMultiInputPipeline(ctx *MultiInputPipelineContext) {}
 
-// ExitFork is called when production fork is exited.
-func (s *BaseBitflowListener) ExitFork(ctx *ForkContext) {}
-
-// EnterWindow is called when production window is entered.
-func (s *BaseBitflowListener) EnterWindow(ctx *WindowContext) {}
-
-// ExitWindow is called when production window is exited.
-func (s *BaseBitflowListener) ExitWindow(ctx *WindowContext) {}
-
-// EnterMultiinput is called when production multiinput is entered.
-func (s *BaseBitflowListener) EnterMultiinput(ctx *MultiinputContext) {}
-
-// ExitMultiinput is called when production multiinput is exited.
-func (s *BaseBitflowListener) ExitMultiinput(ctx *MultiinputContext) {}
+// ExitMultiInputPipeline is called when production multiInputPipeline is exited.
+func (s *BaseBitflowListener) ExitMultiInputPipeline(ctx *MultiInputPipelineContext) {}
 
 // EnterInput is called when production input is entered.
 func (s *BaseBitflowListener) EnterInput(ctx *InputContext) {}
@@ -62,29 +50,29 @@ func (s *BaseBitflowListener) EnterOutput(ctx *OutputContext) {}
 // ExitOutput is called when production output is exited.
 func (s *BaseBitflowListener) ExitOutput(ctx *OutputContext) {}
 
-// EnterTransform is called when production transform is entered.
-func (s *BaseBitflowListener) EnterTransform(ctx *TransformContext) {}
+// EnterName is called when production name is entered.
+func (s *BaseBitflowListener) EnterName(ctx *NameContext) {}
 
-// ExitTransform is called when production transform is exited.
-func (s *BaseBitflowListener) ExitTransform(ctx *TransformContext) {}
+// ExitName is called when production name is exited.
+func (s *BaseBitflowListener) ExitName(ctx *NameContext) {}
 
-// EnterSubPipeline is called when production subPipeline is entered.
-func (s *BaseBitflowListener) EnterSubPipeline(ctx *SubPipelineContext) {}
+// EnterNamedSubPipelineKey is called when production namedSubPipelineKey is entered.
+func (s *BaseBitflowListener) EnterNamedSubPipelineKey(ctx *NamedSubPipelineKeyContext) {}
 
-// ExitSubPipeline is called when production subPipeline is exited.
-func (s *BaseBitflowListener) ExitSubPipeline(ctx *SubPipelineContext) {}
+// ExitNamedSubPipelineKey is called when production namedSubPipelineKey is exited.
+func (s *BaseBitflowListener) ExitNamedSubPipelineKey(ctx *NamedSubPipelineKeyContext) {}
 
-// EnterWindowSubPipeline is called when production windowSubPipeline is entered.
-func (s *BaseBitflowListener) EnterWindowSubPipeline(ctx *WindowSubPipelineContext) {}
+// EnterEndpoint is called when production endpoint is entered.
+func (s *BaseBitflowListener) EnterEndpoint(ctx *EndpointContext) {}
 
-// ExitWindowSubPipeline is called when production windowSubPipeline is exited.
-func (s *BaseBitflowListener) ExitWindowSubPipeline(ctx *WindowSubPipelineContext) {}
+// ExitEndpoint is called when production endpoint is exited.
+func (s *BaseBitflowListener) ExitEndpoint(ctx *EndpointContext) {}
 
-// EnterPipeline is called when production pipeline is entered.
-func (s *BaseBitflowListener) EnterPipeline(ctx *PipelineContext) {}
+// EnterVal is called when production val is entered.
+func (s *BaseBitflowListener) EnterVal(ctx *ValContext) {}
 
-// ExitPipeline is called when production pipeline is exited.
-func (s *BaseBitflowListener) ExitPipeline(ctx *PipelineContext) {}
+// ExitVal is called when production val is exited.
+func (s *BaseBitflowListener) ExitVal(ctx *ValContext) {}
 
 // EnterParameter is called when production parameter is entered.
 func (s *BaseBitflowListener) EnterParameter(ctx *ParameterContext) {}
@@ -98,17 +86,59 @@ func (s *BaseBitflowListener) EnterTransformParameters(ctx *TransformParametersC
 // ExitTransformParameters is called when production transformParameters is exited.
 func (s *BaseBitflowListener) ExitTransformParameters(ctx *TransformParametersContext) {}
 
-// EnterName is called when production name is entered.
-func (s *BaseBitflowListener) EnterName(ctx *NameContext) {}
+// EnterIntermediateTransform is called when production intermediateTransform is entered.
+func (s *BaseBitflowListener) EnterIntermediateTransform(ctx *IntermediateTransformContext) {}
 
-// ExitName is called when production name is exited.
-func (s *BaseBitflowListener) ExitName(ctx *NameContext) {}
+// ExitIntermediateTransform is called when production intermediateTransform is exited.
+func (s *BaseBitflowListener) ExitIntermediateTransform(ctx *IntermediateTransformContext) {}
 
-// EnterPipelineName is called when production pipelineName is entered.
-func (s *BaseBitflowListener) EnterPipelineName(ctx *PipelineNameContext) {}
+// EnterTransform is called when production transform is entered.
+func (s *BaseBitflowListener) EnterTransform(ctx *TransformContext) {}
 
-// ExitPipelineName is called when production pipelineName is exited.
-func (s *BaseBitflowListener) ExitPipelineName(ctx *PipelineNameContext) {}
+// ExitTransform is called when production transform is exited.
+func (s *BaseBitflowListener) ExitTransform(ctx *TransformContext) {}
+
+// EnterFork is called when production fork is entered.
+func (s *BaseBitflowListener) EnterFork(ctx *ForkContext) {}
+
+// ExitFork is called when production fork is exited.
+func (s *BaseBitflowListener) ExitFork(ctx *ForkContext) {}
+
+// EnterNamedSubPipeline is called when production namedSubPipeline is entered.
+func (s *BaseBitflowListener) EnterNamedSubPipeline(ctx *NamedSubPipelineContext) {}
+
+// ExitNamedSubPipeline is called when production namedSubPipeline is exited.
+func (s *BaseBitflowListener) ExitNamedSubPipeline(ctx *NamedSubPipelineContext) {}
+
+// EnterSubPipeline is called when production subPipeline is entered.
+func (s *BaseBitflowListener) EnterSubPipeline(ctx *SubPipelineContext) {}
+
+// ExitSubPipeline is called when production subPipeline is exited.
+func (s *BaseBitflowListener) ExitSubPipeline(ctx *SubPipelineContext) {}
+
+// EnterMultiplexFork is called when production multiplexFork is entered.
+func (s *BaseBitflowListener) EnterMultiplexFork(ctx *MultiplexForkContext) {}
+
+// ExitMultiplexFork is called when production multiplexFork is exited.
+func (s *BaseBitflowListener) ExitMultiplexFork(ctx *MultiplexForkContext) {}
+
+// EnterMultiplexSubPipeline is called when production multiplexSubPipeline is entered.
+func (s *BaseBitflowListener) EnterMultiplexSubPipeline(ctx *MultiplexSubPipelineContext) {}
+
+// ExitMultiplexSubPipeline is called when production multiplexSubPipeline is exited.
+func (s *BaseBitflowListener) ExitMultiplexSubPipeline(ctx *MultiplexSubPipelineContext) {}
+
+// EnterWindow is called when production window is entered.
+func (s *BaseBitflowListener) EnterWindow(ctx *WindowContext) {}
+
+// ExitWindow is called when production window is exited.
+func (s *BaseBitflowListener) ExitWindow(ctx *WindowContext) {}
+
+// EnterWindowPipeline is called when production windowPipeline is entered.
+func (s *BaseBitflowListener) EnterWindowPipeline(ctx *WindowPipelineContext) {}
+
+// ExitWindowPipeline is called when production windowPipeline is exited.
+func (s *BaseBitflowListener) ExitWindowPipeline(ctx *WindowPipelineContext) {}
 
 // EnterSchedulingHints is called when production schedulingHints is entered.
 func (s *BaseBitflowListener) EnterSchedulingHints(ctx *SchedulingHintsContext) {}

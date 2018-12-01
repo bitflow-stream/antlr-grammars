@@ -11,4 +11,3 @@ The `generate.sh` script can also be started with `gui script` or `gui query` pa
 - `echo 'a -> b()' | ./generate.sh gui script`
 - `cat bitflow-script/tests/0_simple.txt | ./generate.sh gui script`
 - `echo "select * where foo = 'bar'" | ./generate.sh gui query`
-

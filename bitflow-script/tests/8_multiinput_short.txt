@@ -1,7 +1,5 @@
-// Please note, that multifile input must be separated by a semicolon ';'
-// whitespace is not enough like it was in the original Bitflow script
-    :7000;
-    "/var/log/access.log";
-    -;
+    { :7000 ;
+    "/var/log/access.log" ;
+    - }
 -> someTransform(param="value1")
 -> output()

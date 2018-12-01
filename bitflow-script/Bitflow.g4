@@ -3,80 +3,59 @@
 */
 grammar Bitflow ;
 
-script : pipeline;
+/*
+* Parser Rules
+*/
 
-outputFork : name? transformParameters? schedulingHints? '{' (output ';')+ '}';
+script : pipeline ( EOP pipeline )* EOP? EOF ;
 
-fork : name? transformParameters? schedulingHints? '{' subPipeline+ '}';
+pipeline : (input | multiInputPipeline) (PIPE intermediateTransform)* ;
+multiInputPipeline : '{' pipeline (EOP pipeline)* EOP? '}';
 
-window: 'window' transformParameters? schedulingHints? '{' windowSubPipeline '}';
+// TODO support for multiple input declarations (separated by spaces)
+// multiinput : input (';' input)* ';'?;
 
-multiinput : input (';' input)* ';'?;
+input : endpoint schedulingHints? ;
+output : endpoint schedulingHints? ;
+name : NAME | STRING ;
+namedSubPipelineKey: NAME | STRING | NUMBER ;
+endpoint : STRING | NAME ;
+val : STRING | NUMBER ; // TODO explicitely add BOOL and FLOAT
 
-input : name transformParameters? schedulingHints?;
-
-output : name transformParameters? schedulingHints?;
-
-transform: name transformParameters? schedulingHints?;
-
-subPipeline : (CASE? pipelineName PIPE)? (transform | fork | window) (PIPE (transform | fork | window))*  ( EOP )?;
-
-windowSubPipeline : (transform | fork) (PIPE (transform | fork))*  ( EOP )?;
-
-pipeline : (multiinput | input) (PIPE  (transform | fork | window ))* PIPE (output | outputFork) ( EOP | EOF )?;
-
-// special transform shortcuts, removed from script, because they are detected by the bitflow framework itself
-// console: '-';
-// ipport: IP? PORT;
-// file: FILEPATH;
-// full_transform: name transform_parameters? scheduling_hints?;
-// transform : (ipport | console | file | full_transform);
-
-parameter : NAME '=' (STRING | NUMBER);
-
+parameter : name '=' val;
 transformParameters : '(' (parameter (',' parameter)*)? ')';
 
-name: (STRING | NAME | NUMBER);
+intermediateTransform : transform | fork | multiplexFork | window | output ;
+transform: name transformParameters schedulingHints? ;
 
-pipelineName: (STRING | NAME | NUMBER);
+fork : name transformParameters schedulingHints? '{' namedSubPipeline (EOP namedSubPipeline)* EOP? '}' ;
+namedSubPipeline : namedSubPipelineKey PIPE subPipeline ;
 
-schedulingHints : '[' (parameter (',' parameter)*)? ']';
+subPipeline : intermediateTransform (PIPE intermediateTransform)* ;
+
+multiplexFork : '{' multiplexSubPipeline (EOP multiplexSubPipeline)* EOP? '}' ;
+multiplexSubPipeline : subPipeline ;
+window : 'window' transformParameters schedulingHints? '{' windowPipeline '}' ;
+windowPipeline : transform (PIPE transform)* ;
+
+schedulingHints : '[' (parameter (',' parameter)*)? ']' ;
 
 /*
 * Lexer Rules
 */
-fragment LETTER : [.a-zA-Z_0-9:\\/-];
 
-fragment LETTER_WITHOUT_DASH : [.a-zA-Z_0-9:\\];
-
-fragment F : ('F'|'f') ;
-
-fragment I : ('I'|'i') ;
-
+fragment START_LETTER : [a-zA-Z0-9._:\\/-];
+fragment END_LETTER : [a-zA-Z0-9._:\\/]; // Identifiers may not end with a dash, to not collide with the '->' operator
 fragment SINGLE_DASH: '-';
 
-CASE: 'case' | 'CASE';
-
-// End Of Pipeline
-EOP : ';';
-
+EOP : ';'; // End Of Pipeline
 PIPE : '->';
 
-PIPE_NAME : ('"' NAME '":' | NAME ':');
-
-STRING : '"' .*? '"';
-
+STRING : '"' .*? '"' | '\'' .*? '\'' | '`' .*? '`';
 NUMBER : [0-9]+;
+NAME : (START_LETTER (START_LETTER* END_LETTER)?) | SINGLE_DASH;
 
-NAME : (LETTER*LETTER_WITHOUT_DASH | '"'LETTER*LETTER_WITHOUT_DASH'"' | SINGLE_DASH);
-
-// ignore comments
-COMMENT : '//' ~('\n'|'\r')* '\r'? NEWLINE -> skip;
-
-MULTILINE_COMMENT : ('/*' .*? '*/') -> skip ;
-
-NEWLINE : ('\r' | '\n') -> skip;
-
+COMMENT : '#' ~('\n'|'\r')* NEWLINE -> skip;
+NEWLINE : ('\r' | '\n' | '\r\n') -> skip;
 WHITESPACE : (' ' | '\\s') -> skip;
-
 TAB : '\t' -> skip;

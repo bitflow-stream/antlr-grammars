@@ -1,5 +1,5 @@
-input()
+input
       -> someFork(nrOfThreads="ASD"){
-               step1() -> step2() -> step3(nrOfThreads="ASD");
+               KEY -> step1() -> step2() -> step3(nrOfThreads="ASD");
       }
       -> someoutput();

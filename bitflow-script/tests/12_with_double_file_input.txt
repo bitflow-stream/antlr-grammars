@@ -1,1 +1,1 @@
-./in; ./in2 -> noop() -> ./out
+{ ./in ; ./in2 } -> noop() -> ./out
