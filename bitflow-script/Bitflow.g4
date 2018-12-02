@@ -9,7 +9,7 @@ grammar Bitflow ;
 
 script : pipeline ( EOP pipeline )* EOP? EOF ;
 
-pipeline : (input | multiInputPipeline) (PIPE intermediateTransform)* ;
+pipeline : (input | multiInputPipeline) (NEXT intermediateTransform)* ;
 multiInputPipeline : '{' pipeline (EOP pipeline)* EOP? '}';
 
 // TODO support for multiple input declarations (separated by spaces)
@@ -29,14 +29,14 @@ intermediateTransform : transform | fork | multiplexFork | window | output ;
 transform: name transformParameters schedulingHints? ;
 
 fork : name transformParameters schedulingHints? '{' namedSubPipeline (EOP namedSubPipeline)* EOP? '}' ;
-namedSubPipeline : namedSubPipelineKey PIPE subPipeline ;
+namedSubPipeline : namedSubPipelineKey NEXT subPipeline ;
 
-subPipeline : intermediateTransform (PIPE intermediateTransform)* ;
+subPipeline : intermediateTransform (NEXT intermediateTransform)* ;
 
 multiplexFork : '{' multiplexSubPipeline (EOP multiplexSubPipeline)* EOP? '}' ;
 multiplexSubPipeline : subPipeline ;
 window : 'window' transformParameters schedulingHints? '{' windowPipeline '}' ;
-windowPipeline : transform (PIPE transform)* ;
+windowPipeline : transform (NEXT transform)* ;
 
 schedulingHints : '[' (parameter (',' parameter)*)? ']' ;
 
@@ -44,16 +44,12 @@ schedulingHints : '[' (parameter (',' parameter)*)? ']' ;
 * Lexer Rules
 */
 
-fragment START_LETTER : [a-zA-Z0-9._:\\/-];
-fragment END_LETTER : [a-zA-Z0-9._:\\/]; // Identifiers may not end with a dash, to not collide with the '->' operator
-fragment SINGLE_DASH: '-';
-
 EOP : ';'; // End Of Pipeline
-PIPE : '->';
+NEXT : '->';
 
 STRING : '"' .*? '"' | '\'' .*? '\'' | '`' .*? '`';
 NUMBER : [0-9]+;
-NAME : (START_LETTER (START_LETTER* END_LETTER)?) | SINGLE_DASH;
+NAME : [a-zA-Z0-9._:\\/-]+;
 
 COMMENT : '#' ~('\n'|'\r')* NEWLINE -> skip;
 NEWLINE : ('\r' | '\n' | '\r\n') -> skip;

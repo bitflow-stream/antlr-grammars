@@ -1,1 +1,1 @@
-input -> transform1() -> someTransform(id=5) -> someoutput() -> outputFile
+input -> transform1()->someTransform(id=5) -> output2 -> someoutput() -> outputFile

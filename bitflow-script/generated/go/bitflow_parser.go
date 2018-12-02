@@ -112,7 +112,7 @@ var literalNames = []string{
 	"';'", "'->'", "", "", "", "", "", "", "'\t'",
 }
 var symbolicNames = []string{
-	"", "", "", "", "", "", "", "", "", "", "EOP", "PIPE", "STRING", "NUMBER",
+	"", "", "", "", "", "", "", "", "", "", "EOP", "NEXT", "STRING", "NUMBER",
 	"NAME", "COMMENT", "NEWLINE", "WHITESPACE", "TAB",
 }
 
@@ -161,7 +161,7 @@ const (
 	BitflowParserT__7       = 8
 	BitflowParserT__8       = 9
 	BitflowParserEOP        = 10
-	BitflowParserPIPE       = 11
+	BitflowParserNEXT       = 11
 	BitflowParserSTRING     = 12
 	BitflowParserNUMBER     = 13
 	BitflowParserNAME       = 14
@@ -424,12 +424,12 @@ func (s *PipelineContext) MultiInputPipeline() IMultiInputPipelineContext {
 	return t.(IMultiInputPipelineContext)
 }
 
-func (s *PipelineContext) AllPIPE() []antlr.TerminalNode {
-	return s.GetTokens(BitflowParserPIPE)
+func (s *PipelineContext) AllNEXT() []antlr.TerminalNode {
+	return s.GetTokens(BitflowParserNEXT)
 }
 
-func (s *PipelineContext) PIPE(i int) antlr.TerminalNode {
-	return s.GetToken(BitflowParserPIPE, i)
+func (s *PipelineContext) NEXT(i int) antlr.TerminalNode {
+	return s.GetToken(BitflowParserNEXT, i)
 }
 
 func (s *PipelineContext) AllIntermediateTransform() []IIntermediateTransformContext {
@@ -530,10 +530,10 @@ func (p *BitflowParser) Pipeline() (localctx IPipelineContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == BitflowParserPIPE {
+	for _la == BitflowParserNEXT {
 		{
 			p.SetState(59)
-			p.Match(BitflowParserPIPE)
+			p.Match(BitflowParserNEXT)
 		}
 		{
 			p.SetState(60)
@@ -2302,8 +2302,8 @@ func (s *NamedSubPipelineContext) NamedSubPipelineKey() INamedSubPipelineKeyCont
 	return t.(INamedSubPipelineKeyContext)
 }
 
-func (s *NamedSubPipelineContext) PIPE() antlr.TerminalNode {
-	return s.GetToken(BitflowParserPIPE, 0)
+func (s *NamedSubPipelineContext) NEXT() antlr.TerminalNode {
+	return s.GetToken(BitflowParserNEXT, 0)
 }
 
 func (s *NamedSubPipelineContext) SubPipeline() ISubPipelineContext {
@@ -2373,7 +2373,7 @@ func (p *BitflowParser) NamedSubPipeline() (localctx INamedSubPipelineContext) {
 	}
 	{
 		p.SetState(145)
-		p.Match(BitflowParserPIPE)
+		p.Match(BitflowParserNEXT)
 	}
 	{
 		p.SetState(146)
@@ -2444,12 +2444,12 @@ func (s *SubPipelineContext) IntermediateTransform(i int) IIntermediateTransform
 	return t.(IIntermediateTransformContext)
 }
 
-func (s *SubPipelineContext) AllPIPE() []antlr.TerminalNode {
-	return s.GetTokens(BitflowParserPIPE)
+func (s *SubPipelineContext) AllNEXT() []antlr.TerminalNode {
+	return s.GetTokens(BitflowParserNEXT)
 }
 
-func (s *SubPipelineContext) PIPE(i int) antlr.TerminalNode {
-	return s.GetToken(BitflowParserPIPE, i)
+func (s *SubPipelineContext) NEXT(i int) antlr.TerminalNode {
+	return s.GetToken(BitflowParserNEXT, i)
 }
 
 func (s *SubPipelineContext) GetRuleContext() antlr.RuleContext {
@@ -2512,10 +2512,10 @@ func (p *BitflowParser) SubPipeline() (localctx ISubPipelineContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == BitflowParserPIPE {
+	for _la == BitflowParserNEXT {
 		{
 			p.SetState(149)
-			p.Match(BitflowParserPIPE)
+			p.Match(BitflowParserNEXT)
 		}
 		{
 			p.SetState(150)
@@ -3023,12 +3023,12 @@ func (s *WindowPipelineContext) Transform(i int) ITransformContext {
 	return t.(ITransformContext)
 }
 
-func (s *WindowPipelineContext) AllPIPE() []antlr.TerminalNode {
-	return s.GetTokens(BitflowParserPIPE)
+func (s *WindowPipelineContext) AllNEXT() []antlr.TerminalNode {
+	return s.GetTokens(BitflowParserNEXT)
 }
 
-func (s *WindowPipelineContext) PIPE(i int) antlr.TerminalNode {
-	return s.GetToken(BitflowParserPIPE, i)
+func (s *WindowPipelineContext) NEXT(i int) antlr.TerminalNode {
+	return s.GetToken(BitflowParserNEXT, i)
 }
 
 func (s *WindowPipelineContext) GetRuleContext() antlr.RuleContext {
@@ -3091,10 +3091,10 @@ func (p *BitflowParser) WindowPipeline() (localctx IWindowPipelineContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == BitflowParserPIPE {
+	for _la == BitflowParserNEXT {
 		{
 			p.SetState(182)
-			p.Match(BitflowParserPIPE)
+			p.Match(BitflowParserNEXT)
 		}
 		{
 			p.SetState(183)
