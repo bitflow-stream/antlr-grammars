@@ -1,4 +1,4 @@
-first_pipeline -> input() -> someTransform(id=5) -> someoutput(); # this is a second pipeline
+first_pipeline -> input() -> someTransform(id=5.555, x="22222.222") -> someoutput(); # this is a second pipeline
 
 # comments are ignored, only for documentation purpose, e.g. when the scripts is checked_in to GIT
 

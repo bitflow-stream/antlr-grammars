@@ -11,14 +11,6 @@ func (v *BaseBitflowVisitor) VisitScript(ctx *ScriptContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseBitflowVisitor) VisitPipeline(ctx *PipelineContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseBitflowVisitor) VisitMultiInputPipeline(ctx *MultiInputPipelineContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseBitflowVisitor) VisitInput(ctx *InputContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -28,14 +20,6 @@ func (v *BaseBitflowVisitor) VisitOutput(ctx *OutputContext) interface{} {
 }
 
 func (v *BaseBitflowVisitor) VisitName(ctx *NameContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseBitflowVisitor) VisitNamedSubPipelineKey(ctx *NamedSubPipelineKeyContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseBitflowVisitor) VisitEndpoint(ctx *EndpointContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -51,7 +35,15 @@ func (v *BaseBitflowVisitor) VisitTransformParameters(ctx *TransformParametersCo
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseBitflowVisitor) VisitIntermediateTransform(ctx *IntermediateTransformContext) interface{} {
+func (v *BaseBitflowVisitor) VisitPipeline(ctx *PipelineContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseBitflowVisitor) VisitMultiInputPipeline(ctx *MultiInputPipelineContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseBitflowVisitor) VisitPipelineElement(ctx *PipelineElementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -88,5 +80,9 @@ func (v *BaseBitflowVisitor) VisitWindowPipeline(ctx *WindowPipelineContext) int
 }
 
 func (v *BaseBitflowVisitor) VisitSchedulingHints(ctx *SchedulingHintsContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseBitflowVisitor) VisitSchedulingParameter(ctx *SchedulingParameterContext) interface{} {
 	return v.VisitChildren(ctx)
 }

@@ -15,112 +15,114 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 20, 205,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 21, 209,
 	4, 2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7,
 	4, 8, 9, 8, 4, 9, 9, 9, 4, 10, 9, 10, 4, 11, 9, 11, 4, 12, 9, 12, 4, 13,
 	9, 13, 4, 14, 9, 14, 4, 15, 9, 15, 4, 16, 9, 16, 4, 17, 9, 17, 4, 18, 9,
-	18, 4, 19, 9, 19, 4, 20, 9, 20, 4, 21, 9, 21, 4, 22, 9, 22, 3, 2, 3, 2,
-	3, 2, 7, 2, 48, 10, 2, 12, 2, 14, 2, 51, 11, 2, 3, 2, 5, 2, 54, 10, 2,
-	3, 2, 3, 2, 3, 3, 3, 3, 5, 3, 60, 10, 3, 3, 3, 3, 3, 7, 3, 64, 10, 3, 12,
-	3, 14, 3, 67, 11, 3, 3, 4, 3, 4, 3, 4, 3, 4, 7, 4, 73, 10, 4, 12, 4, 14,
-	4, 76, 11, 4, 3, 4, 5, 4, 79, 10, 4, 3, 4, 3, 4, 3, 5, 3, 5, 5, 5, 85,
-	10, 5, 3, 6, 3, 6, 5, 6, 89, 10, 6, 3, 7, 3, 7, 3, 8, 3, 8, 3, 9, 3, 9,
-	3, 10, 3, 10, 3, 11, 3, 11, 3, 11, 3, 11, 3, 12, 3, 12, 3, 12, 3, 12, 7,
-	12, 107, 10, 12, 12, 12, 14, 12, 110, 11, 12, 5, 12, 112, 10, 12, 3, 12,
-	3, 12, 3, 13, 3, 13, 3, 13, 3, 13, 3, 13, 5, 13, 121, 10, 13, 3, 14, 3,
-	14, 3, 14, 5, 14, 126, 10, 14, 3, 15, 3, 15, 3, 15, 5, 15, 131, 10, 15,
-	3, 15, 3, 15, 3, 15, 3, 15, 7, 15, 137, 10, 15, 12, 15, 14, 15, 140, 11,
-	15, 3, 15, 5, 15, 143, 10, 15, 3, 15, 3, 15, 3, 16, 3, 16, 3, 16, 3, 16,
-	3, 17, 3, 17, 3, 17, 7, 17, 154, 10, 17, 12, 17, 14, 17, 157, 11, 17, 3,
-	18, 3, 18, 3, 18, 3, 18, 7, 18, 163, 10, 18, 12, 18, 14, 18, 166, 11, 18,
-	3, 18, 5, 18, 169, 10, 18, 3, 18, 3, 18, 3, 19, 3, 19, 3, 20, 3, 20, 3,
-	20, 5, 20, 178, 10, 20, 3, 20, 3, 20, 3, 20, 3, 20, 3, 21, 3, 21, 3, 21,
-	7, 21, 187, 10, 21, 12, 21, 14, 21, 190, 11, 21, 3, 22, 3, 22, 3, 22, 3,
-	22, 7, 22, 196, 10, 22, 12, 22, 14, 22, 199, 11, 22, 5, 22, 201, 10, 22,
-	3, 22, 3, 22, 3, 22, 2, 2, 23, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22,
-	24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 2, 5, 4, 2, 14, 14, 16, 16, 3,
-	2, 14, 16, 3, 2, 14, 15, 2, 208, 2, 44, 3, 2, 2, 2, 4, 59, 3, 2, 2, 2,
-	6, 68, 3, 2, 2, 2, 8, 82, 3, 2, 2, 2, 10, 86, 3, 2, 2, 2, 12, 90, 3, 2,
-	2, 2, 14, 92, 3, 2, 2, 2, 16, 94, 3, 2, 2, 2, 18, 96, 3, 2, 2, 2, 20, 98,
-	3, 2, 2, 2, 22, 102, 3, 2, 2, 2, 24, 120, 3, 2, 2, 2, 26, 122, 3, 2, 2,
-	2, 28, 127, 3, 2, 2, 2, 30, 146, 3, 2, 2, 2, 32, 150, 3, 2, 2, 2, 34, 158,
-	3, 2, 2, 2, 36, 172, 3, 2, 2, 2, 38, 174, 3, 2, 2, 2, 40, 183, 3, 2, 2,
-	2, 42, 191, 3, 2, 2, 2, 44, 49, 5, 4, 3, 2, 45, 46, 7, 12, 2, 2, 46, 48,
-	5, 4, 3, 2, 47, 45, 3, 2, 2, 2, 48, 51, 3, 2, 2, 2, 49, 47, 3, 2, 2, 2,
-	49, 50, 3, 2, 2, 2, 50, 53, 3, 2, 2, 2, 51, 49, 3, 2, 2, 2, 52, 54, 7,
-	12, 2, 2, 53, 52, 3, 2, 2, 2, 53, 54, 3, 2, 2, 2, 54, 55, 3, 2, 2, 2, 55,
-	56, 7, 2, 2, 3, 56, 3, 3, 2, 2, 2, 57, 60, 5, 8, 5, 2, 58, 60, 5, 6, 4,
-	2, 59, 57, 3, 2, 2, 2, 59, 58, 3, 2, 2, 2, 60, 65, 3, 2, 2, 2, 61, 62,
-	7, 13, 2, 2, 62, 64, 5, 24, 13, 2, 63, 61, 3, 2, 2, 2, 64, 67, 3, 2, 2,
-	2, 65, 63, 3, 2, 2, 2, 65, 66, 3, 2, 2, 2, 66, 5, 3, 2, 2, 2, 67, 65, 3,
-	2, 2, 2, 68, 69, 7, 3, 2, 2, 69, 74, 5, 4, 3, 2, 70, 71, 7, 12, 2, 2, 71,
-	73, 5, 4, 3, 2, 72, 70, 3, 2, 2, 2, 73, 76, 3, 2, 2, 2, 74, 72, 3, 2, 2,
-	2, 74, 75, 3, 2, 2, 2, 75, 78, 3, 2, 2, 2, 76, 74, 3, 2, 2, 2, 77, 79,
-	7, 12, 2, 2, 78, 77, 3, 2, 2, 2, 78, 79, 3, 2, 2, 2, 79, 80, 3, 2, 2, 2,
-	80, 81, 7, 4, 2, 2, 81, 7, 3, 2, 2, 2, 82, 84, 5, 16, 9, 2, 83, 85, 5,
-	42, 22, 2, 84, 83, 3, 2, 2, 2, 84, 85, 3, 2, 2, 2, 85, 9, 3, 2, 2, 2, 86,
-	88, 5, 16, 9, 2, 87, 89, 5, 42, 22, 2, 88, 87, 3, 2, 2, 2, 88, 89, 3, 2,
-	2, 2, 89, 11, 3, 2, 2, 2, 90, 91, 9, 2, 2, 2, 91, 13, 3, 2, 2, 2, 92, 93,
-	9, 3, 2, 2, 93, 15, 3, 2, 2, 2, 94, 95, 9, 2, 2, 2, 95, 17, 3, 2, 2, 2,
-	96, 97, 9, 4, 2, 2, 97, 19, 3, 2, 2, 2, 98, 99, 5, 12, 7, 2, 99, 100, 7,
-	5, 2, 2, 100, 101, 5, 18, 10, 2, 101, 21, 3, 2, 2, 2, 102, 111, 7, 6, 2,
-	2, 103, 108, 5, 20, 11, 2, 104, 105, 7, 7, 2, 2, 105, 107, 5, 20, 11, 2,
-	106, 104, 3, 2, 2, 2, 107, 110, 3, 2, 2, 2, 108, 106, 3, 2, 2, 2, 108,
-	109, 3, 2, 2, 2, 109, 112, 3, 2, 2, 2, 110, 108, 3, 2, 2, 2, 111, 103,
-	3, 2, 2, 2, 111, 112, 3, 2, 2, 2, 112, 113, 3, 2, 2, 2, 113, 114, 7, 8,
-	2, 2, 114, 23, 3, 2, 2, 2, 115, 121, 5, 26, 14, 2, 116, 121, 5, 28, 15,
-	2, 117, 121, 5, 34, 18, 2, 118, 121, 5, 38, 20, 2, 119, 121, 5, 10, 6,
-	2, 120, 115, 3, 2, 2, 2, 120, 116, 3, 2, 2, 2, 120, 117, 3, 2, 2, 2, 120,
-	118, 3, 2, 2, 2, 120, 119, 3, 2, 2, 2, 121, 25, 3, 2, 2, 2, 122, 123, 5,
-	12, 7, 2, 123, 125, 5, 22, 12, 2, 124, 126, 5, 42, 22, 2, 125, 124, 3,
-	2, 2, 2, 125, 126, 3, 2, 2, 2, 126, 27, 3, 2, 2, 2, 127, 128, 5, 12, 7,
-	2, 128, 130, 5, 22, 12, 2, 129, 131, 5, 42, 22, 2, 130, 129, 3, 2, 2, 2,
-	130, 131, 3, 2, 2, 2, 131, 132, 3, 2, 2, 2, 132, 133, 7, 3, 2, 2, 133,
-	138, 5, 30, 16, 2, 134, 135, 7, 12, 2, 2, 135, 137, 5, 30, 16, 2, 136,
-	134, 3, 2, 2, 2, 137, 140, 3, 2, 2, 2, 138, 136, 3, 2, 2, 2, 138, 139,
-	3, 2, 2, 2, 139, 142, 3, 2, 2, 2, 140, 138, 3, 2, 2, 2, 141, 143, 7, 12,
-	2, 2, 142, 141, 3, 2, 2, 2, 142, 143, 3, 2, 2, 2, 143, 144, 3, 2, 2, 2,
-	144, 145, 7, 4, 2, 2, 145, 29, 3, 2, 2, 2, 146, 147, 5, 14, 8, 2, 147,
-	148, 7, 13, 2, 2, 148, 149, 5, 32, 17, 2, 149, 31, 3, 2, 2, 2, 150, 155,
-	5, 24, 13, 2, 151, 152, 7, 13, 2, 2, 152, 154, 5, 24, 13, 2, 153, 151,
-	3, 2, 2, 2, 154, 157, 3, 2, 2, 2, 155, 153, 3, 2, 2, 2, 155, 156, 3, 2,
-	2, 2, 156, 33, 3, 2, 2, 2, 157, 155, 3, 2, 2, 2, 158, 159, 7, 3, 2, 2,
-	159, 164, 5, 36, 19, 2, 160, 161, 7, 12, 2, 2, 161, 163, 5, 36, 19, 2,
-	162, 160, 3, 2, 2, 2, 163, 166, 3, 2, 2, 2, 164, 162, 3, 2, 2, 2, 164,
-	165, 3, 2, 2, 2, 165, 168, 3, 2, 2, 2, 166, 164, 3, 2, 2, 2, 167, 169,
-	7, 12, 2, 2, 168, 167, 3, 2, 2, 2, 168, 169, 3, 2, 2, 2, 169, 170, 3, 2,
-	2, 2, 170, 171, 7, 4, 2, 2, 171, 35, 3, 2, 2, 2, 172, 173, 5, 32, 17, 2,
-	173, 37, 3, 2, 2, 2, 174, 175, 7, 9, 2, 2, 175, 177, 5, 22, 12, 2, 176,
-	178, 5, 42, 22, 2, 177, 176, 3, 2, 2, 2, 177, 178, 3, 2, 2, 2, 178, 179,
-	3, 2, 2, 2, 179, 180, 7, 3, 2, 2, 180, 181, 5, 40, 21, 2, 181, 182, 7,
-	4, 2, 2, 182, 39, 3, 2, 2, 2, 183, 188, 5, 26, 14, 2, 184, 185, 7, 13,
-	2, 2, 185, 187, 5, 26, 14, 2, 186, 184, 3, 2, 2, 2, 187, 190, 3, 2, 2,
-	2, 188, 186, 3, 2, 2, 2, 188, 189, 3, 2, 2, 2, 189, 41, 3, 2, 2, 2, 190,
-	188, 3, 2, 2, 2, 191, 200, 7, 10, 2, 2, 192, 197, 5, 20, 11, 2, 193, 194,
-	7, 7, 2, 2, 194, 196, 5, 20, 11, 2, 195, 193, 3, 2, 2, 2, 196, 199, 3,
-	2, 2, 2, 197, 195, 3, 2, 2, 2, 197, 198, 3, 2, 2, 2, 198, 201, 3, 2, 2,
-	2, 199, 197, 3, 2, 2, 2, 200, 192, 3, 2, 2, 2, 200, 201, 3, 2, 2, 2, 201,
-	202, 3, 2, 2, 2, 202, 203, 7, 11, 2, 2, 203, 43, 3, 2, 2, 2, 24, 49, 53,
-	59, 65, 74, 78, 84, 88, 108, 111, 120, 125, 130, 138, 142, 155, 164, 168,
-	177, 188, 197, 200,
+	18, 4, 19, 9, 19, 4, 20, 9, 20, 4, 21, 9, 21, 3, 2, 3, 2, 3, 2, 7, 2, 46,
+	10, 2, 12, 2, 14, 2, 49, 11, 2, 3, 2, 5, 2, 52, 10, 2, 3, 2, 3, 2, 3, 3,
+	6, 3, 57, 10, 3, 13, 3, 14, 3, 58, 3, 3, 5, 3, 62, 10, 3, 3, 4, 3, 4, 5,
+	4, 66, 10, 4, 3, 5, 3, 5, 3, 6, 3, 6, 3, 7, 3, 7, 3, 7, 3, 7, 3, 8, 3,
+	8, 3, 8, 3, 8, 7, 8, 80, 10, 8, 12, 8, 14, 8, 83, 11, 8, 5, 8, 85, 10,
+	8, 3, 8, 3, 8, 3, 9, 3, 9, 5, 9, 91, 10, 9, 3, 9, 3, 9, 7, 9, 95, 10, 9,
+	12, 9, 14, 9, 98, 11, 9, 3, 10, 3, 10, 3, 10, 3, 10, 7, 10, 104, 10, 10,
+	12, 10, 14, 10, 107, 11, 10, 3, 10, 5, 10, 110, 10, 10, 3, 10, 3, 10, 3,
+	11, 3, 11, 3, 11, 3, 11, 3, 11, 5, 11, 119, 10, 11, 3, 12, 3, 12, 3, 12,
+	5, 12, 124, 10, 12, 3, 13, 3, 13, 3, 13, 5, 13, 129, 10, 13, 3, 13, 3,
+	13, 3, 13, 3, 13, 7, 13, 135, 10, 13, 12, 13, 14, 13, 138, 11, 13, 3, 13,
+	5, 13, 141, 10, 13, 3, 13, 3, 13, 3, 14, 6, 14, 146, 10, 14, 13, 14, 14,
+	14, 147, 3, 14, 3, 14, 3, 14, 3, 15, 3, 15, 3, 15, 7, 15, 156, 10, 15,
+	12, 15, 14, 15, 159, 11, 15, 3, 16, 3, 16, 3, 16, 3, 16, 7, 16, 165, 10,
+	16, 12, 16, 14, 16, 168, 11, 16, 3, 16, 5, 16, 171, 10, 16, 3, 16, 3, 16,
+	3, 17, 3, 17, 3, 18, 3, 18, 3, 18, 5, 18, 180, 10, 18, 3, 18, 3, 18, 3,
+	18, 3, 18, 3, 19, 3, 19, 3, 19, 7, 19, 189, 10, 19, 12, 19, 14, 19, 192,
+	11, 19, 3, 20, 3, 20, 3, 20, 3, 20, 7, 20, 198, 10, 20, 12, 20, 14, 20,
+	201, 11, 20, 5, 20, 203, 10, 20, 3, 20, 3, 20, 3, 21, 3, 21, 3, 21, 2,
+	2, 22, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34,
+	36, 38, 40, 2, 4, 3, 2, 14, 17, 3, 2, 14, 16, 2, 215, 2, 42, 3, 2, 2, 2,
+	4, 56, 3, 2, 2, 2, 6, 63, 3, 2, 2, 2, 8, 67, 3, 2, 2, 2, 10, 69, 3, 2,
+	2, 2, 12, 71, 3, 2, 2, 2, 14, 75, 3, 2, 2, 2, 16, 90, 3, 2, 2, 2, 18, 99,
+	3, 2, 2, 2, 20, 118, 3, 2, 2, 2, 22, 120, 3, 2, 2, 2, 24, 125, 3, 2, 2,
+	2, 26, 145, 3, 2, 2, 2, 28, 152, 3, 2, 2, 2, 30, 160, 3, 2, 2, 2, 32, 174,
+	3, 2, 2, 2, 34, 176, 3, 2, 2, 2, 36, 185, 3, 2, 2, 2, 38, 193, 3, 2, 2,
+	2, 40, 206, 3, 2, 2, 2, 42, 47, 5, 16, 9, 2, 43, 44, 7, 12, 2, 2, 44, 46,
+	5, 16, 9, 2, 45, 43, 3, 2, 2, 2, 46, 49, 3, 2, 2, 2, 47, 45, 3, 2, 2, 2,
+	47, 48, 3, 2, 2, 2, 48, 51, 3, 2, 2, 2, 49, 47, 3, 2, 2, 2, 50, 52, 7,
+	12, 2, 2, 51, 50, 3, 2, 2, 2, 51, 52, 3, 2, 2, 2, 52, 53, 3, 2, 2, 2, 53,
+	54, 7, 2, 2, 3, 54, 3, 3, 2, 2, 2, 55, 57, 5, 8, 5, 2, 56, 55, 3, 2, 2,
+	2, 57, 58, 3, 2, 2, 2, 58, 56, 3, 2, 2, 2, 58, 59, 3, 2, 2, 2, 59, 61,
+	3, 2, 2, 2, 60, 62, 5, 38, 20, 2, 61, 60, 3, 2, 2, 2, 61, 62, 3, 2, 2,
+	2, 62, 5, 3, 2, 2, 2, 63, 65, 5, 8, 5, 2, 64, 66, 5, 38, 20, 2, 65, 64,
+	3, 2, 2, 2, 65, 66, 3, 2, 2, 2, 66, 7, 3, 2, 2, 2, 67, 68, 9, 2, 2, 2,
+	68, 9, 3, 2, 2, 2, 69, 70, 9, 3, 2, 2, 70, 11, 3, 2, 2, 2, 71, 72, 5, 8,
+	5, 2, 72, 73, 7, 3, 2, 2, 73, 74, 5, 10, 6, 2, 74, 13, 3, 2, 2, 2, 75,
+	84, 7, 4, 2, 2, 76, 81, 5, 12, 7, 2, 77, 78, 7, 5, 2, 2, 78, 80, 5, 12,
+	7, 2, 79, 77, 3, 2, 2, 2, 80, 83, 3, 2, 2, 2, 81, 79, 3, 2, 2, 2, 81, 82,
+	3, 2, 2, 2, 82, 85, 3, 2, 2, 2, 83, 81, 3, 2, 2, 2, 84, 76, 3, 2, 2, 2,
+	84, 85, 3, 2, 2, 2, 85, 86, 3, 2, 2, 2, 86, 87, 7, 6, 2, 2, 87, 15, 3,
+	2, 2, 2, 88, 91, 5, 4, 3, 2, 89, 91, 5, 18, 10, 2, 90, 88, 3, 2, 2, 2,
+	90, 89, 3, 2, 2, 2, 91, 96, 3, 2, 2, 2, 92, 93, 7, 13, 2, 2, 93, 95, 5,
+	20, 11, 2, 94, 92, 3, 2, 2, 2, 95, 98, 3, 2, 2, 2, 96, 94, 3, 2, 2, 2,
+	96, 97, 3, 2, 2, 2, 97, 17, 3, 2, 2, 2, 98, 96, 3, 2, 2, 2, 99, 100, 7,
+	7, 2, 2, 100, 105, 5, 16, 9, 2, 101, 102, 7, 12, 2, 2, 102, 104, 5, 16,
+	9, 2, 103, 101, 3, 2, 2, 2, 104, 107, 3, 2, 2, 2, 105, 103, 3, 2, 2, 2,
+	105, 106, 3, 2, 2, 2, 106, 109, 3, 2, 2, 2, 107, 105, 3, 2, 2, 2, 108,
+	110, 7, 12, 2, 2, 109, 108, 3, 2, 2, 2, 109, 110, 3, 2, 2, 2, 110, 111,
+	3, 2, 2, 2, 111, 112, 7, 8, 2, 2, 112, 19, 3, 2, 2, 2, 113, 119, 5, 22,
+	12, 2, 114, 119, 5, 24, 13, 2, 115, 119, 5, 30, 16, 2, 116, 119, 5, 34,
+	18, 2, 117, 119, 5, 6, 4, 2, 118, 113, 3, 2, 2, 2, 118, 114, 3, 2, 2, 2,
+	118, 115, 3, 2, 2, 2, 118, 116, 3, 2, 2, 2, 118, 117, 3, 2, 2, 2, 119,
+	21, 3, 2, 2, 2, 120, 121, 5, 8, 5, 2, 121, 123, 5, 14, 8, 2, 122, 124,
+	5, 38, 20, 2, 123, 122, 3, 2, 2, 2, 123, 124, 3, 2, 2, 2, 124, 23, 3, 2,
+	2, 2, 125, 126, 5, 8, 5, 2, 126, 128, 5, 14, 8, 2, 127, 129, 5, 38, 20,
+	2, 128, 127, 3, 2, 2, 2, 128, 129, 3, 2, 2, 2, 129, 130, 3, 2, 2, 2, 130,
+	131, 7, 7, 2, 2, 131, 136, 5, 26, 14, 2, 132, 133, 7, 12, 2, 2, 133, 135,
+	5, 26, 14, 2, 134, 132, 3, 2, 2, 2, 135, 138, 3, 2, 2, 2, 136, 134, 3,
+	2, 2, 2, 136, 137, 3, 2, 2, 2, 137, 140, 3, 2, 2, 2, 138, 136, 3, 2, 2,
+	2, 139, 141, 7, 12, 2, 2, 140, 139, 3, 2, 2, 2, 140, 141, 3, 2, 2, 2, 141,
+	142, 3, 2, 2, 2, 142, 143, 7, 8, 2, 2, 143, 25, 3, 2, 2, 2, 144, 146, 5,
+	8, 5, 2, 145, 144, 3, 2, 2, 2, 146, 147, 3, 2, 2, 2, 147, 145, 3, 2, 2,
+	2, 147, 148, 3, 2, 2, 2, 148, 149, 3, 2, 2, 2, 149, 150, 7, 13, 2, 2, 150,
+	151, 5, 28, 15, 2, 151, 27, 3, 2, 2, 2, 152, 157, 5, 20, 11, 2, 153, 154,
+	7, 13, 2, 2, 154, 156, 5, 20, 11, 2, 155, 153, 3, 2, 2, 2, 156, 159, 3,
+	2, 2, 2, 157, 155, 3, 2, 2, 2, 157, 158, 3, 2, 2, 2, 158, 29, 3, 2, 2,
+	2, 159, 157, 3, 2, 2, 2, 160, 161, 7, 7, 2, 2, 161, 166, 5, 32, 17, 2,
+	162, 163, 7, 12, 2, 2, 163, 165, 5, 32, 17, 2, 164, 162, 3, 2, 2, 2, 165,
+	168, 3, 2, 2, 2, 166, 164, 3, 2, 2, 2, 166, 167, 3, 2, 2, 2, 167, 170,
+	3, 2, 2, 2, 168, 166, 3, 2, 2, 2, 169, 171, 7, 12, 2, 2, 170, 169, 3, 2,
+	2, 2, 170, 171, 3, 2, 2, 2, 171, 172, 3, 2, 2, 2, 172, 173, 7, 8, 2, 2,
+	173, 31, 3, 2, 2, 2, 174, 175, 5, 28, 15, 2, 175, 33, 3, 2, 2, 2, 176,
+	177, 7, 9, 2, 2, 177, 179, 5, 14, 8, 2, 178, 180, 5, 38, 20, 2, 179, 178,
+	3, 2, 2, 2, 179, 180, 3, 2, 2, 2, 180, 181, 3, 2, 2, 2, 181, 182, 7, 7,
+	2, 2, 182, 183, 5, 36, 19, 2, 183, 184, 7, 8, 2, 2, 184, 35, 3, 2, 2, 2,
+	185, 190, 5, 22, 12, 2, 186, 187, 7, 13, 2, 2, 187, 189, 5, 22, 12, 2,
+	188, 186, 3, 2, 2, 2, 189, 192, 3, 2, 2, 2, 190, 188, 3, 2, 2, 2, 190,
+	191, 3, 2, 2, 2, 191, 37, 3, 2, 2, 2, 192, 190, 3, 2, 2, 2, 193, 202, 7,
+	10, 2, 2, 194, 199, 5, 40, 21, 2, 195, 196, 7, 5, 2, 2, 196, 198, 5, 40,
+	21, 2, 197, 195, 3, 2, 2, 2, 198, 201, 3, 2, 2, 2, 199, 197, 3, 2, 2, 2,
+	199, 200, 3, 2, 2, 2, 200, 203, 3, 2, 2, 2, 201, 199, 3, 2, 2, 2, 202,
+	194, 3, 2, 2, 2, 202, 203, 3, 2, 2, 2, 203, 204, 3, 2, 2, 2, 204, 205,
+	7, 11, 2, 2, 205, 39, 3, 2, 2, 2, 206, 207, 5, 12, 7, 2, 207, 41, 3, 2,
+	2, 2, 26, 47, 51, 58, 61, 65, 81, 84, 90, 96, 105, 109, 118, 123, 128,
+	136, 140, 147, 157, 166, 170, 179, 190, 199, 202,
 }
 var deserializer = antlr.NewATNDeserializer(nil)
 var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
 
 var literalNames = []string{
-	"", "'{'", "'}'", "'='", "'('", "','", "')'", "'window'", "'['", "']'",
-	"';'", "'->'", "", "", "", "", "", "", "'\t'",
+	"", "'='", "'('", "','", "')'", "'{'", "'}'", "'window'", "'['", "']'",
+	"';'", "'->'", "", "", "", "", "", "", "", "'\t'",
 }
 var symbolicNames = []string{
 	"", "", "", "", "", "", "", "", "", "", "EOP", "NEXT", "STRING", "NUMBER",
-	"NAME", "COMMENT", "NEWLINE", "WHITESPACE", "TAB",
+	"BOOL", "IDENTIFIER", "COMMENT", "NEWLINE", "WHITESPACE", "TAB",
 }
 
 var ruleNames = []string{
-	"script", "pipeline", "multiInputPipeline", "input", "output", "name",
-	"namedSubPipelineKey", "endpoint", "val", "parameter", "transformParameters",
-	"intermediateTransform", "transform", "fork", "namedSubPipeline", "subPipeline",
-	"multiplexFork", "multiplexSubPipeline", "window", "windowPipeline", "schedulingHints",
+	"script", "input", "output", "name", "val", "parameter", "transformParameters",
+	"pipeline", "multiInputPipeline", "pipelineElement", "transform", "fork",
+	"namedSubPipeline", "subPipeline", "multiplexFork", "multiplexSubPipeline",
+	"window", "windowPipeline", "schedulingHints", "schedulingParameter",
 }
 var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
 
@@ -164,36 +166,36 @@ const (
 	BitflowParserNEXT       = 11
 	BitflowParserSTRING     = 12
 	BitflowParserNUMBER     = 13
-	BitflowParserNAME       = 14
-	BitflowParserCOMMENT    = 15
-	BitflowParserNEWLINE    = 16
-	BitflowParserWHITESPACE = 17
-	BitflowParserTAB        = 18
+	BitflowParserBOOL       = 14
+	BitflowParserIDENTIFIER = 15
+	BitflowParserCOMMENT    = 16
+	BitflowParserNEWLINE    = 17
+	BitflowParserWHITESPACE = 18
+	BitflowParserTAB        = 19
 )
 
 // BitflowParser rules.
 const (
-	BitflowParserRULE_script                = 0
-	BitflowParserRULE_pipeline              = 1
-	BitflowParserRULE_multiInputPipeline    = 2
-	BitflowParserRULE_input                 = 3
-	BitflowParserRULE_output                = 4
-	BitflowParserRULE_name                  = 5
-	BitflowParserRULE_namedSubPipelineKey   = 6
-	BitflowParserRULE_endpoint              = 7
-	BitflowParserRULE_val                   = 8
-	BitflowParserRULE_parameter             = 9
-	BitflowParserRULE_transformParameters   = 10
-	BitflowParserRULE_intermediateTransform = 11
-	BitflowParserRULE_transform             = 12
-	BitflowParserRULE_fork                  = 13
-	BitflowParserRULE_namedSubPipeline      = 14
-	BitflowParserRULE_subPipeline           = 15
-	BitflowParserRULE_multiplexFork         = 16
-	BitflowParserRULE_multiplexSubPipeline  = 17
-	BitflowParserRULE_window                = 18
-	BitflowParserRULE_windowPipeline        = 19
-	BitflowParserRULE_schedulingHints       = 20
+	BitflowParserRULE_script               = 0
+	BitflowParserRULE_input                = 1
+	BitflowParserRULE_output               = 2
+	BitflowParserRULE_name                 = 3
+	BitflowParserRULE_val                  = 4
+	BitflowParserRULE_parameter            = 5
+	BitflowParserRULE_transformParameters  = 6
+	BitflowParserRULE_pipeline             = 7
+	BitflowParserRULE_multiInputPipeline   = 8
+	BitflowParserRULE_pipelineElement      = 9
+	BitflowParserRULE_transform            = 10
+	BitflowParserRULE_fork                 = 11
+	BitflowParserRULE_namedSubPipeline     = 12
+	BitflowParserRULE_subPipeline          = 13
+	BitflowParserRULE_multiplexFork        = 14
+	BitflowParserRULE_multiplexSubPipeline = 15
+	BitflowParserRULE_window               = 16
+	BitflowParserRULE_windowPipeline       = 17
+	BitflowParserRULE_schedulingHints      = 18
+	BitflowParserRULE_schedulingParameter  = 19
 )
 
 // IScriptContext is an interface to support dynamic dispatch.
@@ -324,43 +326,841 @@ func (p *BitflowParser) Script() (localctx IScriptContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(42)
+		p.SetState(40)
 		p.Pipeline()
 	}
-	p.SetState(47)
+	p.SetState(45)
 	p.GetErrorHandler().Sync(p)
 	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 0, p.GetParserRuleContext())
 
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
 			{
-				p.SetState(43)
+				p.SetState(41)
 				p.Match(BitflowParserEOP)
 			}
 			{
-				p.SetState(44)
+				p.SetState(42)
 				p.Pipeline()
 			}
 
 		}
-		p.SetState(49)
+		p.SetState(47)
 		p.GetErrorHandler().Sync(p)
 		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 0, p.GetParserRuleContext())
 	}
-	p.SetState(51)
+	p.SetState(49)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == BitflowParserEOP {
 		{
-			p.SetState(50)
+			p.SetState(48)
 			p.Match(BitflowParserEOP)
 		}
 
 	}
 	{
-		p.SetState(53)
+		p.SetState(51)
 		p.Match(BitflowParserEOF)
+	}
+
+	return localctx
+}
+
+// IInputContext is an interface to support dynamic dispatch.
+type IInputContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsInputContext differentiates from other interfaces.
+	IsInputContext()
+}
+
+type InputContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyInputContext() *InputContext {
+	var p = new(InputContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = BitflowParserRULE_input
+	return p
+}
+
+func (*InputContext) IsInputContext() {}
+
+func NewInputContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *InputContext {
+	var p = new(InputContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = BitflowParserRULE_input
+
+	return p
+}
+
+func (s *InputContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *InputContext) AllName() []INameContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*INameContext)(nil)).Elem())
+	var tst = make([]INameContext, len(ts))
+
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(INameContext)
+		}
+	}
+
+	return tst
+}
+
+func (s *InputContext) Name(i int) INameContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*INameContext)(nil)).Elem(), i)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(INameContext)
+}
+
+func (s *InputContext) SchedulingHints() ISchedulingHintsContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISchedulingHintsContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ISchedulingHintsContext)
+}
+
+func (s *InputContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *InputContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *InputContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BitflowListener); ok {
+		listenerT.EnterInput(s)
+	}
+}
+
+func (s *InputContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BitflowListener); ok {
+		listenerT.ExitInput(s)
+	}
+}
+
+func (s *InputContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case BitflowVisitor:
+		return t.VisitInput(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *BitflowParser) Input() (localctx IInputContext) {
+	localctx = NewInputContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 2, BitflowParserRULE_input)
+	var _la int
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	p.SetState(54)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<BitflowParserSTRING)|(1<<BitflowParserNUMBER)|(1<<BitflowParserBOOL)|(1<<BitflowParserIDENTIFIER))) != 0) {
+		{
+			p.SetState(53)
+			p.Name()
+		}
+
+		p.SetState(56)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+	}
+	p.SetState(59)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	if _la == BitflowParserT__7 {
+		{
+			p.SetState(58)
+			p.SchedulingHints()
+		}
+
+	}
+
+	return localctx
+}
+
+// IOutputContext is an interface to support dynamic dispatch.
+type IOutputContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsOutputContext differentiates from other interfaces.
+	IsOutputContext()
+}
+
+type OutputContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyOutputContext() *OutputContext {
+	var p = new(OutputContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = BitflowParserRULE_output
+	return p
+}
+
+func (*OutputContext) IsOutputContext() {}
+
+func NewOutputContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *OutputContext {
+	var p = new(OutputContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = BitflowParserRULE_output
+
+	return p
+}
+
+func (s *OutputContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *OutputContext) Name() INameContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*INameContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(INameContext)
+}
+
+func (s *OutputContext) SchedulingHints() ISchedulingHintsContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISchedulingHintsContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ISchedulingHintsContext)
+}
+
+func (s *OutputContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *OutputContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *OutputContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BitflowListener); ok {
+		listenerT.EnterOutput(s)
+	}
+}
+
+func (s *OutputContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BitflowListener); ok {
+		listenerT.ExitOutput(s)
+	}
+}
+
+func (s *OutputContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case BitflowVisitor:
+		return t.VisitOutput(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *BitflowParser) Output() (localctx IOutputContext) {
+	localctx = NewOutputContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 4, BitflowParserRULE_output)
+	var _la int
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(61)
+		p.Name()
+	}
+	p.SetState(63)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	if _la == BitflowParserT__7 {
+		{
+			p.SetState(62)
+			p.SchedulingHints()
+		}
+
+	}
+
+	return localctx
+}
+
+// INameContext is an interface to support dynamic dispatch.
+type INameContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsNameContext differentiates from other interfaces.
+	IsNameContext()
+}
+
+type NameContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyNameContext() *NameContext {
+	var p = new(NameContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = BitflowParserRULE_name
+	return p
+}
+
+func (*NameContext) IsNameContext() {}
+
+func NewNameContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *NameContext {
+	var p = new(NameContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = BitflowParserRULE_name
+
+	return p
+}
+
+func (s *NameContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *NameContext) IDENTIFIER() antlr.TerminalNode {
+	return s.GetToken(BitflowParserIDENTIFIER, 0)
+}
+
+func (s *NameContext) NUMBER() antlr.TerminalNode {
+	return s.GetToken(BitflowParserNUMBER, 0)
+}
+
+func (s *NameContext) BOOL() antlr.TerminalNode {
+	return s.GetToken(BitflowParserBOOL, 0)
+}
+
+func (s *NameContext) STRING() antlr.TerminalNode {
+	return s.GetToken(BitflowParserSTRING, 0)
+}
+
+func (s *NameContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *NameContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *NameContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BitflowListener); ok {
+		listenerT.EnterName(s)
+	}
+}
+
+func (s *NameContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BitflowListener); ok {
+		listenerT.ExitName(s)
+	}
+}
+
+func (s *NameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case BitflowVisitor:
+		return t.VisitName(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *BitflowParser) Name() (localctx INameContext) {
+	localctx = NewNameContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 6, BitflowParserRULE_name)
+	var _la int
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(65)
+		_la = p.GetTokenStream().LA(1)
+
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<BitflowParserSTRING)|(1<<BitflowParserNUMBER)|(1<<BitflowParserBOOL)|(1<<BitflowParserIDENTIFIER))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
+	}
+
+	return localctx
+}
+
+// IValContext is an interface to support dynamic dispatch.
+type IValContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsValContext differentiates from other interfaces.
+	IsValContext()
+}
+
+type ValContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyValContext() *ValContext {
+	var p = new(ValContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = BitflowParserRULE_val
+	return p
+}
+
+func (*ValContext) IsValContext() {}
+
+func NewValContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ValContext {
+	var p = new(ValContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = BitflowParserRULE_val
+
+	return p
+}
+
+func (s *ValContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *ValContext) NUMBER() antlr.TerminalNode {
+	return s.GetToken(BitflowParserNUMBER, 0)
+}
+
+func (s *ValContext) BOOL() antlr.TerminalNode {
+	return s.GetToken(BitflowParserBOOL, 0)
+}
+
+func (s *ValContext) STRING() antlr.TerminalNode {
+	return s.GetToken(BitflowParserSTRING, 0)
+}
+
+func (s *ValContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ValContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *ValContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BitflowListener); ok {
+		listenerT.EnterVal(s)
+	}
+}
+
+func (s *ValContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BitflowListener); ok {
+		listenerT.ExitVal(s)
+	}
+}
+
+func (s *ValContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case BitflowVisitor:
+		return t.VisitVal(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *BitflowParser) Val() (localctx IValContext) {
+	localctx = NewValContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 8, BitflowParserRULE_val)
+	var _la int
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(67)
+		_la = p.GetTokenStream().LA(1)
+
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<BitflowParserSTRING)|(1<<BitflowParserNUMBER)|(1<<BitflowParserBOOL))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
+	}
+
+	return localctx
+}
+
+// IParameterContext is an interface to support dynamic dispatch.
+type IParameterContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsParameterContext differentiates from other interfaces.
+	IsParameterContext()
+}
+
+type ParameterContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyParameterContext() *ParameterContext {
+	var p = new(ParameterContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = BitflowParserRULE_parameter
+	return p
+}
+
+func (*ParameterContext) IsParameterContext() {}
+
+func NewParameterContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ParameterContext {
+	var p = new(ParameterContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = BitflowParserRULE_parameter
+
+	return p
+}
+
+func (s *ParameterContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *ParameterContext) Name() INameContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*INameContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(INameContext)
+}
+
+func (s *ParameterContext) Val() IValContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IValContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IValContext)
+}
+
+func (s *ParameterContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ParameterContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *ParameterContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BitflowListener); ok {
+		listenerT.EnterParameter(s)
+	}
+}
+
+func (s *ParameterContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BitflowListener); ok {
+		listenerT.ExitParameter(s)
+	}
+}
+
+func (s *ParameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case BitflowVisitor:
+		return t.VisitParameter(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *BitflowParser) Parameter() (localctx IParameterContext) {
+	localctx = NewParameterContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 10, BitflowParserRULE_parameter)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(69)
+		p.Name()
+	}
+	{
+		p.SetState(70)
+		p.Match(BitflowParserT__0)
+	}
+	{
+		p.SetState(71)
+		p.Val()
+	}
+
+	return localctx
+}
+
+// ITransformParametersContext is an interface to support dynamic dispatch.
+type ITransformParametersContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsTransformParametersContext differentiates from other interfaces.
+	IsTransformParametersContext()
+}
+
+type TransformParametersContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyTransformParametersContext() *TransformParametersContext {
+	var p = new(TransformParametersContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = BitflowParserRULE_transformParameters
+	return p
+}
+
+func (*TransformParametersContext) IsTransformParametersContext() {}
+
+func NewTransformParametersContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *TransformParametersContext {
+	var p = new(TransformParametersContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = BitflowParserRULE_transformParameters
+
+	return p
+}
+
+func (s *TransformParametersContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *TransformParametersContext) AllParameter() []IParameterContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IParameterContext)(nil)).Elem())
+	var tst = make([]IParameterContext, len(ts))
+
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(IParameterContext)
+		}
+	}
+
+	return tst
+}
+
+func (s *TransformParametersContext) Parameter(i int) IParameterContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IParameterContext)(nil)).Elem(), i)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IParameterContext)
+}
+
+func (s *TransformParametersContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *TransformParametersContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *TransformParametersContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BitflowListener); ok {
+		listenerT.EnterTransformParameters(s)
+	}
+}
+
+func (s *TransformParametersContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BitflowListener); ok {
+		listenerT.ExitTransformParameters(s)
+	}
+}
+
+func (s *TransformParametersContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case BitflowVisitor:
+		return t.VisitTransformParameters(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *BitflowParser) TransformParameters() (localctx ITransformParametersContext) {
+	localctx = NewTransformParametersContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 12, BitflowParserRULE_transformParameters)
+	var _la int
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(73)
+		p.Match(BitflowParserT__1)
+	}
+	p.SetState(82)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<BitflowParserSTRING)|(1<<BitflowParserNUMBER)|(1<<BitflowParserBOOL)|(1<<BitflowParserIDENTIFIER))) != 0 {
+		{
+			p.SetState(74)
+			p.Parameter()
+		}
+		p.SetState(79)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+
+		for _la == BitflowParserT__2 {
+			{
+				p.SetState(75)
+				p.Match(BitflowParserT__2)
+			}
+			{
+				p.SetState(76)
+				p.Parameter()
+			}
+
+			p.SetState(81)
+			p.GetErrorHandler().Sync(p)
+			_la = p.GetTokenStream().LA(1)
+		}
+
+	}
+	{
+		p.SetState(84)
+		p.Match(BitflowParserT__3)
 	}
 
 	return localctx
@@ -432,27 +1232,27 @@ func (s *PipelineContext) NEXT(i int) antlr.TerminalNode {
 	return s.GetToken(BitflowParserNEXT, i)
 }
 
-func (s *PipelineContext) AllIntermediateTransform() []IIntermediateTransformContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IIntermediateTransformContext)(nil)).Elem())
-	var tst = make([]IIntermediateTransformContext, len(ts))
+func (s *PipelineContext) AllPipelineElement() []IPipelineElementContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IPipelineElementContext)(nil)).Elem())
+	var tst = make([]IPipelineElementContext, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(IIntermediateTransformContext)
+			tst[i] = t.(IPipelineElementContext)
 		}
 	}
 
 	return tst
 }
 
-func (s *PipelineContext) IntermediateTransform(i int) IIntermediateTransformContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIntermediateTransformContext)(nil)).Elem(), i)
+func (s *PipelineContext) PipelineElement(i int) IPipelineElementContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IPipelineElementContext)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIntermediateTransformContext)
+	return t.(IPipelineElementContext)
 }
 
 func (s *PipelineContext) GetRuleContext() antlr.RuleContext {
@@ -487,7 +1287,7 @@ func (s *PipelineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 
 func (p *BitflowParser) Pipeline() (localctx IPipelineContext) {
 	localctx = NewPipelineContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 2, BitflowParserRULE_pipeline)
+	p.EnterRule(localctx, 14, BitflowParserRULE_pipeline)
 	var _la int
 
 	defer func() {
@@ -507,40 +1307,40 @@ func (p *BitflowParser) Pipeline() (localctx IPipelineContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(57)
+	p.SetState(88)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case BitflowParserSTRING, BitflowParserNAME:
+	case BitflowParserSTRING, BitflowParserNUMBER, BitflowParserBOOL, BitflowParserIDENTIFIER:
 		{
-			p.SetState(55)
+			p.SetState(86)
 			p.Input()
 		}
 
-	case BitflowParserT__0:
+	case BitflowParserT__4:
 		{
-			p.SetState(56)
+			p.SetState(87)
 			p.MultiInputPipeline()
 		}
 
 	default:
 		panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
 	}
-	p.SetState(63)
+	p.SetState(94)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == BitflowParserNEXT {
 		{
-			p.SetState(59)
+			p.SetState(90)
 			p.Match(BitflowParserNEXT)
 		}
 		{
-			p.SetState(60)
-			p.IntermediateTransform()
+			p.SetState(91)
+			p.PipelineElement()
 		}
 
-		p.SetState(65)
+		p.SetState(96)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
@@ -649,7 +1449,7 @@ func (s *MultiInputPipelineContext) Accept(visitor antlr.ParseTreeVisitor) inter
 
 func (p *BitflowParser) MultiInputPipeline() (localctx IMultiInputPipelineContext) {
 	localctx = NewMultiInputPipelineContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 4, BitflowParserRULE_multiInputPipeline)
+	p.EnterRule(localctx, 16, BitflowParserRULE_multiInputPipeline)
 	var _la int
 
 	defer func() {
@@ -672,1084 +1472,91 @@ func (p *BitflowParser) MultiInputPipeline() (localctx IMultiInputPipelineContex
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(66)
-		p.Match(BitflowParserT__0)
+		p.SetState(97)
+		p.Match(BitflowParserT__4)
 	}
 	{
-		p.SetState(67)
+		p.SetState(98)
 		p.Pipeline()
 	}
-	p.SetState(72)
+	p.SetState(103)
 	p.GetErrorHandler().Sync(p)
-	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 4, p.GetParserRuleContext())
+	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 9, p.GetParserRuleContext())
 
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
 			{
-				p.SetState(68)
+				p.SetState(99)
 				p.Match(BitflowParserEOP)
 			}
 			{
-				p.SetState(69)
+				p.SetState(100)
 				p.Pipeline()
 			}
 
 		}
-		p.SetState(74)
+		p.SetState(105)
 		p.GetErrorHandler().Sync(p)
-		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 4, p.GetParserRuleContext())
+		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 9, p.GetParserRuleContext())
 	}
-	p.SetState(76)
+	p.SetState(107)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == BitflowParserEOP {
 		{
-			p.SetState(75)
+			p.SetState(106)
 			p.Match(BitflowParserEOP)
 		}
 
 	}
 	{
-		p.SetState(78)
-		p.Match(BitflowParserT__1)
-	}
-
-	return localctx
-}
-
-// IInputContext is an interface to support dynamic dispatch.
-type IInputContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsInputContext differentiates from other interfaces.
-	IsInputContext()
-}
-
-type InputContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyInputContext() *InputContext {
-	var p = new(InputContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = BitflowParserRULE_input
-	return p
-}
-
-func (*InputContext) IsInputContext() {}
-
-func NewInputContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *InputContext {
-	var p = new(InputContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = BitflowParserRULE_input
-
-	return p
-}
-
-func (s *InputContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *InputContext) Endpoint() IEndpointContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IEndpointContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IEndpointContext)
-}
-
-func (s *InputContext) SchedulingHints() ISchedulingHintsContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISchedulingHintsContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(ISchedulingHintsContext)
-}
-
-func (s *InputContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *InputContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *InputContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.EnterInput(s)
-	}
-}
-
-func (s *InputContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.ExitInput(s)
-	}
-}
-
-func (s *InputContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case BitflowVisitor:
-		return t.VisitInput(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *BitflowParser) Input() (localctx IInputContext) {
-	localctx = NewInputContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 6, BitflowParserRULE_input)
-	var _la int
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(80)
-		p.Endpoint()
-	}
-	p.SetState(82)
-	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
-
-	if _la == BitflowParserT__7 {
-		{
-			p.SetState(81)
-			p.SchedulingHints()
-		}
-
-	}
-
-	return localctx
-}
-
-// IOutputContext is an interface to support dynamic dispatch.
-type IOutputContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsOutputContext differentiates from other interfaces.
-	IsOutputContext()
-}
-
-type OutputContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyOutputContext() *OutputContext {
-	var p = new(OutputContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = BitflowParserRULE_output
-	return p
-}
-
-func (*OutputContext) IsOutputContext() {}
-
-func NewOutputContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *OutputContext {
-	var p = new(OutputContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = BitflowParserRULE_output
-
-	return p
-}
-
-func (s *OutputContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *OutputContext) Endpoint() IEndpointContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IEndpointContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IEndpointContext)
-}
-
-func (s *OutputContext) SchedulingHints() ISchedulingHintsContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISchedulingHintsContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(ISchedulingHintsContext)
-}
-
-func (s *OutputContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *OutputContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *OutputContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.EnterOutput(s)
-	}
-}
-
-func (s *OutputContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.ExitOutput(s)
-	}
-}
-
-func (s *OutputContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case BitflowVisitor:
-		return t.VisitOutput(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *BitflowParser) Output() (localctx IOutputContext) {
-	localctx = NewOutputContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 8, BitflowParserRULE_output)
-	var _la int
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(84)
-		p.Endpoint()
-	}
-	p.SetState(86)
-	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
-
-	if _la == BitflowParserT__7 {
-		{
-			p.SetState(85)
-			p.SchedulingHints()
-		}
-
-	}
-
-	return localctx
-}
-
-// INameContext is an interface to support dynamic dispatch.
-type INameContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsNameContext differentiates from other interfaces.
-	IsNameContext()
-}
-
-type NameContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyNameContext() *NameContext {
-	var p = new(NameContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = BitflowParserRULE_name
-	return p
-}
-
-func (*NameContext) IsNameContext() {}
-
-func NewNameContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *NameContext {
-	var p = new(NameContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = BitflowParserRULE_name
-
-	return p
-}
-
-func (s *NameContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *NameContext) NAME() antlr.TerminalNode {
-	return s.GetToken(BitflowParserNAME, 0)
-}
-
-func (s *NameContext) STRING() antlr.TerminalNode {
-	return s.GetToken(BitflowParserSTRING, 0)
-}
-
-func (s *NameContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *NameContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *NameContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.EnterName(s)
-	}
-}
-
-func (s *NameContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.ExitName(s)
-	}
-}
-
-func (s *NameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case BitflowVisitor:
-		return t.VisitName(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *BitflowParser) Name() (localctx INameContext) {
-	localctx = NewNameContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 10, BitflowParserRULE_name)
-	var _la int
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(88)
-		_la = p.GetTokenStream().LA(1)
-
-		if !(_la == BitflowParserSTRING || _la == BitflowParserNAME) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
-		}
-	}
-
-	return localctx
-}
-
-// INamedSubPipelineKeyContext is an interface to support dynamic dispatch.
-type INamedSubPipelineKeyContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsNamedSubPipelineKeyContext differentiates from other interfaces.
-	IsNamedSubPipelineKeyContext()
-}
-
-type NamedSubPipelineKeyContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyNamedSubPipelineKeyContext() *NamedSubPipelineKeyContext {
-	var p = new(NamedSubPipelineKeyContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = BitflowParserRULE_namedSubPipelineKey
-	return p
-}
-
-func (*NamedSubPipelineKeyContext) IsNamedSubPipelineKeyContext() {}
-
-func NewNamedSubPipelineKeyContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *NamedSubPipelineKeyContext {
-	var p = new(NamedSubPipelineKeyContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = BitflowParserRULE_namedSubPipelineKey
-
-	return p
-}
-
-func (s *NamedSubPipelineKeyContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *NamedSubPipelineKeyContext) NAME() antlr.TerminalNode {
-	return s.GetToken(BitflowParserNAME, 0)
-}
-
-func (s *NamedSubPipelineKeyContext) STRING() antlr.TerminalNode {
-	return s.GetToken(BitflowParserSTRING, 0)
-}
-
-func (s *NamedSubPipelineKeyContext) NUMBER() antlr.TerminalNode {
-	return s.GetToken(BitflowParserNUMBER, 0)
-}
-
-func (s *NamedSubPipelineKeyContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *NamedSubPipelineKeyContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *NamedSubPipelineKeyContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.EnterNamedSubPipelineKey(s)
-	}
-}
-
-func (s *NamedSubPipelineKeyContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.ExitNamedSubPipelineKey(s)
-	}
-}
-
-func (s *NamedSubPipelineKeyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case BitflowVisitor:
-		return t.VisitNamedSubPipelineKey(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *BitflowParser) NamedSubPipelineKey() (localctx INamedSubPipelineKeyContext) {
-	localctx = NewNamedSubPipelineKeyContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 12, BitflowParserRULE_namedSubPipelineKey)
-	var _la int
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(90)
-		_la = p.GetTokenStream().LA(1)
-
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<BitflowParserSTRING)|(1<<BitflowParserNUMBER)|(1<<BitflowParserNAME))) != 0) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
-		}
-	}
-
-	return localctx
-}
-
-// IEndpointContext is an interface to support dynamic dispatch.
-type IEndpointContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsEndpointContext differentiates from other interfaces.
-	IsEndpointContext()
-}
-
-type EndpointContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyEndpointContext() *EndpointContext {
-	var p = new(EndpointContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = BitflowParserRULE_endpoint
-	return p
-}
-
-func (*EndpointContext) IsEndpointContext() {}
-
-func NewEndpointContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *EndpointContext {
-	var p = new(EndpointContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = BitflowParserRULE_endpoint
-
-	return p
-}
-
-func (s *EndpointContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *EndpointContext) STRING() antlr.TerminalNode {
-	return s.GetToken(BitflowParserSTRING, 0)
-}
-
-func (s *EndpointContext) NAME() antlr.TerminalNode {
-	return s.GetToken(BitflowParserNAME, 0)
-}
-
-func (s *EndpointContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *EndpointContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *EndpointContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.EnterEndpoint(s)
-	}
-}
-
-func (s *EndpointContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.ExitEndpoint(s)
-	}
-}
-
-func (s *EndpointContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case BitflowVisitor:
-		return t.VisitEndpoint(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *BitflowParser) Endpoint() (localctx IEndpointContext) {
-	localctx = NewEndpointContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 14, BitflowParserRULE_endpoint)
-	var _la int
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(92)
-		_la = p.GetTokenStream().LA(1)
-
-		if !(_la == BitflowParserSTRING || _la == BitflowParserNAME) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
-		}
-	}
-
-	return localctx
-}
-
-// IValContext is an interface to support dynamic dispatch.
-type IValContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsValContext differentiates from other interfaces.
-	IsValContext()
-}
-
-type ValContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyValContext() *ValContext {
-	var p = new(ValContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = BitflowParserRULE_val
-	return p
-}
-
-func (*ValContext) IsValContext() {}
-
-func NewValContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ValContext {
-	var p = new(ValContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = BitflowParserRULE_val
-
-	return p
-}
-
-func (s *ValContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *ValContext) STRING() antlr.TerminalNode {
-	return s.GetToken(BitflowParserSTRING, 0)
-}
-
-func (s *ValContext) NUMBER() antlr.TerminalNode {
-	return s.GetToken(BitflowParserNUMBER, 0)
-}
-
-func (s *ValContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *ValContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *ValContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.EnterVal(s)
-	}
-}
-
-func (s *ValContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.ExitVal(s)
-	}
-}
-
-func (s *ValContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case BitflowVisitor:
-		return t.VisitVal(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *BitflowParser) Val() (localctx IValContext) {
-	localctx = NewValContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 16, BitflowParserRULE_val)
-	var _la int
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(94)
-		_la = p.GetTokenStream().LA(1)
-
-		if !(_la == BitflowParserSTRING || _la == BitflowParserNUMBER) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
-		}
-	}
-
-	return localctx
-}
-
-// IParameterContext is an interface to support dynamic dispatch.
-type IParameterContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsParameterContext differentiates from other interfaces.
-	IsParameterContext()
-}
-
-type ParameterContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyParameterContext() *ParameterContext {
-	var p = new(ParameterContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = BitflowParserRULE_parameter
-	return p
-}
-
-func (*ParameterContext) IsParameterContext() {}
-
-func NewParameterContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ParameterContext {
-	var p = new(ParameterContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = BitflowParserRULE_parameter
-
-	return p
-}
-
-func (s *ParameterContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *ParameterContext) Name() INameContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*INameContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(INameContext)
-}
-
-func (s *ParameterContext) Val() IValContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IValContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IValContext)
-}
-
-func (s *ParameterContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *ParameterContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *ParameterContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.EnterParameter(s)
-	}
-}
-
-func (s *ParameterContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.ExitParameter(s)
-	}
-}
-
-func (s *ParameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case BitflowVisitor:
-		return t.VisitParameter(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *BitflowParser) Parameter() (localctx IParameterContext) {
-	localctx = NewParameterContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 18, BitflowParserRULE_parameter)
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(96)
-		p.Name()
-	}
-	{
-		p.SetState(97)
-		p.Match(BitflowParserT__2)
-	}
-	{
-		p.SetState(98)
-		p.Val()
-	}
-
-	return localctx
-}
-
-// ITransformParametersContext is an interface to support dynamic dispatch.
-type ITransformParametersContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsTransformParametersContext differentiates from other interfaces.
-	IsTransformParametersContext()
-}
-
-type TransformParametersContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyTransformParametersContext() *TransformParametersContext {
-	var p = new(TransformParametersContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = BitflowParserRULE_transformParameters
-	return p
-}
-
-func (*TransformParametersContext) IsTransformParametersContext() {}
-
-func NewTransformParametersContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *TransformParametersContext {
-	var p = new(TransformParametersContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = BitflowParserRULE_transformParameters
-
-	return p
-}
-
-func (s *TransformParametersContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *TransformParametersContext) AllParameter() []IParameterContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IParameterContext)(nil)).Elem())
-	var tst = make([]IParameterContext, len(ts))
-
-	for i, t := range ts {
-		if t != nil {
-			tst[i] = t.(IParameterContext)
-		}
-	}
-
-	return tst
-}
-
-func (s *TransformParametersContext) Parameter(i int) IParameterContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IParameterContext)(nil)).Elem(), i)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IParameterContext)
-}
-
-func (s *TransformParametersContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *TransformParametersContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *TransformParametersContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.EnterTransformParameters(s)
-	}
-}
-
-func (s *TransformParametersContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.ExitTransformParameters(s)
-	}
-}
-
-func (s *TransformParametersContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case BitflowVisitor:
-		return t.VisitTransformParameters(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
-func (p *BitflowParser) TransformParameters() (localctx ITransformParametersContext) {
-	localctx = NewTransformParametersContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 20, BitflowParserRULE_transformParameters)
-	var _la int
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(100)
-		p.Match(BitflowParserT__3)
-	}
-	p.SetState(109)
-	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
-
-	if _la == BitflowParserSTRING || _la == BitflowParserNAME {
-		{
-			p.SetState(101)
-			p.Parameter()
-		}
-		p.SetState(106)
-		p.GetErrorHandler().Sync(p)
-		_la = p.GetTokenStream().LA(1)
-
-		for _la == BitflowParserT__4 {
-			{
-				p.SetState(102)
-				p.Match(BitflowParserT__4)
-			}
-			{
-				p.SetState(103)
-				p.Parameter()
-			}
-
-			p.SetState(108)
-			p.GetErrorHandler().Sync(p)
-			_la = p.GetTokenStream().LA(1)
-		}
-
-	}
-	{
-		p.SetState(111)
+		p.SetState(109)
 		p.Match(BitflowParserT__5)
 	}
 
 	return localctx
 }
 
-// IIntermediateTransformContext is an interface to support dynamic dispatch.
-type IIntermediateTransformContext interface {
+// IPipelineElementContext is an interface to support dynamic dispatch.
+type IPipelineElementContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsIntermediateTransformContext differentiates from other interfaces.
-	IsIntermediateTransformContext()
+	// IsPipelineElementContext differentiates from other interfaces.
+	IsPipelineElementContext()
 }
 
-type IntermediateTransformContext struct {
+type PipelineElementContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyIntermediateTransformContext() *IntermediateTransformContext {
-	var p = new(IntermediateTransformContext)
+func NewEmptyPipelineElementContext() *PipelineElementContext {
+	var p = new(PipelineElementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = BitflowParserRULE_intermediateTransform
+	p.RuleIndex = BitflowParserRULE_pipelineElement
 	return p
 }
 
-func (*IntermediateTransformContext) IsIntermediateTransformContext() {}
+func (*PipelineElementContext) IsPipelineElementContext() {}
 
-func NewIntermediateTransformContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *IntermediateTransformContext {
-	var p = new(IntermediateTransformContext)
+func NewPipelineElementContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *PipelineElementContext {
+	var p = new(PipelineElementContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = BitflowParserRULE_intermediateTransform
+	p.RuleIndex = BitflowParserRULE_pipelineElement
 
 	return p
 }
 
-func (s *IntermediateTransformContext) GetParser() antlr.Parser { return s.parser }
+func (s *PipelineElementContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *IntermediateTransformContext) Transform() ITransformContext {
+func (s *PipelineElementContext) Transform() ITransformContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ITransformContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -1759,7 +1566,7 @@ func (s *IntermediateTransformContext) Transform() ITransformContext {
 	return t.(ITransformContext)
 }
 
-func (s *IntermediateTransformContext) Fork() IForkContext {
+func (s *PipelineElementContext) Fork() IForkContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IForkContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -1769,7 +1576,7 @@ func (s *IntermediateTransformContext) Fork() IForkContext {
 	return t.(IForkContext)
 }
 
-func (s *IntermediateTransformContext) MultiplexFork() IMultiplexForkContext {
+func (s *PipelineElementContext) MultiplexFork() IMultiplexForkContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IMultiplexForkContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -1779,7 +1586,7 @@ func (s *IntermediateTransformContext) MultiplexFork() IMultiplexForkContext {
 	return t.(IMultiplexForkContext)
 }
 
-func (s *IntermediateTransformContext) Window() IWindowContext {
+func (s *PipelineElementContext) Window() IWindowContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IWindowContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -1789,7 +1596,7 @@ func (s *IntermediateTransformContext) Window() IWindowContext {
 	return t.(IWindowContext)
 }
 
-func (s *IntermediateTransformContext) Output() IOutputContext {
+func (s *PipelineElementContext) Output() IOutputContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IOutputContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -1799,39 +1606,39 @@ func (s *IntermediateTransformContext) Output() IOutputContext {
 	return t.(IOutputContext)
 }
 
-func (s *IntermediateTransformContext) GetRuleContext() antlr.RuleContext {
+func (s *PipelineElementContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *IntermediateTransformContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *PipelineElementContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *IntermediateTransformContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *PipelineElementContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.EnterIntermediateTransform(s)
+		listenerT.EnterPipelineElement(s)
 	}
 }
 
-func (s *IntermediateTransformContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *PipelineElementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(BitflowListener); ok {
-		listenerT.ExitIntermediateTransform(s)
+		listenerT.ExitPipelineElement(s)
 	}
 }
 
-func (s *IntermediateTransformContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+func (s *PipelineElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
 	case BitflowVisitor:
-		return t.VisitIntermediateTransform(s)
+		return t.VisitPipelineElement(s)
 
 	default:
 		return t.VisitChildren(s)
 	}
 }
 
-func (p *BitflowParser) IntermediateTransform() (localctx IIntermediateTransformContext) {
-	localctx = NewIntermediateTransformContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 22, BitflowParserRULE_intermediateTransform)
+func (p *BitflowParser) PipelineElement() (localctx IPipelineElementContext) {
+	localctx = NewPipelineElementContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 18, BitflowParserRULE_pipelineElement)
 
 	defer func() {
 		p.ExitRule()
@@ -1849,41 +1656,41 @@ func (p *BitflowParser) IntermediateTransform() (localctx IIntermediateTransform
 		}
 	}()
 
-	p.SetState(118)
+	p.SetState(116)
 	p.GetErrorHandler().Sync(p)
-	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 10, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 11, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(113)
+			p.SetState(111)
 			p.Transform()
 		}
 
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(114)
+			p.SetState(112)
 			p.Fork()
 		}
 
 	case 3:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(115)
+			p.SetState(113)
 			p.MultiplexFork()
 		}
 
 	case 4:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(116)
+			p.SetState(114)
 			p.Window()
 		}
 
 	case 5:
 		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(117)
+			p.SetState(115)
 			p.Output()
 		}
 
@@ -1992,7 +1799,7 @@ func (s *TransformContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 
 func (p *BitflowParser) Transform() (localctx ITransformContext) {
 	localctx = NewTransformContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 24, BitflowParserRULE_transform)
+	p.EnterRule(localctx, 20, BitflowParserRULE_transform)
 	var _la int
 
 	defer func() {
@@ -2013,20 +1820,20 @@ func (p *BitflowParser) Transform() (localctx ITransformContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(120)
+		p.SetState(118)
 		p.Name()
 	}
 	{
-		p.SetState(121)
+		p.SetState(119)
 		p.TransformParameters()
 	}
-	p.SetState(123)
+	p.SetState(121)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == BitflowParserT__7 {
 		{
-			p.SetState(122)
+			p.SetState(120)
 			p.SchedulingHints()
 		}
 
@@ -2166,7 +1973,7 @@ func (s *ForkContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 
 func (p *BitflowParser) Fork() (localctx IForkContext) {
 	localctx = NewForkContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 26, BitflowParserRULE_fork)
+	p.EnterRule(localctx, 22, BitflowParserRULE_fork)
 	var _la int
 
 	defer func() {
@@ -2189,66 +1996,66 @@ func (p *BitflowParser) Fork() (localctx IForkContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(125)
+		p.SetState(123)
 		p.Name()
 	}
 	{
-		p.SetState(126)
+		p.SetState(124)
 		p.TransformParameters()
 	}
-	p.SetState(128)
+	p.SetState(126)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == BitflowParserT__7 {
 		{
-			p.SetState(127)
+			p.SetState(125)
 			p.SchedulingHints()
 		}
 
 	}
 	{
-		p.SetState(130)
-		p.Match(BitflowParserT__0)
+		p.SetState(128)
+		p.Match(BitflowParserT__4)
 	}
 	{
-		p.SetState(131)
+		p.SetState(129)
 		p.NamedSubPipeline()
 	}
-	p.SetState(136)
+	p.SetState(134)
 	p.GetErrorHandler().Sync(p)
-	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 13, p.GetParserRuleContext())
+	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 14, p.GetParserRuleContext())
 
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
 			{
-				p.SetState(132)
+				p.SetState(130)
 				p.Match(BitflowParserEOP)
 			}
 			{
-				p.SetState(133)
+				p.SetState(131)
 				p.NamedSubPipeline()
 			}
 
 		}
-		p.SetState(138)
+		p.SetState(136)
 		p.GetErrorHandler().Sync(p)
-		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 13, p.GetParserRuleContext())
+		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 14, p.GetParserRuleContext())
 	}
-	p.SetState(140)
+	p.SetState(138)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == BitflowParserEOP {
 		{
-			p.SetState(139)
+			p.SetState(137)
 			p.Match(BitflowParserEOP)
 		}
 
 	}
 	{
-		p.SetState(142)
-		p.Match(BitflowParserT__1)
+		p.SetState(140)
+		p.Match(BitflowParserT__5)
 	}
 
 	return localctx
@@ -2292,16 +2099,6 @@ func NewNamedSubPipelineContext(parser antlr.Parser, parent antlr.ParserRuleCont
 
 func (s *NamedSubPipelineContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *NamedSubPipelineContext) NamedSubPipelineKey() INamedSubPipelineKeyContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*INamedSubPipelineKeyContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(INamedSubPipelineKeyContext)
-}
-
 func (s *NamedSubPipelineContext) NEXT() antlr.TerminalNode {
 	return s.GetToken(BitflowParserNEXT, 0)
 }
@@ -2314,6 +2111,29 @@ func (s *NamedSubPipelineContext) SubPipeline() ISubPipelineContext {
 	}
 
 	return t.(ISubPipelineContext)
+}
+
+func (s *NamedSubPipelineContext) AllName() []INameContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*INameContext)(nil)).Elem())
+	var tst = make([]INameContext, len(ts))
+
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(INameContext)
+		}
+	}
+
+	return tst
+}
+
+func (s *NamedSubPipelineContext) Name(i int) INameContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*INameContext)(nil)).Elem(), i)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(INameContext)
 }
 
 func (s *NamedSubPipelineContext) GetRuleContext() antlr.RuleContext {
@@ -2348,7 +2168,8 @@ func (s *NamedSubPipelineContext) Accept(visitor antlr.ParseTreeVisitor) interfa
 
 func (p *BitflowParser) NamedSubPipeline() (localctx INamedSubPipelineContext) {
 	localctx = NewNamedSubPipelineContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 28, BitflowParserRULE_namedSubPipeline)
+	p.EnterRule(localctx, 24, BitflowParserRULE_namedSubPipeline)
+	var _la int
 
 	defer func() {
 		p.ExitRule()
@@ -2367,16 +2188,26 @@ func (p *BitflowParser) NamedSubPipeline() (localctx INamedSubPipelineContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(144)
-		p.NamedSubPipelineKey()
+	p.SetState(143)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<BitflowParserSTRING)|(1<<BitflowParserNUMBER)|(1<<BitflowParserBOOL)|(1<<BitflowParserIDENTIFIER))) != 0) {
+		{
+			p.SetState(142)
+			p.Name()
+		}
+
+		p.SetState(145)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(145)
+		p.SetState(147)
 		p.Match(BitflowParserNEXT)
 	}
 	{
-		p.SetState(146)
+		p.SetState(148)
 		p.SubPipeline()
 	}
 
@@ -2421,27 +2252,27 @@ func NewSubPipelineContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 
 func (s *SubPipelineContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *SubPipelineContext) AllIntermediateTransform() []IIntermediateTransformContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IIntermediateTransformContext)(nil)).Elem())
-	var tst = make([]IIntermediateTransformContext, len(ts))
+func (s *SubPipelineContext) AllPipelineElement() []IPipelineElementContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IPipelineElementContext)(nil)).Elem())
+	var tst = make([]IPipelineElementContext, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(IIntermediateTransformContext)
+			tst[i] = t.(IPipelineElementContext)
 		}
 	}
 
 	return tst
 }
 
-func (s *SubPipelineContext) IntermediateTransform(i int) IIntermediateTransformContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIntermediateTransformContext)(nil)).Elem(), i)
+func (s *SubPipelineContext) PipelineElement(i int) IPipelineElementContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IPipelineElementContext)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIntermediateTransformContext)
+	return t.(IPipelineElementContext)
 }
 
 func (s *SubPipelineContext) AllNEXT() []antlr.TerminalNode {
@@ -2484,7 +2315,7 @@ func (s *SubPipelineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} 
 
 func (p *BitflowParser) SubPipeline() (localctx ISubPipelineContext) {
 	localctx = NewSubPipelineContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 30, BitflowParserRULE_subPipeline)
+	p.EnterRule(localctx, 26, BitflowParserRULE_subPipeline)
 	var _la int
 
 	defer func() {
@@ -2505,24 +2336,24 @@ func (p *BitflowParser) SubPipeline() (localctx ISubPipelineContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(148)
-		p.IntermediateTransform()
+		p.SetState(150)
+		p.PipelineElement()
 	}
-	p.SetState(153)
+	p.SetState(155)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == BitflowParserNEXT {
 		{
-			p.SetState(149)
+			p.SetState(151)
 			p.Match(BitflowParserNEXT)
 		}
 		{
-			p.SetState(150)
-			p.IntermediateTransform()
+			p.SetState(152)
+			p.PipelineElement()
 		}
 
-		p.SetState(155)
+		p.SetState(157)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
@@ -2631,7 +2462,7 @@ func (s *MultiplexForkContext) Accept(visitor antlr.ParseTreeVisitor) interface{
 
 func (p *BitflowParser) MultiplexFork() (localctx IMultiplexForkContext) {
 	localctx = NewMultiplexForkContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 32, BitflowParserRULE_multiplexFork)
+	p.EnterRule(localctx, 28, BitflowParserRULE_multiplexFork)
 	var _la int
 
 	defer func() {
@@ -2654,47 +2485,47 @@ func (p *BitflowParser) MultiplexFork() (localctx IMultiplexForkContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(156)
-		p.Match(BitflowParserT__0)
+		p.SetState(158)
+		p.Match(BitflowParserT__4)
 	}
 	{
-		p.SetState(157)
+		p.SetState(159)
 		p.MultiplexSubPipeline()
 	}
-	p.SetState(162)
+	p.SetState(164)
 	p.GetErrorHandler().Sync(p)
-	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 16, p.GetParserRuleContext())
+	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 18, p.GetParserRuleContext())
 
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
 			{
-				p.SetState(158)
+				p.SetState(160)
 				p.Match(BitflowParserEOP)
 			}
 			{
-				p.SetState(159)
+				p.SetState(161)
 				p.MultiplexSubPipeline()
 			}
 
 		}
-		p.SetState(164)
+		p.SetState(166)
 		p.GetErrorHandler().Sync(p)
-		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 16, p.GetParserRuleContext())
+		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 18, p.GetParserRuleContext())
 	}
-	p.SetState(166)
+	p.SetState(168)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == BitflowParserEOP {
 		{
-			p.SetState(165)
+			p.SetState(167)
 			p.Match(BitflowParserEOP)
 		}
 
 	}
 	{
-		p.SetState(168)
-		p.Match(BitflowParserT__1)
+		p.SetState(170)
+		p.Match(BitflowParserT__5)
 	}
 
 	return localctx
@@ -2780,7 +2611,7 @@ func (s *MultiplexSubPipelineContext) Accept(visitor antlr.ParseTreeVisitor) int
 
 func (p *BitflowParser) MultiplexSubPipeline() (localctx IMultiplexSubPipelineContext) {
 	localctx = NewMultiplexSubPipelineContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 34, BitflowParserRULE_multiplexSubPipeline)
+	p.EnterRule(localctx, 30, BitflowParserRULE_multiplexSubPipeline)
 
 	defer func() {
 		p.ExitRule()
@@ -2800,7 +2631,7 @@ func (p *BitflowParser) MultiplexSubPipeline() (localctx IMultiplexSubPipelineCo
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(170)
+		p.SetState(172)
 		p.SubPipeline()
 	}
 
@@ -2907,7 +2738,7 @@ func (s *WindowContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 
 func (p *BitflowParser) Window() (localctx IWindowContext) {
 	localctx = NewWindowContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 36, BitflowParserRULE_window)
+	p.EnterRule(localctx, 32, BitflowParserRULE_window)
 	var _la int
 
 	defer func() {
@@ -2928,35 +2759,35 @@ func (p *BitflowParser) Window() (localctx IWindowContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(172)
+		p.SetState(174)
 		p.Match(BitflowParserT__6)
 	}
 	{
-		p.SetState(173)
+		p.SetState(175)
 		p.TransformParameters()
 	}
-	p.SetState(175)
+	p.SetState(177)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == BitflowParserT__7 {
 		{
-			p.SetState(174)
+			p.SetState(176)
 			p.SchedulingHints()
 		}
 
 	}
 	{
-		p.SetState(177)
-		p.Match(BitflowParserT__0)
+		p.SetState(179)
+		p.Match(BitflowParserT__4)
 	}
 	{
-		p.SetState(178)
+		p.SetState(180)
 		p.WindowPipeline()
 	}
 	{
-		p.SetState(179)
-		p.Match(BitflowParserT__1)
+		p.SetState(181)
+		p.Match(BitflowParserT__5)
 	}
 
 	return localctx
@@ -3063,7 +2894,7 @@ func (s *WindowPipelineContext) Accept(visitor antlr.ParseTreeVisitor) interface
 
 func (p *BitflowParser) WindowPipeline() (localctx IWindowPipelineContext) {
 	localctx = NewWindowPipelineContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 38, BitflowParserRULE_windowPipeline)
+	p.EnterRule(localctx, 34, BitflowParserRULE_windowPipeline)
 	var _la int
 
 	defer func() {
@@ -3084,24 +2915,24 @@ func (p *BitflowParser) WindowPipeline() (localctx IWindowPipelineContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(181)
+		p.SetState(183)
 		p.Transform()
 	}
-	p.SetState(186)
+	p.SetState(188)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == BitflowParserNEXT {
 		{
-			p.SetState(182)
+			p.SetState(184)
 			p.Match(BitflowParserNEXT)
 		}
 		{
-			p.SetState(183)
+			p.SetState(185)
 			p.Transform()
 		}
 
-		p.SetState(188)
+		p.SetState(190)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
@@ -3147,27 +2978,27 @@ func NewSchedulingHintsContext(parser antlr.Parser, parent antlr.ParserRuleConte
 
 func (s *SchedulingHintsContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *SchedulingHintsContext) AllParameter() []IParameterContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IParameterContext)(nil)).Elem())
-	var tst = make([]IParameterContext, len(ts))
+func (s *SchedulingHintsContext) AllSchedulingParameter() []ISchedulingParameterContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ISchedulingParameterContext)(nil)).Elem())
+	var tst = make([]ISchedulingParameterContext, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(IParameterContext)
+			tst[i] = t.(ISchedulingParameterContext)
 		}
 	}
 
 	return tst
 }
 
-func (s *SchedulingHintsContext) Parameter(i int) IParameterContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IParameterContext)(nil)).Elem(), i)
+func (s *SchedulingHintsContext) SchedulingParameter(i int) ISchedulingParameterContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISchedulingParameterContext)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IParameterContext)
+	return t.(ISchedulingParameterContext)
 }
 
 func (s *SchedulingHintsContext) GetRuleContext() antlr.RuleContext {
@@ -3202,7 +3033,7 @@ func (s *SchedulingHintsContext) Accept(visitor antlr.ParseTreeVisitor) interfac
 
 func (p *BitflowParser) SchedulingHints() (localctx ISchedulingHintsContext) {
 	localctx = NewSchedulingHintsContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 40, BitflowParserRULE_schedulingHints)
+	p.EnterRule(localctx, 36, BitflowParserRULE_schedulingHints)
 	var _la int
 
 	defer func() {
@@ -3223,41 +3054,148 @@ func (p *BitflowParser) SchedulingHints() (localctx ISchedulingHintsContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(189)
+		p.SetState(191)
 		p.Match(BitflowParserT__7)
 	}
-	p.SetState(198)
+	p.SetState(200)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == BitflowParserSTRING || _la == BitflowParserNAME {
+	if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<BitflowParserSTRING)|(1<<BitflowParserNUMBER)|(1<<BitflowParserBOOL)|(1<<BitflowParserIDENTIFIER))) != 0 {
 		{
-			p.SetState(190)
-			p.Parameter()
+			p.SetState(192)
+			p.SchedulingParameter()
 		}
-		p.SetState(195)
+		p.SetState(197)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for _la == BitflowParserT__4 {
+		for _la == BitflowParserT__2 {
 			{
-				p.SetState(191)
-				p.Match(BitflowParserT__4)
+				p.SetState(193)
+				p.Match(BitflowParserT__2)
 			}
 			{
-				p.SetState(192)
-				p.Parameter()
+				p.SetState(194)
+				p.SchedulingParameter()
 			}
 
-			p.SetState(197)
+			p.SetState(199)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 		}
 
 	}
 	{
-		p.SetState(200)
+		p.SetState(202)
 		p.Match(BitflowParserT__8)
+	}
+
+	return localctx
+}
+
+// ISchedulingParameterContext is an interface to support dynamic dispatch.
+type ISchedulingParameterContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsSchedulingParameterContext differentiates from other interfaces.
+	IsSchedulingParameterContext()
+}
+
+type SchedulingParameterContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptySchedulingParameterContext() *SchedulingParameterContext {
+	var p = new(SchedulingParameterContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = BitflowParserRULE_schedulingParameter
+	return p
+}
+
+func (*SchedulingParameterContext) IsSchedulingParameterContext() {}
+
+func NewSchedulingParameterContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *SchedulingParameterContext {
+	var p = new(SchedulingParameterContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = BitflowParserRULE_schedulingParameter
+
+	return p
+}
+
+func (s *SchedulingParameterContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *SchedulingParameterContext) Parameter() IParameterContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IParameterContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IParameterContext)
+}
+
+func (s *SchedulingParameterContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *SchedulingParameterContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *SchedulingParameterContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BitflowListener); ok {
+		listenerT.EnterSchedulingParameter(s)
+	}
+}
+
+func (s *SchedulingParameterContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(BitflowListener); ok {
+		listenerT.ExitSchedulingParameter(s)
+	}
+}
+
+func (s *SchedulingParameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case BitflowVisitor:
+		return t.VisitSchedulingParameter(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *BitflowParser) SchedulingParameter() (localctx ISchedulingParameterContext) {
+	localctx = NewSchedulingParameterContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 38, BitflowParserRULE_schedulingParameter)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(204)
+		p.Parameter()
 	}
 
 	return localctx

@@ -9,47 +9,48 @@ grammar Bitflow ;
 
 script : pipeline ( EOP pipeline )* EOP? EOF ;
 
-pipeline : (input | multiInputPipeline) (NEXT intermediateTransform)* ;
-multiInputPipeline : '{' pipeline (EOP pipeline)* EOP? '}';
+// Simple tokens
+input : name+ schedulingHints? ;
+output : name schedulingHints? ;
+name : IDENTIFIER | NUMBER | BOOL | STRING ;
+val : NUMBER | BOOL | STRING ;
 
-// TODO support for multiple input declarations (separated by spaces)
-// multiinput : input (';' input)* ';'?;
-
-input : endpoint schedulingHints? ;
-output : endpoint schedulingHints? ;
-name : NAME | STRING ;
-namedSubPipelineKey: NAME | STRING | NUMBER ;
-endpoint : STRING | NAME ;
-val : STRING | NUMBER ; // TODO explicitely add BOOL and FLOAT
-
+// Parameters
 parameter : name '=' val;
 transformParameters : '(' (parameter (',' parameter)*)? ')';
 
-intermediateTransform : transform | fork | multiplexFork | window | output ;
+// Pipeline and steps
+pipeline : (input | multiInputPipeline) (NEXT pipelineElement)* ;
+multiInputPipeline : '{' pipeline (EOP pipeline)* EOP? '}';
+pipelineElement : transform | fork | multiplexFork | window | output ;
 transform: name transformParameters schedulingHints? ;
 
+// Forks
 fork : name transformParameters schedulingHints? '{' namedSubPipeline (EOP namedSubPipeline)* EOP? '}' ;
-namedSubPipeline : namedSubPipelineKey NEXT subPipeline ;
-
-subPipeline : intermediateTransform (NEXT intermediateTransform)* ;
-
+namedSubPipeline : name+ NEXT subPipeline ;
+subPipeline : pipelineElement (NEXT pipelineElement)* ;
 multiplexFork : '{' multiplexSubPipeline (EOP multiplexSubPipeline)* EOP? '}' ;
 multiplexSubPipeline : subPipeline ;
+
+// Windows
 window : 'window' transformParameters schedulingHints? '{' windowPipeline '}' ;
 windowPipeline : transform (NEXT transform)* ;
 
-schedulingHints : '[' (parameter (',' parameter)*)? ']' ;
+// Scheduling hints
+schedulingHints : '[' (schedulingParameter (',' schedulingParameter)*)? ']' ;
+schedulingParameter : parameter ;
 
 /*
 * Lexer Rules
 */
 
-EOP : ';'; // End Of Pipeline
-NEXT : '->';
+EOP : ';' ; // End Of Pipeline
+NEXT : '->' ;
 
-STRING : '"' .*? '"' | '\'' .*? '\'' | '`' .*? '`';
-NUMBER : [0-9]+;
-NAME : [a-zA-Z0-9._:\\/-]+;
+STRING : '"' .*? '"' | '\'' .*? '\'' | '`' .*? '`' ;
+NUMBER : [0-9]+('.'[0-9]+)? ;
+BOOL : 'true'|'True'|'false'|'False' ;
+IDENTIFIER : [a-zA-Z0-9._:\\/-]+ ;
 
 COMMENT : '#' ~('\n'|'\r')* NEWLINE -> skip;
 NEWLINE : ('\r' | '\n' | '\r\n') -> skip;

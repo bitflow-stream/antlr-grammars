@@ -1,4 +1,10 @@
-input -> window(batch_size=5){
+input ->
+
+
+
+
+        window(batch_size=5){
+
                batchStep1() -> batchStep2() -> step3(nrOfThreads="ASD")
       }
       -> someoutput();

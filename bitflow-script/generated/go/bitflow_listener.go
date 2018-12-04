@@ -10,12 +10,6 @@ type BitflowListener interface {
 	// EnterScript is called when entering the script production.
 	EnterScript(c *ScriptContext)
 
-	// EnterPipeline is called when entering the pipeline production.
-	EnterPipeline(c *PipelineContext)
-
-	// EnterMultiInputPipeline is called when entering the multiInputPipeline production.
-	EnterMultiInputPipeline(c *MultiInputPipelineContext)
-
 	// EnterInput is called when entering the input production.
 	EnterInput(c *InputContext)
 
@@ -24,12 +18,6 @@ type BitflowListener interface {
 
 	// EnterName is called when entering the name production.
 	EnterName(c *NameContext)
-
-	// EnterNamedSubPipelineKey is called when entering the namedSubPipelineKey production.
-	EnterNamedSubPipelineKey(c *NamedSubPipelineKeyContext)
-
-	// EnterEndpoint is called when entering the endpoint production.
-	EnterEndpoint(c *EndpointContext)
 
 	// EnterVal is called when entering the val production.
 	EnterVal(c *ValContext)
@@ -40,8 +28,14 @@ type BitflowListener interface {
 	// EnterTransformParameters is called when entering the transformParameters production.
 	EnterTransformParameters(c *TransformParametersContext)
 
-	// EnterIntermediateTransform is called when entering the intermediateTransform production.
-	EnterIntermediateTransform(c *IntermediateTransformContext)
+	// EnterPipeline is called when entering the pipeline production.
+	EnterPipeline(c *PipelineContext)
+
+	// EnterMultiInputPipeline is called when entering the multiInputPipeline production.
+	EnterMultiInputPipeline(c *MultiInputPipelineContext)
+
+	// EnterPipelineElement is called when entering the pipelineElement production.
+	EnterPipelineElement(c *PipelineElementContext)
 
 	// EnterTransform is called when entering the transform production.
 	EnterTransform(c *TransformContext)
@@ -70,14 +64,11 @@ type BitflowListener interface {
 	// EnterSchedulingHints is called when entering the schedulingHints production.
 	EnterSchedulingHints(c *SchedulingHintsContext)
 
+	// EnterSchedulingParameter is called when entering the schedulingParameter production.
+	EnterSchedulingParameter(c *SchedulingParameterContext)
+
 	// ExitScript is called when exiting the script production.
 	ExitScript(c *ScriptContext)
-
-	// ExitPipeline is called when exiting the pipeline production.
-	ExitPipeline(c *PipelineContext)
-
-	// ExitMultiInputPipeline is called when exiting the multiInputPipeline production.
-	ExitMultiInputPipeline(c *MultiInputPipelineContext)
 
 	// ExitInput is called when exiting the input production.
 	ExitInput(c *InputContext)
@@ -88,12 +79,6 @@ type BitflowListener interface {
 	// ExitName is called when exiting the name production.
 	ExitName(c *NameContext)
 
-	// ExitNamedSubPipelineKey is called when exiting the namedSubPipelineKey production.
-	ExitNamedSubPipelineKey(c *NamedSubPipelineKeyContext)
-
-	// ExitEndpoint is called when exiting the endpoint production.
-	ExitEndpoint(c *EndpointContext)
-
 	// ExitVal is called when exiting the val production.
 	ExitVal(c *ValContext)
 
@@ -103,8 +88,14 @@ type BitflowListener interface {
 	// ExitTransformParameters is called when exiting the transformParameters production.
 	ExitTransformParameters(c *TransformParametersContext)
 
-	// ExitIntermediateTransform is called when exiting the intermediateTransform production.
-	ExitIntermediateTransform(c *IntermediateTransformContext)
+	// ExitPipeline is called when exiting the pipeline production.
+	ExitPipeline(c *PipelineContext)
+
+	// ExitMultiInputPipeline is called when exiting the multiInputPipeline production.
+	ExitMultiInputPipeline(c *MultiInputPipelineContext)
+
+	// ExitPipelineElement is called when exiting the pipelineElement production.
+	ExitPipelineElement(c *PipelineElementContext)
 
 	// ExitTransform is called when exiting the transform production.
 	ExitTransform(c *TransformContext)
@@ -132,4 +123,7 @@ type BitflowListener interface {
 
 	// ExitSchedulingHints is called when exiting the schedulingHints production.
 	ExitSchedulingHints(c *SchedulingHintsContext)
+
+	// ExitSchedulingParameter is called when exiting the schedulingParameter production.
+	ExitSchedulingParameter(c *SchedulingParameterContext)
 }

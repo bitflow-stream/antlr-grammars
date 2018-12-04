@@ -26,18 +26,6 @@ func (s *BaseBitflowListener) EnterScript(ctx *ScriptContext) {}
 // ExitScript is called when production script is exited.
 func (s *BaseBitflowListener) ExitScript(ctx *ScriptContext) {}
 
-// EnterPipeline is called when production pipeline is entered.
-func (s *BaseBitflowListener) EnterPipeline(ctx *PipelineContext) {}
-
-// ExitPipeline is called when production pipeline is exited.
-func (s *BaseBitflowListener) ExitPipeline(ctx *PipelineContext) {}
-
-// EnterMultiInputPipeline is called when production multiInputPipeline is entered.
-func (s *BaseBitflowListener) EnterMultiInputPipeline(ctx *MultiInputPipelineContext) {}
-
-// ExitMultiInputPipeline is called when production multiInputPipeline is exited.
-func (s *BaseBitflowListener) ExitMultiInputPipeline(ctx *MultiInputPipelineContext) {}
-
 // EnterInput is called when production input is entered.
 func (s *BaseBitflowListener) EnterInput(ctx *InputContext) {}
 
@@ -55,18 +43,6 @@ func (s *BaseBitflowListener) EnterName(ctx *NameContext) {}
 
 // ExitName is called when production name is exited.
 func (s *BaseBitflowListener) ExitName(ctx *NameContext) {}
-
-// EnterNamedSubPipelineKey is called when production namedSubPipelineKey is entered.
-func (s *BaseBitflowListener) EnterNamedSubPipelineKey(ctx *NamedSubPipelineKeyContext) {}
-
-// ExitNamedSubPipelineKey is called when production namedSubPipelineKey is exited.
-func (s *BaseBitflowListener) ExitNamedSubPipelineKey(ctx *NamedSubPipelineKeyContext) {}
-
-// EnterEndpoint is called when production endpoint is entered.
-func (s *BaseBitflowListener) EnterEndpoint(ctx *EndpointContext) {}
-
-// ExitEndpoint is called when production endpoint is exited.
-func (s *BaseBitflowListener) ExitEndpoint(ctx *EndpointContext) {}
 
 // EnterVal is called when production val is entered.
 func (s *BaseBitflowListener) EnterVal(ctx *ValContext) {}
@@ -86,11 +62,23 @@ func (s *BaseBitflowListener) EnterTransformParameters(ctx *TransformParametersC
 // ExitTransformParameters is called when production transformParameters is exited.
 func (s *BaseBitflowListener) ExitTransformParameters(ctx *TransformParametersContext) {}
 
-// EnterIntermediateTransform is called when production intermediateTransform is entered.
-func (s *BaseBitflowListener) EnterIntermediateTransform(ctx *IntermediateTransformContext) {}
+// EnterPipeline is called when production pipeline is entered.
+func (s *BaseBitflowListener) EnterPipeline(ctx *PipelineContext) {}
 
-// ExitIntermediateTransform is called when production intermediateTransform is exited.
-func (s *BaseBitflowListener) ExitIntermediateTransform(ctx *IntermediateTransformContext) {}
+// ExitPipeline is called when production pipeline is exited.
+func (s *BaseBitflowListener) ExitPipeline(ctx *PipelineContext) {}
+
+// EnterMultiInputPipeline is called when production multiInputPipeline is entered.
+func (s *BaseBitflowListener) EnterMultiInputPipeline(ctx *MultiInputPipelineContext) {}
+
+// ExitMultiInputPipeline is called when production multiInputPipeline is exited.
+func (s *BaseBitflowListener) ExitMultiInputPipeline(ctx *MultiInputPipelineContext) {}
+
+// EnterPipelineElement is called when production pipelineElement is entered.
+func (s *BaseBitflowListener) EnterPipelineElement(ctx *PipelineElementContext) {}
+
+// ExitPipelineElement is called when production pipelineElement is exited.
+func (s *BaseBitflowListener) ExitPipelineElement(ctx *PipelineElementContext) {}
 
 // EnterTransform is called when production transform is entered.
 func (s *BaseBitflowListener) EnterTransform(ctx *TransformContext) {}
@@ -145,3 +133,9 @@ func (s *BaseBitflowListener) EnterSchedulingHints(ctx *SchedulingHintsContext) 
 
 // ExitSchedulingHints is called when production schedulingHints is exited.
 func (s *BaseBitflowListener) ExitSchedulingHints(ctx *SchedulingHintsContext) {}
+
+// EnterSchedulingParameter is called when production schedulingParameter is entered.
+func (s *BaseBitflowListener) EnterSchedulingParameter(ctx *SchedulingParameterContext) {}
+
+// ExitSchedulingParameter is called when production schedulingParameter is exited.
+func (s *BaseBitflowListener) ExitSchedulingParameter(ctx *SchedulingParameterContext) {}

@@ -10,12 +10,6 @@ type BitflowVisitor interface {
 	// Visit a parse tree produced by BitflowParser#script.
 	VisitScript(ctx *ScriptContext) interface{}
 
-	// Visit a parse tree produced by BitflowParser#pipeline.
-	VisitPipeline(ctx *PipelineContext) interface{}
-
-	// Visit a parse tree produced by BitflowParser#multiInputPipeline.
-	VisitMultiInputPipeline(ctx *MultiInputPipelineContext) interface{}
-
 	// Visit a parse tree produced by BitflowParser#input.
 	VisitInput(ctx *InputContext) interface{}
 
@@ -24,12 +18,6 @@ type BitflowVisitor interface {
 
 	// Visit a parse tree produced by BitflowParser#name.
 	VisitName(ctx *NameContext) interface{}
-
-	// Visit a parse tree produced by BitflowParser#namedSubPipelineKey.
-	VisitNamedSubPipelineKey(ctx *NamedSubPipelineKeyContext) interface{}
-
-	// Visit a parse tree produced by BitflowParser#endpoint.
-	VisitEndpoint(ctx *EndpointContext) interface{}
 
 	// Visit a parse tree produced by BitflowParser#val.
 	VisitVal(ctx *ValContext) interface{}
@@ -40,8 +28,14 @@ type BitflowVisitor interface {
 	// Visit a parse tree produced by BitflowParser#transformParameters.
 	VisitTransformParameters(ctx *TransformParametersContext) interface{}
 
-	// Visit a parse tree produced by BitflowParser#intermediateTransform.
-	VisitIntermediateTransform(ctx *IntermediateTransformContext) interface{}
+	// Visit a parse tree produced by BitflowParser#pipeline.
+	VisitPipeline(ctx *PipelineContext) interface{}
+
+	// Visit a parse tree produced by BitflowParser#multiInputPipeline.
+	VisitMultiInputPipeline(ctx *MultiInputPipelineContext) interface{}
+
+	// Visit a parse tree produced by BitflowParser#pipelineElement.
+	VisitPipelineElement(ctx *PipelineElementContext) interface{}
 
 	// Visit a parse tree produced by BitflowParser#transform.
 	VisitTransform(ctx *TransformContext) interface{}
@@ -69,4 +63,7 @@ type BitflowVisitor interface {
 
 	// Visit a parse tree produced by BitflowParser#schedulingHints.
 	VisitSchedulingHints(ctx *SchedulingHintsContext) interface{}
+
+	// Visit a parse tree produced by BitflowParser#schedulingParameter.
+	VisitSchedulingParameter(ctx *SchedulingParameterContext) interface{}
 }
