@@ -7,7 +7,7 @@ grammar Bitflow ;
 * Parser Rules
 */
 
-script : pipeline ( EOP pipeline )* EOP? EOF ;
+script : multiInputPipeline EOF ;
 
 // Simple tokens
 input : name+ schedulingHints? ;
@@ -20,8 +20,8 @@ parameter : name '=' val;
 transformParameters : '(' (parameter (',' parameter)*)? ')';
 
 // Pipeline and steps
-pipeline : (input | multiInputPipeline) (NEXT pipelineElement)* ;
-multiInputPipeline : '{' pipeline (EOP pipeline)* EOP? '}';
+pipeline : (input | '{' multiInputPipeline '}') (NEXT pipelineElement)* ;
+multiInputPipeline : pipeline (EOP pipeline)* EOP? ;
 pipelineElement : transform | fork | multiplexFork | window | output ;
 transform: name transformParameters schedulingHints? ;
 
