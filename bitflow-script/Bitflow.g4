@@ -10,44 +10,56 @@ grammar Bitflow ;
 script : multiInputPipeline EOF ;
 
 // Simple tokens
-input : name+ schedulingHints? ;
-output : name schedulingHints? ;
+dataInput : name+ schedulingHints? ;
+dataOutput : name schedulingHints? ;
 name : IDENTIFIER | NUMBER | BOOL | STRING ;
 val : NUMBER | BOOL | STRING ;
 
 // Parameters
-parameter : name '=' val;
-transformParameters : '(' (parameter (',' parameter)*)? ')';
+parameter : name EQ val;
+transformParameters : OPEN_PARAMS (parameter (SEP parameter)*)? SEP? CLOSE_PARAMS;
 
 // Pipeline and steps
-pipeline : (input | '{' multiInputPipeline '}') (NEXT pipelineElement)* ;
+pipeline : (dataInput | OPEN multiInputPipeline CLOSE) (NEXT pipelineElement)* ;
 multiInputPipeline : pipeline (EOP pipeline)* EOP? ;
-pipelineElement : transform | fork | multiplexFork | window | output ;
+pipelineElement : transform | fork | multiplexFork | window | dataOutput ;
 transform: name transformParameters schedulingHints? ;
 
 // Forks
-fork : name transformParameters schedulingHints? '{' namedSubPipeline (EOP namedSubPipeline)* EOP? '}' ;
+fork : name transformParameters schedulingHints? OPEN namedSubPipeline (EOP namedSubPipeline)* EOP? CLOSE ;
 namedSubPipeline : name+ NEXT subPipeline ;
 subPipeline : pipelineElement (NEXT pipelineElement)* ;
-multiplexFork : '{' multiplexSubPipeline (EOP multiplexSubPipeline)* EOP? '}' ;
+multiplexFork : OPEN multiplexSubPipeline (EOP multiplexSubPipeline)* EOP? CLOSE ;
 multiplexSubPipeline : subPipeline ;
 
 // Windows
-window : 'window' transformParameters schedulingHints? '{' windowPipeline '}' ;
+window : WINDOW transformParameters schedulingHints? OPEN windowPipeline CLOSE ;
 windowPipeline : transform (NEXT transform)* ;
 
 // Scheduling hints
-schedulingHints : '[' (schedulingParameter (',' schedulingParameter)*)? ']' ;
+schedulingHints : OPEN_HINTS (schedulingParameter (SEP schedulingParameter)*)? SEP? CLOSE_HINTS ;
 schedulingParameter : parameter ;
 
 /*
 * Lexer Rules
 */
 
+OPEN : '{' ;
+CLOSE : '}' ;
 EOP : ';' ; // End Of Pipeline
 NEXT : '->' ;
 
-STRING : '"' .*? '"' | '\'' .*? '\'' | '`' .*? '`' ;
+OPEN_PARAMS : '(' ;
+CLOSE_PARAMS : ')' ;
+EQ : '=' ;
+SEP : ',' ;
+
+OPEN_HINTS : '[' ;
+CLOSE_HINTS : ']' ;
+
+WINDOW: 'window' ; // Only "keyword" in the grammar
+
+STRING : '"' .*? '"' | '\'' .*? '\'' | '`' .*? '`' ; // Three types of string delimiter characters for flexibility
 NUMBER : [0-9]+('.'[0-9]+)? ;
 BOOL : 'true'|'True'|'false'|'False' ;
 IDENTIFIER : [a-zA-Z0-9._:\\/-]+ ;

@@ -42,12 +42,16 @@ case $cmd in
         # Bitflow Script
         script="$root/bitflow-script"
         generate_java "$script/Bitflow.g4" "$script/generated/java/bitflow4j/script/generated" -package $SCRIPT_JAVA_PACKAGE -visitor
-        generate      "$script/Bitflow.g4" "$script/generated/go"   -package $SCRIPT_GO_PACKAGE -Dlanguage=Go -visitor
+        generate      "$script/Bitflow.g4" "$script/generated/go"      -package $SCRIPT_GO_PACKAGE -Dlanguage=Go -visitor
+        generate      "$script/Bitflow.g4" "$script/generated/python2" -package "ignored" -Dlanguage=Python2 -visitor
+        generate      "$script/Bitflow.g4" "$script/generated/python3" -package "ignored" -Dlanguage=Python3 -visitor
 
         # Bitflow Query Language
         query="$root/bitflow-query-language"
         generate_java "$query/BitflowQuery.g4" "$query/generated/java/bitflow4j/steps/query/generated" -package $QUERY_JAVA_PACKAGE -visitor
-        generate      "$query/BitflowQuery.g4" "$query/generated/go"   -package $QUERY_GO_PACKAGE -Dlanguage=Go -visitor
+        generate      "$query/BitflowQuery.g4" "$query/generated/go"      -package $QUERY_GO_PACKAGE -Dlanguage=Go -visitor
+        #generate      "$query/BitflowQuery.g4" "$query/generated/python2" -package "ignored" -Dlanguage=Python2 -visitor
+        #generate      "$query/BitflowQuery.g4" "$query/generated/python3" -package "ignored" -Dlanguage=Python3 -visitor
         ;;
     "test script")
         cd "$root/bitflow-script/generated/java"
