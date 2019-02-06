@@ -25,18 +25,23 @@ class BitflowVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by BitflowParser#val.
-    def visitVal(self, ctx):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by BitflowParser#parameter.
     def visitParameter(self, ctx):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by BitflowParser#transformParameters.
-    def visitTransformParameters(self, ctx):
+    # Visit a parse tree produced by BitflowParser#parameterList.
+    def visitParameterList(self, ctx):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by BitflowParser#parameters.
+    def visitParameters(self, ctx):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by BitflowParser#pipelines.
+    def visitPipelines(self, ctx):
         return self.visitChildren(ctx)
 
 
@@ -45,18 +50,18 @@ class BitflowVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by BitflowParser#multiInputPipeline.
-    def visitMultiInputPipeline(self, ctx):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by BitflowParser#pipelineElement.
     def visitPipelineElement(self, ctx):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by BitflowParser#transform.
-    def visitTransform(self, ctx):
+    # Visit a parse tree produced by BitflowParser#pipelineTailElement.
+    def visitPipelineTailElement(self, ctx):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by BitflowParser#processingStep.
+    def visitProcessingStep(self, ctx):
         return self.visitChildren(ctx)
 
 
@@ -80,28 +85,13 @@ class BitflowVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by BitflowParser#multiplexSubPipeline.
-    def visitMultiplexSubPipeline(self, ctx):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by BitflowParser#window.
     def visitWindow(self, ctx):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by BitflowParser#windowPipeline.
-    def visitWindowPipeline(self, ctx):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by BitflowParser#schedulingHints.
     def visitSchedulingHints(self, ctx):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by BitflowParser#schedulingParameter.
-    def visitSchedulingParameter(self, ctx):
         return self.visitChildren(ctx)
 
 

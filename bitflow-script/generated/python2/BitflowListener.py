@@ -40,15 +40,6 @@ class BitflowListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by BitflowParser#val.
-    def enterVal(self, ctx):
-        pass
-
-    # Exit a parse tree produced by BitflowParser#val.
-    def exitVal(self, ctx):
-        pass
-
-
     # Enter a parse tree produced by BitflowParser#parameter.
     def enterParameter(self, ctx):
         pass
@@ -58,12 +49,30 @@ class BitflowListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by BitflowParser#transformParameters.
-    def enterTransformParameters(self, ctx):
+    # Enter a parse tree produced by BitflowParser#parameterList.
+    def enterParameterList(self, ctx):
         pass
 
-    # Exit a parse tree produced by BitflowParser#transformParameters.
-    def exitTransformParameters(self, ctx):
+    # Exit a parse tree produced by BitflowParser#parameterList.
+    def exitParameterList(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by BitflowParser#parameters.
+    def enterParameters(self, ctx):
+        pass
+
+    # Exit a parse tree produced by BitflowParser#parameters.
+    def exitParameters(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by BitflowParser#pipelines.
+    def enterPipelines(self, ctx):
+        pass
+
+    # Exit a parse tree produced by BitflowParser#pipelines.
+    def exitPipelines(self, ctx):
         pass
 
 
@@ -76,15 +85,6 @@ class BitflowListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by BitflowParser#multiInputPipeline.
-    def enterMultiInputPipeline(self, ctx):
-        pass
-
-    # Exit a parse tree produced by BitflowParser#multiInputPipeline.
-    def exitMultiInputPipeline(self, ctx):
-        pass
-
-
     # Enter a parse tree produced by BitflowParser#pipelineElement.
     def enterPipelineElement(self, ctx):
         pass
@@ -94,12 +94,21 @@ class BitflowListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by BitflowParser#transform.
-    def enterTransform(self, ctx):
+    # Enter a parse tree produced by BitflowParser#pipelineTailElement.
+    def enterPipelineTailElement(self, ctx):
         pass
 
-    # Exit a parse tree produced by BitflowParser#transform.
-    def exitTransform(self, ctx):
+    # Exit a parse tree produced by BitflowParser#pipelineTailElement.
+    def exitPipelineTailElement(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by BitflowParser#processingStep.
+    def enterProcessingStep(self, ctx):
+        pass
+
+    # Exit a parse tree produced by BitflowParser#processingStep.
+    def exitProcessingStep(self, ctx):
         pass
 
 
@@ -139,15 +148,6 @@ class BitflowListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by BitflowParser#multiplexSubPipeline.
-    def enterMultiplexSubPipeline(self, ctx):
-        pass
-
-    # Exit a parse tree produced by BitflowParser#multiplexSubPipeline.
-    def exitMultiplexSubPipeline(self, ctx):
-        pass
-
-
     # Enter a parse tree produced by BitflowParser#window.
     def enterWindow(self, ctx):
         pass
@@ -157,30 +157,12 @@ class BitflowListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by BitflowParser#windowPipeline.
-    def enterWindowPipeline(self, ctx):
-        pass
-
-    # Exit a parse tree produced by BitflowParser#windowPipeline.
-    def exitWindowPipeline(self, ctx):
-        pass
-
-
     # Enter a parse tree produced by BitflowParser#schedulingHints.
     def enterSchedulingHints(self, ctx):
         pass
 
     # Exit a parse tree produced by BitflowParser#schedulingHints.
     def exitSchedulingHints(self, ctx):
-        pass
-
-
-    # Enter a parse tree produced by BitflowParser#schedulingParameter.
-    def enterSchedulingParameter(self, ctx):
-        pass
-
-    # Exit a parse tree produced by BitflowParser#schedulingParameter.
-    def exitSchedulingParameter(self, ctx):
         pass
 
 

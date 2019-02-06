@@ -29,18 +29,23 @@ class BitflowVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by BitflowParser#val.
-    def visitVal(self, ctx:BitflowParser.ValContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by BitflowParser#parameter.
     def visitParameter(self, ctx:BitflowParser.ParameterContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by BitflowParser#transformParameters.
-    def visitTransformParameters(self, ctx:BitflowParser.TransformParametersContext):
+    # Visit a parse tree produced by BitflowParser#parameterList.
+    def visitParameterList(self, ctx:BitflowParser.ParameterListContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by BitflowParser#parameters.
+    def visitParameters(self, ctx:BitflowParser.ParametersContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by BitflowParser#pipelines.
+    def visitPipelines(self, ctx:BitflowParser.PipelinesContext):
         return self.visitChildren(ctx)
 
 
@@ -49,18 +54,18 @@ class BitflowVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by BitflowParser#multiInputPipeline.
-    def visitMultiInputPipeline(self, ctx:BitflowParser.MultiInputPipelineContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by BitflowParser#pipelineElement.
     def visitPipelineElement(self, ctx:BitflowParser.PipelineElementContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by BitflowParser#transform.
-    def visitTransform(self, ctx:BitflowParser.TransformContext):
+    # Visit a parse tree produced by BitflowParser#pipelineTailElement.
+    def visitPipelineTailElement(self, ctx:BitflowParser.PipelineTailElementContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by BitflowParser#processingStep.
+    def visitProcessingStep(self, ctx:BitflowParser.ProcessingStepContext):
         return self.visitChildren(ctx)
 
 
@@ -84,28 +89,13 @@ class BitflowVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by BitflowParser#multiplexSubPipeline.
-    def visitMultiplexSubPipeline(self, ctx:BitflowParser.MultiplexSubPipelineContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by BitflowParser#window.
     def visitWindow(self, ctx:BitflowParser.WindowContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by BitflowParser#windowPipeline.
-    def visitWindowPipeline(self, ctx:BitflowParser.WindowPipelineContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by BitflowParser#schedulingHints.
     def visitSchedulingHints(self, ctx:BitflowParser.SchedulingHintsContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by BitflowParser#schedulingParameter.
-    def visitSchedulingParameter(self, ctx:BitflowParser.SchedulingParameterContext):
         return self.visitChildren(ctx)
 
 
