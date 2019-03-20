@@ -52,9 +52,8 @@ OPEN_HINTS : '[' ;
 CLOSE_HINTS : ']' ;
 
 WINDOW: 'window' ; // Only "keyword" in the grammar
-
 STRING : '"' .*? '"' | '\'' .*? '\'' | '`' .*? '`' ; // Three types of string delimiter characters for flexibility
-IDENTIFIER : [a-zA-Z0-9._:\\/-]+ ;
+IDENTIFIER : [a-zA-Z0-9._%+&*?:\\/-]+ ;
 
 COMMENT : '#' ~('\n'|'\r')* NEWLINE -> skip;
 NEWLINE : ('\r' | '\n' | '\r\n') -> skip;
