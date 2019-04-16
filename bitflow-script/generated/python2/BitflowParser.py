@@ -98,7 +98,7 @@ class BitflowParser ( Parser ):
     sharedContextCache = PredictionContextCache()
 
     literalNames = [ u"<INVALID>", u"'{'", u"'}'", u"';'", u"'->'", u"'('", 
-                     u"')'", u"'='", u"','", u"'['", u"']'", u"'window'", 
+                     u"')'", u"'='", u"','", u"'['", u"']'", u"'batch'", 
                      u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
                      u"<INVALID>", u"'\t'" ]
 
