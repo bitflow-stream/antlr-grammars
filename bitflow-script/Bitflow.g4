@@ -51,7 +51,7 @@ SEP : ',' ;
 OPEN_HINTS : '[' ;
 CLOSE_HINTS : ']' ;
 
-WINDOW: 'window' ; // Only "keyword" in the grammar
+WINDOW: 'batch' ; // Only "keyword" in the grammar
 STRING : '"' .*? '"' | '\'' .*? '\'' | '`' .*? '`' ; // Three types of string delimiter characters for flexibility
 IDENTIFIER : [a-zA-Z0-9._%+&*?:\\/-]+ ;
 
