@@ -7,81 +7,82 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\23")
-        buf.write("\u00c0\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\22")
+        buf.write("\u00c3\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
-        buf.write("\3\2\3\2\3\2\3\3\6\3+\n\3\r\3\16\3,\3\3\5\3\60\n\3\3\4")
-        buf.write("\3\4\5\4\64\n\4\3\5\3\5\3\6\3\6\3\6\3\6\3\7\3\7\3\7\7")
-        buf.write("\7?\n\7\f\7\16\7B\13\7\3\b\3\b\3\b\5\bG\n\b\5\bI\n\b\3")
-        buf.write("\b\3\b\3\t\3\t\3\t\7\tP\n\t\f\t\16\tS\13\t\3\t\5\tV\n")
-        buf.write("\t\3\n\3\n\3\n\3\n\3\n\3\n\5\n^\n\n\3\n\3\n\7\nb\n\n\f")
-        buf.write("\n\16\ne\13\n\3\13\3\13\3\13\5\13j\n\13\3\f\3\f\3\f\5")
-        buf.write("\fo\n\f\3\r\3\r\3\r\5\rt\n\r\3\16\3\16\3\16\5\16y\n\16")
-        buf.write("\3\16\3\16\3\16\3\16\7\16\177\n\16\f\16\16\16\u0082\13")
-        buf.write("\16\3\16\5\16\u0085\n\16\3\16\3\16\3\17\6\17\u008a\n\17")
-        buf.write("\r\17\16\17\u008b\3\17\3\17\3\17\3\20\3\20\3\20\7\20\u0094")
-        buf.write("\n\20\f\20\16\20\u0097\13\20\3\21\3\21\3\21\3\21\7\21")
-        buf.write("\u009d\n\21\f\21\16\21\u00a0\13\21\3\21\5\21\u00a3\n\21")
-        buf.write("\3\21\3\21\3\22\3\22\3\22\5\22\u00aa\n\22\3\22\3\22\3")
-        buf.write("\22\3\22\7\22\u00b0\n\22\f\22\16\22\u00b3\13\22\3\22\3")
-        buf.write("\22\3\23\3\23\3\23\5\23\u00ba\n\23\5\23\u00bc\n\23\3\23")
-        buf.write("\3\23\3\23\2\2\24\2\4\6\b\n\f\16\20\22\24\26\30\32\34")
-        buf.write("\36 \"$\2\3\3\2\16\17\2\u00c8\2&\3\2\2\2\4*\3\2\2\2\6")
-        buf.write("\61\3\2\2\2\b\65\3\2\2\2\n\67\3\2\2\2\f;\3\2\2\2\16C\3")
-        buf.write("\2\2\2\20L\3\2\2\2\22]\3\2\2\2\24i\3\2\2\2\26n\3\2\2\2")
-        buf.write("\30p\3\2\2\2\32u\3\2\2\2\34\u0089\3\2\2\2\36\u0090\3\2")
-        buf.write("\2\2 \u0098\3\2\2\2\"\u00a6\3\2\2\2$\u00b6\3\2\2\2&\'")
-        buf.write("\5\20\t\2\'(\7\2\2\3(\3\3\2\2\2)+\5\b\5\2*)\3\2\2\2+,")
-        buf.write("\3\2\2\2,*\3\2\2\2,-\3\2\2\2-/\3\2\2\2.\60\5$\23\2/.\3")
-        buf.write("\2\2\2/\60\3\2\2\2\60\5\3\2\2\2\61\63\5\b\5\2\62\64\5")
-        buf.write("$\23\2\63\62\3\2\2\2\63\64\3\2\2\2\64\7\3\2\2\2\65\66")
-        buf.write("\t\2\2\2\66\t\3\2\2\2\678\5\b\5\289\7\t\2\29:\5\b\5\2")
-        buf.write(":\13\3\2\2\2;@\5\n\6\2<=\7\n\2\2=?\5\n\6\2><\3\2\2\2?")
-        buf.write("B\3\2\2\2@>\3\2\2\2@A\3\2\2\2A\r\3\2\2\2B@\3\2\2\2CH\7")
-        buf.write("\7\2\2DF\5\f\7\2EG\7\n\2\2FE\3\2\2\2FG\3\2\2\2GI\3\2\2")
-        buf.write("\2HD\3\2\2\2HI\3\2\2\2IJ\3\2\2\2JK\7\b\2\2K\17\3\2\2\2")
-        buf.write("LQ\5\22\n\2MN\7\5\2\2NP\5\22\n\2OM\3\2\2\2PS\3\2\2\2Q")
-        buf.write("O\3\2\2\2QR\3\2\2\2RU\3\2\2\2SQ\3\2\2\2TV\7\5\2\2UT\3")
-        buf.write("\2\2\2UV\3\2\2\2V\21\3\2\2\2W^\5\4\3\2X^\5\24\13\2YZ\7")
-        buf.write("\3\2\2Z[\5\20\t\2[\\\7\4\2\2\\^\3\2\2\2]W\3\2\2\2]X\3")
-        buf.write("\2\2\2]Y\3\2\2\2^c\3\2\2\2_`\7\6\2\2`b\5\26\f\2a_\3\2")
-        buf.write("\2\2be\3\2\2\2ca\3\2\2\2cd\3\2\2\2d\23\3\2\2\2ec\3\2\2")
-        buf.write("\2fj\5\30\r\2gj\5\32\16\2hj\5\"\22\2if\3\2\2\2ig\3\2\2")
-        buf.write("\2ih\3\2\2\2j\25\3\2\2\2ko\5\24\13\2lo\5 \21\2mo\5\6\4")
-        buf.write("\2nk\3\2\2\2nl\3\2\2\2nm\3\2\2\2o\27\3\2\2\2pq\5\b\5\2")
-        buf.write("qs\5\16\b\2rt\5$\23\2sr\3\2\2\2st\3\2\2\2t\31\3\2\2\2")
-        buf.write("uv\5\b\5\2vx\5\16\b\2wy\5$\23\2xw\3\2\2\2xy\3\2\2\2yz")
-        buf.write("\3\2\2\2z{\7\3\2\2{\u0080\5\34\17\2|}\7\5\2\2}\177\5\34")
-        buf.write("\17\2~|\3\2\2\2\177\u0082\3\2\2\2\u0080~\3\2\2\2\u0080")
-        buf.write("\u0081\3\2\2\2\u0081\u0084\3\2\2\2\u0082\u0080\3\2\2\2")
-        buf.write("\u0083\u0085\7\5\2\2\u0084\u0083\3\2\2\2\u0084\u0085\3")
-        buf.write("\2\2\2\u0085\u0086\3\2\2\2\u0086\u0087\7\4\2\2\u0087\33")
-        buf.write("\3\2\2\2\u0088\u008a\5\b\5\2\u0089\u0088\3\2\2\2\u008a")
-        buf.write("\u008b\3\2\2\2\u008b\u0089\3\2\2\2\u008b\u008c\3\2\2\2")
-        buf.write("\u008c\u008d\3\2\2\2\u008d\u008e\7\6\2\2\u008e\u008f\5")
-        buf.write("\36\20\2\u008f\35\3\2\2\2\u0090\u0095\5\26\f\2\u0091\u0092")
-        buf.write("\7\6\2\2\u0092\u0094\5\26\f\2\u0093\u0091\3\2\2\2\u0094")
-        buf.write("\u0097\3\2\2\2\u0095\u0093\3\2\2\2\u0095\u0096\3\2\2\2")
-        buf.write("\u0096\37\3\2\2\2\u0097\u0095\3\2\2\2\u0098\u0099\7\3")
-        buf.write("\2\2\u0099\u009e\5\36\20\2\u009a\u009b\7\5\2\2\u009b\u009d")
-        buf.write("\5\36\20\2\u009c\u009a\3\2\2\2\u009d\u00a0\3\2\2\2\u009e")
-        buf.write("\u009c\3\2\2\2\u009e\u009f\3\2\2\2\u009f\u00a2\3\2\2\2")
-        buf.write("\u00a0\u009e\3\2\2\2\u00a1\u00a3\7\5\2\2\u00a2\u00a1\3")
-        buf.write("\2\2\2\u00a2\u00a3\3\2\2\2\u00a3\u00a4\3\2\2\2\u00a4\u00a5")
-        buf.write("\7\4\2\2\u00a5!\3\2\2\2\u00a6\u00a7\7\r\2\2\u00a7\u00a9")
-        buf.write("\5\16\b\2\u00a8\u00aa\5$\23\2\u00a9\u00a8\3\2\2\2\u00a9")
-        buf.write("\u00aa\3\2\2\2\u00aa\u00ab\3\2\2\2\u00ab\u00ac\7\3\2\2")
-        buf.write("\u00ac\u00b1\5\30\r\2\u00ad\u00ae\7\6\2\2\u00ae\u00b0")
-        buf.write("\5\30\r\2\u00af\u00ad\3\2\2\2\u00b0\u00b3\3\2\2\2\u00b1")
-        buf.write("\u00af\3\2\2\2\u00b1\u00b2\3\2\2\2\u00b2\u00b4\3\2\2\2")
-        buf.write("\u00b3\u00b1\3\2\2\2\u00b4\u00b5\7\4\2\2\u00b5#\3\2\2")
-        buf.write("\2\u00b6\u00bb\7\13\2\2\u00b7\u00b9\5\f\7\2\u00b8\u00ba")
-        buf.write("\7\n\2\2\u00b9\u00b8\3\2\2\2\u00b9\u00ba\3\2\2\2\u00ba")
-        buf.write("\u00bc\3\2\2\2\u00bb\u00b7\3\2\2\2\u00bb\u00bc\3\2\2\2")
-        buf.write("\u00bc\u00bd\3\2\2\2\u00bd\u00be\7\f\2\2\u00be%\3\2\2")
-        buf.write("\2\32,/\63@FHQU]cinsx\u0080\u0084\u008b\u0095\u009e\u00a2")
-        buf.write("\u00a9\u00b1\u00b9\u00bb")
+        buf.write("\4\24\t\24\3\2\3\2\3\2\3\3\6\3-\n\3\r\3\16\3.\3\3\5\3")
+        buf.write("\62\n\3\3\4\3\4\5\4\66\n\4\3\5\3\5\3\6\3\6\3\6\3\6\3\7")
+        buf.write("\3\7\3\7\7\7A\n\7\f\7\16\7D\13\7\3\b\3\b\3\b\5\bI\n\b")
+        buf.write("\5\bK\n\b\3\b\3\b\3\t\3\t\3\t\7\tR\n\t\f\t\16\tU\13\t")
+        buf.write("\3\t\5\tX\n\t\3\n\3\n\3\n\3\n\3\n\3\n\5\n`\n\n\3\n\3\n")
+        buf.write("\7\nd\n\n\f\n\16\ng\13\n\3\13\3\13\3\13\5\13l\n\13\3\f")
+        buf.write("\3\f\3\f\5\fq\n\f\3\r\3\r\3\r\5\rv\n\r\3\16\3\16\3\16")
+        buf.write("\5\16{\n\16\3\16\3\16\3\16\3\16\7\16\u0081\n\16\f\16\16")
+        buf.write("\16\u0084\13\16\3\16\5\16\u0087\n\16\3\16\3\16\3\17\6")
+        buf.write("\17\u008c\n\17\r\17\16\17\u008d\3\17\3\17\3\17\3\20\3")
+        buf.write("\20\3\20\7\20\u0096\n\20\f\20\16\20\u0099\13\20\3\21\3")
+        buf.write("\21\3\21\7\21\u009e\n\21\f\21\16\21\u00a1\13\21\3\22\3")
+        buf.write("\22\3\22\3\22\7\22\u00a7\n\22\f\22\16\22\u00aa\13\22\3")
+        buf.write("\22\5\22\u00ad\n\22\3\22\3\22\3\23\3\23\3\23\5\23\u00b4")
+        buf.write("\n\23\3\23\3\23\3\23\3\23\3\24\3\24\3\24\5\24\u00bd\n")
+        buf.write("\24\5\24\u00bf\n\24\3\24\3\24\3\24\2\2\25\2\4\6\b\n\f")
+        buf.write("\16\20\22\24\26\30\32\34\36 \"$&\2\3\3\2\r\16\2\u00ca")
+        buf.write("\2(\3\2\2\2\4,\3\2\2\2\6\63\3\2\2\2\b\67\3\2\2\2\n9\3")
+        buf.write("\2\2\2\f=\3\2\2\2\16E\3\2\2\2\20N\3\2\2\2\22_\3\2\2\2")
+        buf.write("\24k\3\2\2\2\26p\3\2\2\2\30r\3\2\2\2\32w\3\2\2\2\34\u008b")
+        buf.write("\3\2\2\2\36\u0092\3\2\2\2 \u009a\3\2\2\2\"\u00a2\3\2\2")
+        buf.write("\2$\u00b0\3\2\2\2&\u00b9\3\2\2\2()\5\20\t\2)*\7\2\2\3")
+        buf.write("*\3\3\2\2\2+-\5\b\5\2,+\3\2\2\2-.\3\2\2\2.,\3\2\2\2./")
+        buf.write("\3\2\2\2/\61\3\2\2\2\60\62\5&\24\2\61\60\3\2\2\2\61\62")
+        buf.write("\3\2\2\2\62\5\3\2\2\2\63\65\5\b\5\2\64\66\5&\24\2\65\64")
+        buf.write("\3\2\2\2\65\66\3\2\2\2\66\7\3\2\2\2\678\t\2\2\28\t\3\2")
+        buf.write("\2\29:\5\b\5\2:;\7\t\2\2;<\5\b\5\2<\13\3\2\2\2=B\5\n\6")
+        buf.write("\2>?\7\n\2\2?A\5\n\6\2@>\3\2\2\2AD\3\2\2\2B@\3\2\2\2B")
+        buf.write("C\3\2\2\2C\r\3\2\2\2DB\3\2\2\2EJ\7\7\2\2FH\5\f\7\2GI\7")
+        buf.write("\n\2\2HG\3\2\2\2HI\3\2\2\2IK\3\2\2\2JF\3\2\2\2JK\3\2\2")
+        buf.write("\2KL\3\2\2\2LM\7\b\2\2M\17\3\2\2\2NS\5\22\n\2OP\7\5\2")
+        buf.write("\2PR\5\22\n\2QO\3\2\2\2RU\3\2\2\2SQ\3\2\2\2ST\3\2\2\2")
+        buf.write("TW\3\2\2\2US\3\2\2\2VX\7\5\2\2WV\3\2\2\2WX\3\2\2\2X\21")
+        buf.write("\3\2\2\2Y`\5\4\3\2Z`\5\24\13\2[\\\7\3\2\2\\]\5\20\t\2")
+        buf.write("]^\7\4\2\2^`\3\2\2\2_Y\3\2\2\2_Z\3\2\2\2_[\3\2\2\2`e\3")
+        buf.write("\2\2\2ab\7\6\2\2bd\5\26\f\2ca\3\2\2\2dg\3\2\2\2ec\3\2")
+        buf.write("\2\2ef\3\2\2\2f\23\3\2\2\2ge\3\2\2\2hl\5\30\r\2il\5\32")
+        buf.write("\16\2jl\5$\23\2kh\3\2\2\2ki\3\2\2\2kj\3\2\2\2l\25\3\2")
+        buf.write("\2\2mq\5\24\13\2nq\5\"\22\2oq\5\6\4\2pm\3\2\2\2pn\3\2")
+        buf.write("\2\2po\3\2\2\2q\27\3\2\2\2rs\5\b\5\2su\5\16\b\2tv\5&\24")
+        buf.write("\2ut\3\2\2\2uv\3\2\2\2v\31\3\2\2\2wx\5\b\5\2xz\5\16\b")
+        buf.write("\2y{\5&\24\2zy\3\2\2\2z{\3\2\2\2{|\3\2\2\2|}\7\3\2\2}")
+        buf.write("\u0082\5\34\17\2~\177\7\5\2\2\177\u0081\5\34\17\2\u0080")
+        buf.write("~\3\2\2\2\u0081\u0084\3\2\2\2\u0082\u0080\3\2\2\2\u0082")
+        buf.write("\u0083\3\2\2\2\u0083\u0086\3\2\2\2\u0084\u0082\3\2\2\2")
+        buf.write("\u0085\u0087\7\5\2\2\u0086\u0085\3\2\2\2\u0086\u0087\3")
+        buf.write("\2\2\2\u0087\u0088\3\2\2\2\u0088\u0089\7\4\2\2\u0089\33")
+        buf.write("\3\2\2\2\u008a\u008c\5\b\5\2\u008b\u008a\3\2\2\2\u008c")
+        buf.write("\u008d\3\2\2\2\u008d\u008b\3\2\2\2\u008d\u008e\3\2\2\2")
+        buf.write("\u008e\u008f\3\2\2\2\u008f\u0090\7\6\2\2\u0090\u0091\5")
+        buf.write("\36\20\2\u0091\35\3\2\2\2\u0092\u0097\5\26\f\2\u0093\u0094")
+        buf.write("\7\6\2\2\u0094\u0096\5\26\f\2\u0095\u0093\3\2\2\2\u0096")
+        buf.write("\u0099\3\2\2\2\u0097\u0095\3\2\2\2\u0097\u0098\3\2\2\2")
+        buf.write("\u0098\37\3\2\2\2\u0099\u0097\3\2\2\2\u009a\u009f\5\30")
+        buf.write("\r\2\u009b\u009c\7\6\2\2\u009c\u009e\5\30\r\2\u009d\u009b")
+        buf.write("\3\2\2\2\u009e\u00a1\3\2\2\2\u009f\u009d\3\2\2\2\u009f")
+        buf.write("\u00a0\3\2\2\2\u00a0!\3\2\2\2\u00a1\u009f\3\2\2\2\u00a2")
+        buf.write("\u00a3\7\3\2\2\u00a3\u00a8\5\36\20\2\u00a4\u00a5\7\5\2")
+        buf.write("\2\u00a5\u00a7\5\36\20\2\u00a6\u00a4\3\2\2\2\u00a7\u00aa")
+        buf.write("\3\2\2\2\u00a8\u00a6\3\2\2\2\u00a8\u00a9\3\2\2\2\u00a9")
+        buf.write("\u00ac\3\2\2\2\u00aa\u00a8\3\2\2\2\u00ab\u00ad\7\5\2\2")
+        buf.write("\u00ac\u00ab\3\2\2\2\u00ac\u00ad\3\2\2\2\u00ad\u00ae\3")
+        buf.write("\2\2\2\u00ae\u00af\7\4\2\2\u00af#\3\2\2\2\u00b0\u00b1")
+        buf.write("\5\b\5\2\u00b1\u00b3\5\16\b\2\u00b2\u00b4\5&\24\2\u00b3")
+        buf.write("\u00b2\3\2\2\2\u00b3\u00b4\3\2\2\2\u00b4\u00b5\3\2\2\2")
+        buf.write("\u00b5\u00b6\7\3\2\2\u00b6\u00b7\5 \21\2\u00b7\u00b8\7")
+        buf.write("\4\2\2\u00b8%\3\2\2\2\u00b9\u00be\7\13\2\2\u00ba\u00bc")
+        buf.write("\5\f\7\2\u00bb\u00bd\7\n\2\2\u00bc\u00bb\3\2\2\2\u00bc")
+        buf.write("\u00bd\3\2\2\2\u00bd\u00bf\3\2\2\2\u00be\u00ba\3\2\2\2")
+        buf.write("\u00be\u00bf\3\2\2\2\u00bf\u00c0\3\2\2\2\u00c0\u00c1\7")
+        buf.write("\f\2\2\u00c1\'\3\2\2\2\32.\61\65BHJSW_ekpuz\u0082\u0086")
+        buf.write("\u008d\u0097\u009f\u00a8\u00ac\u00b3\u00bc\u00be")
         return buf.getvalue()
 
 
@@ -96,14 +97,13 @@ class BitflowParser ( Parser ):
     sharedContextCache = PredictionContextCache()
 
     literalNames = [ "<INVALID>", "'{'", "'}'", "';'", "'->'", "'('", "')'", 
-                     "'='", "','", "'['", "']'", "'batch'", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "'\t'" ]
+                     "'='", "','", "'['", "']'", "<INVALID>", "<INVALID>", 
+                     "<INVALID>", "<INVALID>", "<INVALID>", "'\t'" ]
 
     symbolicNames = [ "<INVALID>", "OPEN", "CLOSE", "EOP", "NEXT", "OPEN_PARAMS", 
                       "CLOSE_PARAMS", "EQ", "SEP", "OPEN_HINTS", "CLOSE_HINTS", 
-                      "WINDOW", "STRING", "IDENTIFIER", "COMMENT", "NEWLINE", 
-                      "WHITESPACE", "TAB" ]
+                      "STRING", "IDENTIFIER", "COMMENT", "NEWLINE", "WHITESPACE", 
+                      "TAB" ]
 
     RULE_script = 0
     RULE_dataInput = 1
@@ -120,15 +120,16 @@ class BitflowParser ( Parser ):
     RULE_fork = 12
     RULE_namedSubPipeline = 13
     RULE_subPipeline = 14
-    RULE_multiplexFork = 15
-    RULE_window = 16
-    RULE_schedulingHints = 17
+    RULE_batchPipeline = 15
+    RULE_multiplexFork = 16
+    RULE_batch = 17
+    RULE_schedulingHints = 18
 
     ruleNames =  [ "script", "dataInput", "dataOutput", "name", "parameter", 
                    "parameterList", "parameters", "pipelines", "pipeline", 
                    "pipelineElement", "pipelineTailElement", "processingStep", 
-                   "fork", "namedSubPipeline", "subPipeline", "multiplexFork", 
-                   "window", "schedulingHints" ]
+                   "fork", "namedSubPipeline", "subPipeline", "batchPipeline", 
+                   "multiplexFork", "batch", "schedulingHints" ]
 
     EOF = Token.EOF
     OPEN=1
@@ -141,13 +142,12 @@ class BitflowParser ( Parser ):
     SEP=8
     OPEN_HINTS=9
     CLOSE_HINTS=10
-    WINDOW=11
-    STRING=12
-    IDENTIFIER=13
-    COMMENT=14
-    NEWLINE=15
-    WHITESPACE=16
-    TAB=17
+    STRING=11
+    IDENTIFIER=12
+    COMMENT=13
+    NEWLINE=14
+    WHITESPACE=15
+    TAB=16
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -196,9 +196,9 @@ class BitflowParser ( Parser ):
         self.enterRule(localctx, 0, self.RULE_script)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 36
+            self.state = 38
             self.pipelines()
-            self.state = 37
+            self.state = 39
             self.match(BitflowParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
@@ -252,23 +252,23 @@ class BitflowParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 40 
+            self.state = 42 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 39
+                self.state = 41
                 self.name()
-                self.state = 42 
+                self.state = 44 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not (_la==BitflowParser.STRING or _la==BitflowParser.IDENTIFIER):
                     break
 
-            self.state = 45
+            self.state = 47
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==BitflowParser.OPEN_HINTS:
-                self.state = 44
+                self.state = 46
                 self.schedulingHints()
 
 
@@ -321,13 +321,13 @@ class BitflowParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 47
-            self.name()
             self.state = 49
+            self.name()
+            self.state = 51
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==BitflowParser.OPEN_HINTS:
-                self.state = 48
+                self.state = 50
                 self.schedulingHints()
 
 
@@ -378,7 +378,7 @@ class BitflowParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 51
+            self.state = 53
             _la = self._input.LA(1)
             if not(_la==BitflowParser.STRING or _la==BitflowParser.IDENTIFIER):
                 self._errHandler.recoverInline(self)
@@ -435,11 +435,11 @@ class BitflowParser ( Parser ):
         self.enterRule(localctx, 8, self.RULE_parameter)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 53
-            self.name()
-            self.state = 54
-            self.match(BitflowParser.EQ)
             self.state = 55
+            self.name()
+            self.state = 56
+            self.match(BitflowParser.EQ)
+            self.state = 57
             self.name()
         except RecognitionException as re:
             localctx.exception = re
@@ -494,18 +494,18 @@ class BitflowParser ( Parser ):
         self.enterRule(localctx, 10, self.RULE_parameterList)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 57
+            self.state = 59
             self.parameter()
-            self.state = 62
+            self.state = 64
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,3,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
-                    self.state = 58
+                    self.state = 60
                     self.match(BitflowParser.SEP)
-                    self.state = 59
+                    self.state = 61
                     self.parameter() 
-                self.state = 64
+                self.state = 66
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,3,self._ctx)
 
@@ -563,25 +563,25 @@ class BitflowParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 65
+            self.state = 67
             self.match(BitflowParser.OPEN_PARAMS)
-            self.state = 70
+            self.state = 72
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==BitflowParser.STRING or _la==BitflowParser.IDENTIFIER:
-                self.state = 66
-                self.parameterList()
                 self.state = 68
+                self.parameterList()
+                self.state = 70
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==BitflowParser.SEP:
-                    self.state = 67
+                    self.state = 69
                     self.match(BitflowParser.SEP)
 
 
 
 
-            self.state = 72
+            self.state = 74
             self.match(BitflowParser.CLOSE_PARAMS)
         except RecognitionException as re:
             localctx.exception = re
@@ -637,26 +637,26 @@ class BitflowParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 74
+            self.state = 76
             self.pipeline()
-            self.state = 79
+            self.state = 81
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,6,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
-                    self.state = 75
+                    self.state = 77
                     self.match(BitflowParser.EOP)
-                    self.state = 76
+                    self.state = 78
                     self.pipeline() 
-                self.state = 81
+                self.state = 83
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,6,self._ctx)
 
-            self.state = 83
+            self.state = 85
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==BitflowParser.EOP:
-                self.state = 82
+                self.state = 84
                 self.match(BitflowParser.EOP)
 
 
@@ -732,38 +732,38 @@ class BitflowParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 91
+            self.state = 93
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
             if la_ == 1:
-                self.state = 85
+                self.state = 87
                 self.dataInput()
                 pass
 
             elif la_ == 2:
-                self.state = 86
+                self.state = 88
                 self.pipelineElement()
                 pass
 
             elif la_ == 3:
-                self.state = 87
-                self.match(BitflowParser.OPEN)
-                self.state = 88
-                self.pipelines()
                 self.state = 89
+                self.match(BitflowParser.OPEN)
+                self.state = 90
+                self.pipelines()
+                self.state = 91
                 self.match(BitflowParser.CLOSE)
                 pass
 
 
-            self.state = 97
+            self.state = 99
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==BitflowParser.NEXT:
-                self.state = 93
+                self.state = 95
                 self.match(BitflowParser.NEXT)
-                self.state = 94
+                self.state = 96
                 self.pipelineTailElement()
-                self.state = 99
+                self.state = 101
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -789,8 +789,8 @@ class BitflowParser ( Parser ):
             return self.getTypedRuleContext(BitflowParser.ForkContext,0)
 
 
-        def window(self):
-            return self.getTypedRuleContext(BitflowParser.WindowContext,0)
+        def batch(self):
+            return self.getTypedRuleContext(BitflowParser.BatchContext,0)
 
 
         def getRuleIndex(self):
@@ -818,25 +818,25 @@ class BitflowParser ( Parser ):
         localctx = BitflowParser.PipelineElementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 18, self.RULE_pipelineElement)
         try:
-            self.state = 103
+            self.state = 105
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,10,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 100
+                self.state = 102
                 self.processingStep()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 101
+                self.state = 103
                 self.fork()
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 102
-                self.window()
+                self.state = 104
+                self.batch()
                 pass
 
 
@@ -891,24 +891,24 @@ class BitflowParser ( Parser ):
         localctx = BitflowParser.PipelineTailElementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 20, self.RULE_pipelineTailElement)
         try:
-            self.state = 108
+            self.state = 110
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 105
+                self.state = 107
                 self.pipelineElement()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 106
+                self.state = 108
                 self.multiplexFork()
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 107
+                self.state = 109
                 self.dataOutput()
                 pass
 
@@ -966,15 +966,15 @@ class BitflowParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 110
+            self.state = 112
             self.name()
-            self.state = 111
-            self.parameters()
             self.state = 113
+            self.parameters()
+            self.state = 115
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==BitflowParser.OPEN_HINTS:
-                self.state = 112
+                self.state = 114
                 self.schedulingHints()
 
 
@@ -1050,44 +1050,44 @@ class BitflowParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 115
+            self.state = 117
             self.name()
-            self.state = 116
-            self.parameters()
             self.state = 118
+            self.parameters()
+            self.state = 120
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==BitflowParser.OPEN_HINTS:
-                self.state = 117
+                self.state = 119
                 self.schedulingHints()
 
 
-            self.state = 120
+            self.state = 122
             self.match(BitflowParser.OPEN)
-            self.state = 121
+            self.state = 123
             self.namedSubPipeline()
-            self.state = 126
+            self.state = 128
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,14,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
-                    self.state = 122
+                    self.state = 124
                     self.match(BitflowParser.EOP)
-                    self.state = 123
+                    self.state = 125
                     self.namedSubPipeline() 
-                self.state = 128
+                self.state = 130
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,14,self._ctx)
 
-            self.state = 130
+            self.state = 132
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==BitflowParser.EOP:
-                self.state = 129
+                self.state = 131
                 self.match(BitflowParser.EOP)
 
 
-            self.state = 132
+            self.state = 134
             self.match(BitflowParser.CLOSE)
         except RecognitionException as re:
             localctx.exception = re
@@ -1144,21 +1144,21 @@ class BitflowParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 135 
+            self.state = 137 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 134
+                self.state = 136
                 self.name()
-                self.state = 137 
+                self.state = 139 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not (_la==BitflowParser.STRING or _la==BitflowParser.IDENTIFIER):
                     break
 
-            self.state = 139
+            self.state = 141
             self.match(BitflowParser.NEXT)
-            self.state = 140
+            self.state = 142
             self.subPipeline()
         except RecognitionException as re:
             localctx.exception = re
@@ -1214,17 +1214,85 @@ class BitflowParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 142
+            self.state = 144
             self.pipelineTailElement()
-            self.state = 147
+            self.state = 149
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==BitflowParser.NEXT:
-                self.state = 143
+                self.state = 145
                 self.match(BitflowParser.NEXT)
-                self.state = 144
+                self.state = 146
                 self.pipelineTailElement()
-                self.state = 149
+                self.state = 151
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+    class BatchPipelineContext(ParserRuleContext):
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def processingStep(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(BitflowParser.ProcessingStepContext)
+            else:
+                return self.getTypedRuleContext(BitflowParser.ProcessingStepContext,i)
+
+
+        def NEXT(self, i:int=None):
+            if i is None:
+                return self.getTokens(BitflowParser.NEXT)
+            else:
+                return self.getToken(BitflowParser.NEXT, i)
+
+        def getRuleIndex(self):
+            return BitflowParser.RULE_batchPipeline
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBatchPipeline" ):
+                listener.enterBatchPipeline(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBatchPipeline" ):
+                listener.exitBatchPipeline(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBatchPipeline" ):
+                return visitor.visitBatchPipeline(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def batchPipeline(self):
+
+        localctx = BitflowParser.BatchPipelineContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 30, self.RULE_batchPipeline)
+        self._la = 0 # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 152
+            self.processingStep()
+            self.state = 157
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            while _la==BitflowParser.NEXT:
+                self.state = 153
+                self.match(BitflowParser.NEXT)
+                self.state = 154
+                self.processingStep()
+                self.state = 159
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -1284,36 +1352,36 @@ class BitflowParser ( Parser ):
     def multiplexFork(self):
 
         localctx = BitflowParser.MultiplexForkContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 30, self.RULE_multiplexFork)
+        self.enterRule(localctx, 32, self.RULE_multiplexFork)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 150
+            self.state = 160
             self.match(BitflowParser.OPEN)
-            self.state = 151
+            self.state = 161
             self.subPipeline()
-            self.state = 156
+            self.state = 166
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,18,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,19,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
-                    self.state = 152
+                    self.state = 162
                     self.match(BitflowParser.EOP)
-                    self.state = 153
+                    self.state = 163
                     self.subPipeline() 
-                self.state = 158
+                self.state = 168
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,18,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,19,self._ctx)
 
-            self.state = 160
+            self.state = 170
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==BitflowParser.EOP:
-                self.state = 159
+                self.state = 169
                 self.match(BitflowParser.EOP)
 
 
-            self.state = 162
+            self.state = 172
             self.match(BitflowParser.CLOSE)
         except RecognitionException as re:
             localctx.exception = re
@@ -1323,14 +1391,15 @@ class BitflowParser ( Parser ):
             self.exitRule()
         return localctx
 
-    class WindowContext(ParserRuleContext):
+    class BatchContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def WINDOW(self):
-            return self.getToken(BitflowParser.WINDOW, 0)
+        def name(self):
+            return self.getTypedRuleContext(BitflowParser.NameContext,0)
+
 
         def parameters(self):
             return self.getTypedRuleContext(BitflowParser.ParametersContext,0)
@@ -1339,11 +1408,8 @@ class BitflowParser ( Parser ):
         def OPEN(self):
             return self.getToken(BitflowParser.OPEN, 0)
 
-        def processingStep(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(BitflowParser.ProcessingStepContext)
-            else:
-                return self.getTypedRuleContext(BitflowParser.ProcessingStepContext,i)
+        def batchPipeline(self):
+            return self.getTypedRuleContext(BitflowParser.BatchPipelineContext,0)
 
 
         def CLOSE(self):
@@ -1353,68 +1419,50 @@ class BitflowParser ( Parser ):
             return self.getTypedRuleContext(BitflowParser.SchedulingHintsContext,0)
 
 
-        def NEXT(self, i:int=None):
-            if i is None:
-                return self.getTokens(BitflowParser.NEXT)
-            else:
-                return self.getToken(BitflowParser.NEXT, i)
-
         def getRuleIndex(self):
-            return BitflowParser.RULE_window
+            return BitflowParser.RULE_batch
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterWindow" ):
-                listener.enterWindow(self)
+            if hasattr( listener, "enterBatch" ):
+                listener.enterBatch(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitWindow" ):
-                listener.exitWindow(self)
+            if hasattr( listener, "exitBatch" ):
+                listener.exitBatch(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitWindow" ):
-                return visitor.visitWindow(self)
+            if hasattr( visitor, "visitBatch" ):
+                return visitor.visitBatch(self)
             else:
                 return visitor.visitChildren(self)
 
 
 
 
-    def window(self):
+    def batch(self):
 
-        localctx = BitflowParser.WindowContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 32, self.RULE_window)
+        localctx = BitflowParser.BatchContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 34, self.RULE_batch)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 164
-            self.match(BitflowParser.WINDOW)
-            self.state = 165
+            self.state = 174
+            self.name()
+            self.state = 175
             self.parameters()
-            self.state = 167
+            self.state = 177
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==BitflowParser.OPEN_HINTS:
-                self.state = 166
+                self.state = 176
                 self.schedulingHints()
 
 
-            self.state = 169
+            self.state = 179
             self.match(BitflowParser.OPEN)
-            self.state = 170
-            self.processingStep()
-            self.state = 175
-            self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            while _la==BitflowParser.NEXT:
-                self.state = 171
-                self.match(BitflowParser.NEXT)
-                self.state = 172
-                self.processingStep()
-                self.state = 177
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-
-            self.state = 178
+            self.state = 180
+            self.batchPipeline()
+            self.state = 181
             self.match(BitflowParser.CLOSE)
         except RecognitionException as re:
             localctx.exception = re
@@ -1466,29 +1514,29 @@ class BitflowParser ( Parser ):
     def schedulingHints(self):
 
         localctx = BitflowParser.SchedulingHintsContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 34, self.RULE_schedulingHints)
+        self.enterRule(localctx, 36, self.RULE_schedulingHints)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 180
+            self.state = 183
             self.match(BitflowParser.OPEN_HINTS)
-            self.state = 185
+            self.state = 188
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==BitflowParser.STRING or _la==BitflowParser.IDENTIFIER:
-                self.state = 181
+                self.state = 184
                 self.parameterList()
-                self.state = 183
+                self.state = 186
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==BitflowParser.SEP:
-                    self.state = 182
+                    self.state = 185
                     self.match(BitflowParser.SEP)
 
 
 
 
-            self.state = 187
+            self.state = 190
             self.match(BitflowParser.CLOSE_HINTS)
         except RecognitionException as re:
             localctx.exception = re

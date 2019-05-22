@@ -18,7 +18,7 @@ parameters : OPEN_PARAMS (parameterList SEP?)? CLOSE_PARAMS ;
 // Pipelines and steps
 pipelines : pipeline (EOP pipeline)* EOP? ;
 pipeline : (dataInput | pipelineElement | OPEN pipelines CLOSE) (NEXT pipelineTailElement)* ;
-pipelineElement : processingStep | fork | window ;
+pipelineElement : processingStep | fork | batch ;
 pipelineTailElement : pipelineElement | multiplexFork | dataOutput ;
 processingStep : name parameters schedulingHints? ;
 
@@ -26,10 +26,11 @@ processingStep : name parameters schedulingHints? ;
 fork : name parameters schedulingHints? OPEN namedSubPipeline (EOP namedSubPipeline)* EOP? CLOSE ;
 namedSubPipeline : name+ NEXT subPipeline ;
 subPipeline : pipelineTailElement (NEXT pipelineTailElement)* ;
+batchPipeline : processingStep (NEXT processingStep)* ;
 multiplexFork : OPEN subPipeline (EOP subPipeline)* EOP? CLOSE ;
 
-// Windows
-window : WINDOW parameters schedulingHints? OPEN processingStep (NEXT processingStep)* CLOSE ;
+// Batch
+batch : name parameters schedulingHints? OPEN batchPipeline CLOSE ;
 
 // Scheduling hints
 schedulingHints : OPEN_HINTS (parameterList SEP?)? CLOSE_HINTS ;
@@ -51,7 +52,6 @@ SEP : ',' ;
 OPEN_HINTS : '[' ;
 CLOSE_HINTS : ']' ;
 
-WINDOW: 'batch' ; // Only "keyword" in the grammar
 STRING : '"' .*? '"' | '\'' .*? '\'' | '`' .*? '`' ; // Three types of string delimiter characters for flexibility
 IDENTIFIER : [a-zA-Z0-9._%+&*?:\\/-]+ ;
 

@@ -84,13 +84,18 @@ class BitflowVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by BitflowParser#batchPipeline.
+    def visitBatchPipeline(self, ctx:BitflowParser.BatchPipelineContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by BitflowParser#multiplexFork.
     def visitMultiplexFork(self, ctx:BitflowParser.MultiplexForkContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by BitflowParser#window.
-    def visitWindow(self, ctx:BitflowParser.WindowContext):
+    # Visit a parse tree produced by BitflowParser#batch.
+    def visitBatch(self, ctx:BitflowParser.BatchContext):
         return self.visitChildren(ctx)
 
 

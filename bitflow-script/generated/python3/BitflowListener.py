@@ -143,6 +143,15 @@ class BitflowListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by BitflowParser#batchPipeline.
+    def enterBatchPipeline(self, ctx:BitflowParser.BatchPipelineContext):
+        pass
+
+    # Exit a parse tree produced by BitflowParser#batchPipeline.
+    def exitBatchPipeline(self, ctx:BitflowParser.BatchPipelineContext):
+        pass
+
+
     # Enter a parse tree produced by BitflowParser#multiplexFork.
     def enterMultiplexFork(self, ctx:BitflowParser.MultiplexForkContext):
         pass
@@ -152,12 +161,12 @@ class BitflowListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by BitflowParser#window.
-    def enterWindow(self, ctx:BitflowParser.WindowContext):
+    # Enter a parse tree produced by BitflowParser#batch.
+    def enterBatch(self, ctx:BitflowParser.BatchContext):
         pass
 
-    # Exit a parse tree produced by BitflowParser#window.
-    def exitWindow(self, ctx:BitflowParser.WindowContext):
+    # Exit a parse tree produced by BitflowParser#batch.
+    def exitBatch(self, ctx:BitflowParser.BatchContext):
         pass
 
 
