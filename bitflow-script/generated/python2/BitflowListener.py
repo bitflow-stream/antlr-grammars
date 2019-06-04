@@ -49,6 +49,51 @@ class BitflowListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by BitflowParser#parameterValue.
+    def enterParameterValue(self, ctx):
+        pass
+
+    # Exit a parse tree produced by BitflowParser#parameterValue.
+    def exitParameterValue(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by BitflowParser#primitiveValue.
+    def enterPrimitiveValue(self, ctx):
+        pass
+
+    # Exit a parse tree produced by BitflowParser#primitiveValue.
+    def exitPrimitiveValue(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by BitflowParser#listValue.
+    def enterListValue(self, ctx):
+        pass
+
+    # Exit a parse tree produced by BitflowParser#listValue.
+    def exitListValue(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by BitflowParser#mapValue.
+    def enterMapValue(self, ctx):
+        pass
+
+    # Exit a parse tree produced by BitflowParser#mapValue.
+    def exitMapValue(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by BitflowParser#mapValueElement.
+    def enterMapValueElement(self, ctx):
+        pass
+
+    # Exit a parse tree produced by BitflowParser#mapValueElement.
+    def exitMapValueElement(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by BitflowParser#parameterList.
     def enterParameterList(self, ctx):
         pass
