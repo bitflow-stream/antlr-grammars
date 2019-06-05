@@ -11,7 +11,12 @@ dataOutput : name schedulingHints? ;
 name : IDENTIFIER | STRING ;
 
 // Parameters
-parameter : name EQ name ;
+parameter : name EQ parameterValue ;
+parameterValue : primitiveValue | listValue | mapValue ;
+primitiveValue : name ;
+listValue : OPEN_HINTS (primitiveValue (SEP primitiveValue)*)? CLOSE_HINTS ;
+mapValue : OPEN (mapValueElement (SEP mapValueElement)*)? CLOSE ;
+mapValueElement : name EQ primitiveValue ;
 parameterList : parameter (SEP parameter)* ;
 parameters : OPEN_PARAMS (parameterList SEP?)? CLOSE_PARAMS ;
 

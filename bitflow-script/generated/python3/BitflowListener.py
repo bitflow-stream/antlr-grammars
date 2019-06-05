@@ -53,6 +53,51 @@ class BitflowListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by BitflowParser#parameterValue.
+    def enterParameterValue(self, ctx:BitflowParser.ParameterValueContext):
+        pass
+
+    # Exit a parse tree produced by BitflowParser#parameterValue.
+    def exitParameterValue(self, ctx:BitflowParser.ParameterValueContext):
+        pass
+
+
+    # Enter a parse tree produced by BitflowParser#primitiveValue.
+    def enterPrimitiveValue(self, ctx:BitflowParser.PrimitiveValueContext):
+        pass
+
+    # Exit a parse tree produced by BitflowParser#primitiveValue.
+    def exitPrimitiveValue(self, ctx:BitflowParser.PrimitiveValueContext):
+        pass
+
+
+    # Enter a parse tree produced by BitflowParser#listValue.
+    def enterListValue(self, ctx:BitflowParser.ListValueContext):
+        pass
+
+    # Exit a parse tree produced by BitflowParser#listValue.
+    def exitListValue(self, ctx:BitflowParser.ListValueContext):
+        pass
+
+
+    # Enter a parse tree produced by BitflowParser#mapValue.
+    def enterMapValue(self, ctx:BitflowParser.MapValueContext):
+        pass
+
+    # Exit a parse tree produced by BitflowParser#mapValue.
+    def exitMapValue(self, ctx:BitflowParser.MapValueContext):
+        pass
+
+
+    # Enter a parse tree produced by BitflowParser#mapValueElement.
+    def enterMapValueElement(self, ctx:BitflowParser.MapValueElementContext):
+        pass
+
+    # Exit a parse tree produced by BitflowParser#mapValueElement.
+    def exitMapValueElement(self, ctx:BitflowParser.MapValueElementContext):
+        pass
+
+
     # Enter a parse tree produced by BitflowParser#parameterList.
     def enterParameterList(self, ctx:BitflowParser.ParameterListContext):
         pass
