@@ -11,7 +11,12 @@ dataOutput : name schedulingHints? ;
 name : IDENTIFIER | STRING ;
 
 // Parameters
-parameter : name EQ name ;
+parameter : name EQ parameterValue ;
+parameterValue : primitiveValue | listValue | mapValue ;
+primitiveValue : name ;
+listValue : OPEN_HINTS (primitiveValue (SEP primitiveValue)*)? CLOSE_HINTS ;
+mapValue : OPEN (mapValueElement (SEP mapValueElement)*)? CLOSE ;
+mapValueElement : name EQ primitiveValue ;
 parameterList : parameter (SEP parameter)* ;
 parameters : OPEN_PARAMS (parameterList SEP?)? CLOSE_PARAMS ;
 
@@ -30,7 +35,7 @@ batchPipeline : processingStep (NEXT processingStep)* ;
 multiplexFork : OPEN subPipeline (EOP subPipeline)* EOP? CLOSE ;
 
 // Batch
-batch : name parameters schedulingHints? OPEN batchPipeline CLOSE ;
+batch : BATCH parameters schedulingHints? OPEN batchPipeline CLOSE ;
 
 // Scheduling hints
 schedulingHints : OPEN_HINTS (parameterList SEP?)? CLOSE_HINTS ;
@@ -52,6 +57,7 @@ SEP : ',' ;
 OPEN_HINTS : '[' ;
 CLOSE_HINTS : ']' ;
 
+BATCH: 'batch' ; // Keyword
 STRING : '"' .*? '"' | '\'' .*? '\'' | '`' .*? '`' ; // Three types of string delimiter characters for flexibility
 IDENTIFIER : [a-zA-Z0-9._%+&*?:\\/-]+ ;
 

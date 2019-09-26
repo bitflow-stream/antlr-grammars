@@ -34,6 +34,31 @@ class BitflowVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by BitflowParser#parameterValue.
+    def visitParameterValue(self, ctx:BitflowParser.ParameterValueContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by BitflowParser#primitiveValue.
+    def visitPrimitiveValue(self, ctx:BitflowParser.PrimitiveValueContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by BitflowParser#listValue.
+    def visitListValue(self, ctx:BitflowParser.ListValueContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by BitflowParser#mapValue.
+    def visitMapValue(self, ctx:BitflowParser.MapValueContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by BitflowParser#mapValueElement.
+    def visitMapValueElement(self, ctx:BitflowParser.MapValueElementContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by BitflowParser#parameterList.
     def visitParameterList(self, ctx:BitflowParser.ParameterListContext):
         return self.visitChildren(ctx)
