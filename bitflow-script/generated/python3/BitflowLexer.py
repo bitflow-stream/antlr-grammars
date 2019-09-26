@@ -67,7 +67,7 @@ class BitflowLexer(Lexer):
     SEP = 8
     OPEN_HINTS = 9
     CLOSE_HINTS = 10
-    WINDOW = 11
+    BATCH = 11
     STRING = 12
     IDENTIFIER = 13
     COMMENT = 14
@@ -85,11 +85,11 @@ class BitflowLexer(Lexer):
 
     symbolicNames = [ "<INVALID>",
             "OPEN", "CLOSE", "EOP", "NEXT", "OPEN_PARAMS", "CLOSE_PARAMS", 
-            "EQ", "SEP", "OPEN_HINTS", "CLOSE_HINTS", "WINDOW", "STRING", 
+            "EQ", "SEP", "OPEN_HINTS", "CLOSE_HINTS", "BATCH", "STRING", 
             "IDENTIFIER", "COMMENT", "NEWLINE", "WHITESPACE", "TAB" ]
 
     ruleNames = [ "OPEN", "CLOSE", "EOP", "NEXT", "OPEN_PARAMS", "CLOSE_PARAMS", 
-                  "EQ", "SEP", "OPEN_HINTS", "CLOSE_HINTS", "WINDOW", "STRING", 
+                  "EQ", "SEP", "OPEN_HINTS", "CLOSE_HINTS", "BATCH", "STRING", 
                   "IDENTIFIER", "COMMENT", "NEWLINE", "WHITESPACE", "TAB" ]
 
     grammarFileName = "Bitflow.g4"

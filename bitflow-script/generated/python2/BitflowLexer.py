@@ -69,7 +69,7 @@ class BitflowLexer(Lexer):
     SEP = 8
     OPEN_HINTS = 9
     CLOSE_HINTS = 10
-    WINDOW = 11
+    BATCH = 11
     STRING = 12
     IDENTIFIER = 13
     COMMENT = 14
@@ -87,11 +87,11 @@ class BitflowLexer(Lexer):
 
     symbolicNames = [ u"<INVALID>",
             u"OPEN", u"CLOSE", u"EOP", u"NEXT", u"OPEN_PARAMS", u"CLOSE_PARAMS", 
-            u"EQ", u"SEP", u"OPEN_HINTS", u"CLOSE_HINTS", u"WINDOW", u"STRING", 
+            u"EQ", u"SEP", u"OPEN_HINTS", u"CLOSE_HINTS", u"BATCH", u"STRING", 
             u"IDENTIFIER", u"COMMENT", u"NEWLINE", u"WHITESPACE", u"TAB" ]
 
     ruleNames = [ u"OPEN", u"CLOSE", u"EOP", u"NEXT", u"OPEN_PARAMS", u"CLOSE_PARAMS", 
-                  u"EQ", u"SEP", u"OPEN_HINTS", u"CLOSE_HINTS", u"WINDOW", 
+                  u"EQ", u"SEP", u"OPEN_HINTS", u"CLOSE_HINTS", u"BATCH", 
                   u"STRING", u"IDENTIFIER", u"COMMENT", u"NEWLINE", u"WHITESPACE", 
                   u"TAB" ]
 
